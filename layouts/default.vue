@@ -97,7 +97,7 @@
 							<div class="col-md-3 col-12 ">
 								<!-- Start Logo -->
 								<div class="logo mt-1" >
-									<a href="/"><img src="img/logo2.png" style="_margin-top: -12px; max-width:100%;" alt="#"></a>
+									<a href="/"><img src="/img/logo2.png" style="_margin-top: -12px; max-width:100%;" alt="#"></a>
 								</div>
 								<!-- End Logo -->
 								<!-- Mobile Nav -->
