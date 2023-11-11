@@ -1,0 +1,32 @@
+[
+    {
+      "id": 1,
+      "title": "prato1",
+      "body": "sdjfh djfhsdjkf hsdkjf hsdkjfhsdfkjdsh fkjdsfh dkj",
+      "href": "#",
+      "imageSrc": "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg",
+      "imageAlt": "Front of men's Basic Tee in black.",
+      "price": "$35",
+      "color": "Black"
+    },
+    {
+      "id": 2,
+      "title": "prato2",
+      "body": "sdjfh djfhsdjkf hsdkjf hsdkjfhsdfkjdsh fkjdsfh dkj",
+      "href": "#",
+      "imageSrc": "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg",
+      "imageAlt": "Front of men's Basic Tee in black.",
+      "price": "$35",
+      "color": "Black"
+    },
+    {
+      "id": 3,
+      "title": "prato3",
+      "body": "sdjfh djfhsdjkf hsdkjf hsdkjfhsdfkjdsh fkjdsfh dkj",
+      "href": "#",
+      "imageSrc": "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg",
+      "imageAlt": "Front of men's Basic Tee in black.",
+      "price": "$35",
+      "color": "Black"
+    }
+  ]

@@ -1,0 +1,43 @@
+[
+    {
+        "id": 0,
+        "imgs": ["/images/templo.jpeg"],
+        "title": "Templo",
+        "desc": "Lugar de devoção espiritual Hare Krishna",
+        "body": "O Templo Hare Krishna é um lugar de devoção espiritual dedicado ao movimento Hare Krishna, onde seguidores se reúnem para cantar mantras, meditar e estudar textos sagrados, com destaque para o culto a Krishna. Esses templos também são conhecidos por oferecer refeições vegetarianas gratuitas, promovendo valores de paz e simplicidade, e compartilhando ensinamentos espirituais com a comunidade."
+    },{
+        "id": 1,
+        "imgs": ["/images/atrativos/meditacao.jpg"],
+        "title": "Retiros espirituais",
+        "desc": "Jornadas de autodescoberta e renovação interior",
+        "body": "Retiros espirituais são jornadas de autodescoberta e renovação interior. Durante esses momentos especiais, você se desconecta do ritmo frenético da vida cotidiana para se reconectar consigo mesmo e com o universo. É uma oportunidade de meditar, refletir, encontrar paz interior e buscar respostas para as questões mais profundas da vida. Venha explorar sua espiritualidade, recarregar suas energias e encontrar serenidade em um retiro espiritual."
+    },
+    {
+        "id": 2,
+        "imgs": ["/images/atrativos/trilha.webp"],
+        "title": "Caminhadas ecológicas",
+        "desc": "Conecção com a natureza enquanto cuidamos dela",
+        "body": "As caminhadas ecológicas são uma forma incrível de se conectar com a natureza enquanto cuidamos dela. Durante essas aventuras ao ar livre, exploramos trilhas deslumbrantes, respiramos ar puro e absorvemos a beleza natural que nos cerca. Além disso, é uma oportunidade única para aprender sobre ecossistemas locais, conservação ambiental e sustentabilidade. Venha se juntar a nós e experimente a harmonia entre o ser humano e a natureza em caminhadas ecológicas memoráveis."
+    },
+    {
+        "id": 3,
+        "imgs": ["/images/atrativos/ayuruvedica.jpg"],
+        "title": "Teraias ayurvédicas",
+        "desc": "Equilibrio do corpo, mente e espírito.",
+        "body": "As Terapias Ayurvédicas são uma forma milenar de cuidar da saúde e do bem-estar, proveniente da Índia. Com base nos princípios da medicina ayurvédica, essas terapias visam equilibrar o corpo, mente e espírito. Utilizando técnicas como massagens, tratamentos à base de ervas e alimentação consciente, as Terapias Ayurvédicas buscam restabelecer a harmonia interna e promover uma vida saudável e vibrante. Descubra o poder da cura natural e traga equilíbrio para sua vida com as Terapias Ayurvédicas."
+    },
+    {
+        "id": 4,
+        "imgs": ["/images/atrativos/capa_prasada.webp"],
+        "title": "Restaurantes",
+        "desc": "Inspirados pela filosofia e práticas da tradição Indiana",
+        "body": "Os restaurantes de uma comunidade Hare Krishna oferecem uma experiência culinária única e espiritual. Inspirados pela filosofia e práticas dessa tradição espiritual, esses restaurantes servem refeições vegetarianas saborosas e saudáveis. Cada prato é preparado com amor e devoção, seguindo os princípios de não-violência e pureza. Além de satisfazer o paladar, esses locais proporcionam um ambiente tranquilo e convidativo, onde os visitantes podem desfrutar de uma refeição nutritiva e, ao mesmo tempo, alimentar o espírito. Venha saborear a comida que nutre o corpo e a alma nos restaurantes da comunidade Hare Krishna."
+    },
+    {
+        "id": 5,
+        "imgs": ["/images/atrativos/vestido.jpg"],
+        "title": "Lojas de artigos indianos",
+        "desc": "Rica experiência de compras com um toque espiritual",
+        "body": "As lojas de artigos indianos de uma comunidade Hare Krishna oferecem uma rica experiência de compras com um toque espiritual. Aqui, você encontrará uma variedade de produtos inspirados na cultura e espiritualidade da Índia, desde roupas tradicionais, jóias exóticas, incensos aromáticos até livros espirituais e imagens divinas. Cada item é cuidadosamente selecionado para refletir os valores da comunidade Hare Krishna, como a devoção, a paz interior e a conexão espiritual. Venha explorar essas lojas e leve para casa um pedacinho da Índia e da espiritualidade Hare Krishna. <br/><br/><a href='lojas' class='btn btn-outline-secondary'>Ver lojas</a>"
+    }
+]
