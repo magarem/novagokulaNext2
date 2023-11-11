@@ -10,8 +10,8 @@
 								<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3678.845862232867!2d-45.46752338949647!3d-22.77110083294911!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cc8dd6afbebb7d%3A0xf483b2816174680a!2sEspa%C3%A7o%20Cultural%20e%20Restaurante%20Confraria%20Vegana!5e0!3m2!1spt-BR!2sbr!4v1684284549318!5m2!1spt-BR!2sbr" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
 								<!-- <div class="pf-details-slider">
-									<img src="img/templo1.png" alt="#">
-									<img src="img/templo2.jpeg" alt="#">
+									<img src="/img/templo1.png" alt="#">
+									<img src="/img/templo2.jpeg" alt="#">
 								</div> -->
 							</div>
 							<!-- <div class="date">

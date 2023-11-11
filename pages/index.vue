@@ -143,7 +143,7 @@
 					<div class="col-lg-12">
 						<div class="section-title">
 							<h2 style="font-size: 24px; font-weight: 600px;">Próximos eventos</h2>
-							<!-- <img src="img/section-img.png" alt="#"> -->
+							<!-- <img src="/img/section-img.png" alt="#"> -->
 							<p>Próximas Celebrações e Encontros Especiais</p>
 						</div>
 					</div>
@@ -153,7 +153,7 @@
 						<!-- Single Blog -->
 						<div class="single-news">
 							<div class="news-head">
-								<a href="/eventos?id=1"><img src="img/evento1.jpeg" alt="#"></a>
+								<a href="/eventos?id=1"><img src="/img/evento1.jpeg" alt="#"></a>
 							</div>
 							<div class="news-body">
 								<div class="news-content">
@@ -169,7 +169,7 @@
 						<!-- Single Blog -->
 						<div class="single-news">
 							<div class="news-head">
-								<a href="/eventos?id=2"><img src="img/evento3.jpeg" alt="#"></a>
+								<a href="/eventos?id=2"><img src="/img/evento3.jpeg" alt="#"></a>
 							</div>
 							<div class="news-body">
 								<div class="news-content">
@@ -185,7 +185,7 @@
 						<!-- Single Blog -->
 						<div class="single-news">
 							<div class="news-head">
-								<a href="/eventos?id=3"><img src="img/evento4.jpeg" alt="#"></a>
+								<a href="/eventos?id=3"><img src="/img/evento4.jpeg" alt="#"></a>
 							</div>
 							<div class="news-body">
 								<div class="news-content">

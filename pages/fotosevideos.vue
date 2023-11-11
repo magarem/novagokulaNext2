@@ -9,8 +9,8 @@
 							<div class="image-slider">
 								<Slideshow :items="slideshow_about" />
 								<!-- <div class="pf-details-slider">
-									<img src="img/templo1.png" alt="#">
-									<img src="img/templo2.jpeg" alt="#">
+									<img src="/img/templo1.png" alt="#">
+									<img src="/img/templo2.jpeg" alt="#">
 								</div> -->
 							</div>
 							<!-- <div class="date">
