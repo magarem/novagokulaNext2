@@ -493,8 +493,13 @@ Version:	1.1
 	box-shadow: 0 1px 0 rgba(0,0,0,.25);
 }
 .header .main-menu{
-	display:none 
+	display:none;
 }
+
+.header .close-main-menu{
+	display:block;
+}
+
 .header .widget-main {
 	float: right;
 	display: none;
@@ -503,7 +508,9 @@ Version:	1.1
 	margin-top: 18px;
 }
 .header .slicknav_nav {
-	margin-top: 65px;
+	/* margin-top: 65px; */
+	margin-top: 16px;
+	margin-bottom: 16px;
 }
 .header.style2 .slicknav_nav {
 	margin-top: 60px;

@@ -35,11 +35,9 @@
         <Link rel="stylesheet" href="/css/animate.min.css"/>
 		<!-- Magnific Popup CSS -->
         <Link rel="stylesheet" href="/css/magnific-popup.css"/>
-		
 		<!-- Medipro CSS -->
         <Link rel="stylesheet" href="/css/normalize.css"/>
         <Link rel="stylesheet" href="/style.css"/>
-        
         <Link rel="stylesheet" href="/css/responsive.css"/>
       </Head>
      
@@ -71,20 +69,18 @@
 								<!-- <li><a href="#">Sobre</a></li> -->
 								<li><a href="comochegar">Como chegar</a></li>
 								<li><a href="visitacao">Visitação</a></li>
-								<li><a href="fotosevideos">Fotos & vídeos</a></li>
-								<li><a href="faq">Filosofia da Bhakti-yoga</a></li>
+								<li><a href="fotosevideos">Galeria</a></li>
+								<li><a href="faq">Filosofia</a></li>
+								<li><i class="fa fa-envelope"></i></li>
 								<!-- <li><a href="faq">FAQ</a></li> -->
 							</ul>
 							<!-- End Contact -->
 						</div>
-						<div class="col-lg-6 col-md-7 col-12">
-							<!-- Top Contact -->
+						<!-- <div class="col-lg-6 col-md-7 col-12">
 							<ul class="top-contact">
-								<!-- <li><i class="fa fa-phone"></i>+55 11 1234 56789</li> -->
 								<li><i class="fa fa-envelope"></i><a href="mailto:faleconosco@novagokula.com.br">faleconosco@novagokula.com.br</a></li>
 							</ul>
-							<!-- End Top Contact -->
-						</div>
+						</div> -->
 					</div>
 				</div>
 			</div>
@@ -97,23 +93,27 @@
 							<div class="col-md-3 col-12 ">
 								<!-- Start Logo -->
 								<div class="logo mt-1" >
-									<a href="/"><img src="/img/logo2.png" style="_margin-top: -12px; max-width:100%;" alt="#"></a>
+									<div class="row">
+										<div class="col-10 col-lg-12">
+											<a href="/"><img src="/img/logo2.png" style="_margin-top: -12px; max-width:100%;" alt="#"></a>
+										</div>
+										<div class="col-2 col-lg-12">
+											<div class="_mobile-nav mt-3" @click="showMenu()"><i class="fa fa-bars fa-2x" aria-hidden="true"></i></div>
+										</div>
+									</div>
+								
 								</div>
 								<!-- End Logo -->
 								<!-- Mobile Nav -->
-								<div class="mobile-nav"></div>
+								<!-- <div class="_mobile-nav" @click="showMenu()"><i class="fa fa-bars fa-2x" aria-hidden="true"></i></div> -->
 								<!-- End Mobile Nav -->
 							</div>
 							<div class="col-md-5 col-12">
 								<!-- Main Menu -->
-								<div class="main-menu">
+								
+								<div class="main-menu" :class="showMobileMenu ? 'close-main-menu' : 'main-menu'">
 									<nav class="navigation">
-										<ul class="nav menu">
-											<!-- <li class="active"><a href="/">Home<i _class="icofont-rounded-down"></i></a> -->
-												<!-- <ul class="dropdown">
-													<li><a href="index.html">Home Page 1</a></li>
-												</ul> -->
-											<!-- </li> -->
+										<ul class="menu" :style="showMobileMenu ? 'padding-top:-100px;' : ''" :class="showMobileMenu ? 'slicknav_nav' : 'nav'">
 											<li><a href="/">Início</a></li>
 											<li><a href="about">Sobre</a></li>
 											<li><a href="#">Atrativos <i class="icofont-rounded-down"></i></a>
@@ -315,8 +315,14 @@
       const route = useRoute()
       console.log(route.name);
       const path=route.name||''
+
+	  let showMobileMenu = ref(false)
+	  const showMenu = () => {
+		// alert(showMobileMenu.value)
+		showMobileMenu.value = !showMobileMenu.value
+	  }
   </script>
-  <style>
+  <style lang="scss" scoped>
   :root {
 				--main-bg-color: hwb(14 42% 4%);
 			}
@@ -348,11 +354,64 @@
                 margin-right:15px;
 				font-size: 12px;
 				color: rgb(34, 34, 34);
-            }
+        }
         
             .footer {
                 color: white;
             }
             
-       
+			.nav-menu {
+				background-color: white;
+				}
+			.nav-content {
+			display: flex;
+			justify-content: space-between;
+			padding: 10px 30px;
+			align-items: center;
+			}
+			.nav-items {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				li {
+					padding: 0 10px;
+				}
+			}
+			i {
+			display: none;
+			}
+			
+				@media screen and (max-width: 768px) {
+				.nav-menu {
+					padding-top: 10px;
+					position: absolute;
+					width: 100%;
+				}
+				.open-menu {
+					opacity: 1;
+					height: 150px;
+				}
+				.closed-menu {
+					opacity: 0;
+					height: 0;
+					padding: 0;
+				}
+				.nav-content {
+					flex-direction: column;
+					z-index: 100;
+					position: relative;
+					transition: all 0.2s ease-out;
+				}
+				.nav-items {
+					flex-direction: column;
+				}
+				i {
+					display: block;
+					text-align: right;
+					padding: 0 10px 10px 0;
+					}
+			}
   </style>

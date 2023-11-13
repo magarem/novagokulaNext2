@@ -13,19 +13,23 @@
 									<img src="/img/templo2.jpeg" alt="#">
 								</div> -->
 							</div>
-							<!-- <div class="date">
+							<div class="date" >
 								<ul>
-									<li><span>Category :</span> Heart Surgery</li>
-									<li><span>Date :</span> April 20, 2019</li>
+									<li style="font-size: 13px;"><span style="font-size: 13px;">Fotografia :</span> <a href="https://www.instagram.com/riozenharehostel/">Marcelo Magalhães</a></li>
+									<!-- <li><span>Date :</span> April 20, 2019</li>
 									<li><span>Client :</span> Suke Agency</li>
-									<li><span>Ags :</span> Typo</li>
+									<li><span>Ags :</span> Typo</li> -->
 								</ul>
-							</div>-->
+							</div>
 							<div class="body-text">
 								<h3>Quem somos</h3>
-								<p>Localizada no Bairro Ribeirão Grande, aos pés da Serra da Mantiqueira, a fazenda abriga o maior templo Hare Krishna da América Latina e com visitação aberta ao público em geral.
-								<p>A comunidade foi criada em 1978 por um grupo de devotos de Krishna, reunidos em torno de um ideal espiritual. Atualmente a comunidade abriga sacerdotes, monges, estudantes e famílias inteiras em diferentes casas ou em alojamentos divididos em três vilas. A fazenda hoje faz parte do cenário turístico da região tanto pela beleza de seu templo e de sua cultura quanto pela natureza que lhe cerca. Integra a Área de Proteção Ambiental da serra da Mantiqueira, o local também é uma área de soltura e devolução de animais silvestres.</p>	</p>
-								<p>O local oferece opções de passeios monitorados pelos próprios devotos tanto no templo e outras instalações, como nas trilhas. Também possui local para camping, pousada e chalés, além de iguarias vegetarianas da culinária védica, nas lanchonetes e no restaurante da fazenda. Eu recomendo no Quiosque Govinadji provar a coxinha de jaca e o salgadinho de banana ou mandioca, são muito bons.</p>
+								<p>FAZENDA NOVA GOKULA - ISKCON BR</p>
+
+<p>Sociedade Internacional para Consciência de Krishna</p>
+
+	<p>A Fazenda Nova Gokula é um santuário natural que oferece aos seus visitantes uma variedade de experiências baseadas no princípio de uma vida simples, natural e saudável e também uma área de preservação ambiental com riquíssima biodiversidade. A comunidade foi criada em 1978 com o intuito de desenvolver a prática de vida simples e pensamento elevado.</p>
+
+		<p>Oferece retiro espiritual em clima monástico com programas no templo, aulas de yoga, culinária vegetariana e vegana, hospedagem em ambiente natural, cursos, terapias ayurvédicas e massagens.</p>
 								<!-- <div class="share">
 									<h4>Share Now -</h4>
 									<ul>
