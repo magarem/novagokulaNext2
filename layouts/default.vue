@@ -39,7 +39,11 @@
         <Link rel="stylesheet" href="/css/normalize.css"/>
         <Link rel="stylesheet" href="/style.css"/>
         <Link rel="stylesheet" href="/css/responsive.css"/>
-      </Head>
+		<Link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+	</Head>
      
       <body>
     	<!-- Preloader -->
@@ -76,11 +80,11 @@
 							</ul>
 							<!-- End Contact -->
 						</div>
-						<!-- <div class="col-lg-6 col-md-7 col-12">
+						<div class="col-lg-6 col-md-7 col-12">
 							<ul class="top-contact">
 								<li><i class="fa fa-envelope"></i><a href="mailto:faleconosco@novagokula.com.br">faleconosco@novagokula.com.br</a></li>
 							</ul>
-						</div> -->
+						</div>
 					</div>
 				</div>
 			</div>
@@ -308,7 +312,8 @@
 		<Script src="/js/bootstrap.min.js"></Script>
 		<!-- Main JS -->
 		<Script src="js/main.js"></Script>
-      </body>
+		<!-- <Script src="https://kit.fontawesome.com/2002a53245.js" crossorigin="anonymous"></Script> -->
+	</body>
     </html>
   </template>
   <script setup>

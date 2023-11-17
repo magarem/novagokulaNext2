@@ -135,9 +135,122 @@
 			</div>
 		</section>
 		<!--/ End Why choose -->
-	
 		<!-- Start Blog Area -->
 		<section class="blog section" id="blog" _style="margin-top: -100px;">
+			<div class="container">
+				
+				<div class="row">
+					<div class="col-12">
+						
+					
+						<section>
+  <div class="row d-flex justify-content-center">
+    <div class="col-md-10 col-xl-8 text-center">
+      <h3 class="mb-4">Opiniões de nossos visitantes</h3>
+      <p class="mb-4 pb-2 mb-md-5 pb-md-0">
+        Veja o que estão dizendo da gente na web
+      </p>
+    </div>
+  </div>
+
+  <div class="row text-center">
+   
+    <div class="col-md-4 mb-5 mb-md-0">
+      <div class="d-flex justify-content-center mb-4">
+		<img src="https://lh3.googleusercontent.com/a-/ALV-UjXDh-03wSS5541vK62G0js5NuZ0Iv_NF6huB-MjhcEgUFcw=w66-h66-p-rp-mo-ba5-br100"
+          class="rounded-circle shadow-1-strong" />
+      </div>
+      <h5 class="mb-3">Tania santos</h5>
+      <h6 class="text-primary mb-3">Visitante</h6>
+      <p class="px-xl-3">
+        <i class="fas fa-quote-left pe-2"></i>Que lugar maravilhoso, uma tranquilidade longe do que vivo, fomos de bike, pude apreciar Is alimentos vegano, sorvete, coxinha de jaca, pudemos nos refrescar nas águas límpidas que dava pra vê o fundo ....e os templos nunca había visto un desperto, pessoas das lojinhas bem atenciosas
+      </p>
+      <ul class="list-unstyled d-flex justify-content-center mb-0">
+        <li>
+          <i class="fas fa-star fa-sm text-warning"></i>
+        </li>
+        <li>
+          <i class="fas fa-star fa-sm text-warning"></i>
+        </li>
+        <li>
+          <i class="fas fa-star fa-sm text-warning"></i>
+        </li>
+        <li>
+          <i class="fas fa-star fa-sm text-warning"></i>
+        </li>
+        <li>
+          <i class="fas fa-star fa-sm text-warning"></i>
+        </li>
+      </ul>
+    </div>
+	<div class="col-md-4 mb-5 mb-md-0">
+      <div class="d-flex justify-content-center mb-4">
+        <img src="https://lh3.googleusercontent.com/a-/ALV-UjXO9v9WEu2ckBelZS90yCpmF-9JiSNJQ02eBtZWOUODpodq=w66-h66-p-rp-mo-ba6-br100"
+          class="rounded-circle shadow-1-strong"   />
+      </div>
+      <h5 class="mb-3">Alex Prosa</h5>
+      <h6 class="text-primary mb-3">Visitante</h6>
+      <p class="px-xl-3">
+        <i class="fas fa-quote-left pe-2"></i>Lugar maravilhoso de contemplação, reflexão, bem-estar, paz. Hare krishna, Hare Hare. Templos para meditação, trilhas, cachoeira, hospedagem, camping, lojinhas de conveniência, lanchonete, espaço para almoço, massagens ayurvédica, natureza exuberante, muitos pássaros de todas as espécies, cânticos, devoção e, acima de tudo, pessoas especiais que dão todo suporte aos visitantes. Entrada, R$ 10,00 por pessoa adultos. Crianças não sei se pagam.
+      </p>
+      <ul class="list-unstyled d-flex justify-content-center mb-0">
+        <li>
+          <i class="fas fa-star fa-sm text-warning"></i>
+        </li>
+        <li>
+          <i class="fas fa-star fa-sm text-warning"></i>
+        </li>
+        <li>
+          <i class="fas fa-star fa-sm text-warning"></i>
+        </li>
+        <li>
+          <i class="fas fa-star fa-sm text-warning"></i>
+        </li>
+        <li>
+          <i class="fas fa-star fa-sm text-warning"></i>
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-4 mb-0">
+      <div class="d-flex justify-content-center mb-4">
+        <img src="https://lh3.googleusercontent.com/a-/ALV-UjUFaj0g7PMSqac5m3rLKwvKRSJKPDcVeAFu2TnXP1G4H52Z=w66-h66-p-rp-mo-ba2-br100"
+          class="rounded-circle shadow-1-strong" />
+      </div>
+      <h5 class="mb-3">Susana Uribarri</h5>
+      <h6 class="text-primary mb-3">Visitante</h6>
+      <p class="px-xl-3">
+        <i class="fas fa-quote-left pe-2"></i>Lugar encantador. Fizemos um retiro de Yoga e mantras. Experiência maravilhosa, pessoas gentis, atenção primorosa. Recomendo o kiosque da Eka, e o restaurante Confraria vegana do Jaya Devi.
+      </p>
+      <ul class="list-unstyled d-flex justify-content-center mb-0">
+        <li>
+          <i class="fas fa-star fa-sm text-warning"></i>
+        </li>
+        <li>
+          <i class="fas fa-star fa-sm text-warning"></i>
+        </li>
+        <li>
+          <i class="fas fa-star fa-sm text-warning"></i>
+        </li>
+        <li>
+          <i class="fas fa-star fa-sm text-warning"></i>
+        </li>
+        <li>
+          <i class="fas fa-star fa-sm text-warning"></i>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+						
+
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End Blog Area -->
+	
+		<!-- Start Blog Area -->
+		<section class="blog section" id="blog" style="margin-top: -100px;">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-12">
@@ -199,6 +312,10 @@
 					</div>
 				</div>
 			</div>
+		
+		
+		
+		
 		</section>
 		<!-- End Blog Area -->
 </template>
