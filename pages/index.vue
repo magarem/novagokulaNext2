@@ -3,7 +3,7 @@
 		<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="/assets/img/slide1.jpeg" class="d-block w-100" alt="...">
+        <img src="/images/slideshow/slide1.jpeg" class="d-block w-100" alt="...">
       </div>
       <div class="carousel-item">
         <img src="/images/slideshow/slide8.png" class="d-block w-100" alt="...">
