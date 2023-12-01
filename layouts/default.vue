@@ -25,7 +25,7 @@
 		   
 			<nav id="mainNav" class="navbar navbar-expand-md navbar-dark fixed-top" >
 				<div class="container"  _style="background-color: #d36858;">
-				  <a class="navbar-brand" href=""><img  id="logo" src="assets/img/logo2.png" ></a>
+				  <a class="navbar-brand" href=""><img  id="logo" src="/img/logo2.png" ></a>
 				  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span> Menu
 				  </button>
