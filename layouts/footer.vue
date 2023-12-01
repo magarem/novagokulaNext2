@@ -8,7 +8,7 @@
                         <div class="single-footer">
                             <h2>Sri Prabhupada</h2>
                             <div class="text-center_" style="width: 100%;">
-                            <img src="assets/img/vedabase-logo.svg" style="width: 180px; margin-bottom: 10px;">
+                            <img src="/img/vedabase-logo.svg" style="width: 180px; margin-bottom: 10px;">
                             </div>
                             <p>Sua Divina Graça A.C. Bhaktivedanta Swami Prabhupada Mestre Fundador da Sociedade Internacional para a Consciência de Krishna</p>
                             <!-- Social -->

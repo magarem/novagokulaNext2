@@ -5,6 +5,4 @@ export default defineNuxtConfig({
   plugins: [
     { src: "~/plugins/jquery", mode: "client" },
   ],
-  
-  // css: ['~/assets/style.css']
 })

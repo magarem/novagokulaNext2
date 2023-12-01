@@ -50,7 +50,7 @@
 	<!-- Prabhupada-->
 	<section class="page-section_ bg-primary_"  id="about" _style="margin-top: -70px;">
 		<div class="_container">
-			<img src="assets/img/1.png" class="w-100 img-fluid">
+			<img src="/img/1.png" class="w-100 img-fluid">
 		</div>
 	</section>
 <!-- eventos-->
@@ -75,7 +75,7 @@
 	<!-- Call to action-->
 	<section class="page-section bg-dark text-white p-0" s_tyle="margin-top: 50px;">
 		<div class="container _px-4 _px-lg-5 text-center">
-		<img src="assets/img/doacao.png"  class="img-fluid">
+		<img src="/img/doacao.png"  class="img-fluid">
 		</div>
 	</section>
 	
