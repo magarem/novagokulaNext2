@@ -336,10 +336,6 @@ h3 {
 	/* background-color: #D39758; */
 }
 
-.crop {
-	background: transparent url(assets/img/slide1.jpeg) center center no-repeat; 
-	background-size: cover;
-}
 
 .navbar {
 	background-color: #d39758;
