@@ -22,7 +22,6 @@
 		</head>
 		<body id="page-top">
 			<!-- Navigation-->
-		   
 			<nav id="mainNav" class="navbar navbar-expand-md navbar-dark fixed-top" >
 				<div class="container"  _style="background-color: #d36858;">
 				  <a class="navbar-brand" href=""><img  id="logo" src="/img/logo2.png" ></a>
