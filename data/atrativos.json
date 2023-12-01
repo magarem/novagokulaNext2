@@ -16,7 +16,7 @@
         "id": 2,
         "imgs": ["/images/atrativos/trilha.webp"],
         "title": "Caminhadas ecológicas",
-        "desc": "Conecção com a natureza enquanto cuidamos dela",
+        "desc": "Conexão com a natureza enquanto cuidamos dela",
         "body": "As caminhadas ecológicas são uma forma incrível de se conectar com a natureza enquanto cuidamos dela. Durante essas aventuras ao ar livre, exploramos trilhas deslumbrantes, respiramos ar puro e absorvemos a beleza natural que nos cerca. Além disso, é uma oportunidade única para aprender sobre ecossistemas locais, conservação ambiental e sustentabilidade. Venha se juntar a nós e experimente a harmonia entre o ser humano e a natureza em caminhadas ecológicas memoráveis."
     },
     {
@@ -37,6 +37,13 @@
         "id": 5,
         "imgs": ["/images/atrativos/vestido.jpg"],
         "title": "Lojas de artigos indianos",
+        "desc": "Rica experiência de compras com um toque espiritual",
+        "body": "As lojas de artigos indianos de uma comunidade Hare Krishna oferecem uma rica experiência de compras com um toque espiritual. Aqui, você encontrará uma variedade de produtos inspirados na cultura e espiritualidade da Índia, desde roupas tradicionais, jóias exóticas, incensos aromáticos até livros espirituais e imagens divinas. Cada item é cuidadosamente selecionado para refletir os valores da comunidade Hare Krishna, como a devoção, a paz interior e a conexão espiritual. Venha explorar essas lojas e leve para casa um pedacinho da Índia e da espiritualidade Hare Krishna. <br/><br/><a href='lojas' class='btn btn-outline-secondary'>Ver lojas</a>"
+    },
+    {
+        "id": 5,
+        "imgs": ["/images/atrativos/vestido.jpg"],
+        "title": "Teste total!",
         "desc": "Rica experiência de compras com um toque espiritual",
         "body": "As lojas de artigos indianos de uma comunidade Hare Krishna oferecem uma rica experiência de compras com um toque espiritual. Aqui, você encontrará uma variedade de produtos inspirados na cultura e espiritualidade da Índia, desde roupas tradicionais, jóias exóticas, incensos aromáticos até livros espirituais e imagens divinas. Cada item é cuidadosamente selecionado para refletir os valores da comunidade Hare Krishna, como a devoção, a paz interior e a conexão espiritual. Venha explorar essas lojas e leve para casa um pedacinho da Índia e da espiritualidade Hare Krishna. <br/><br/><a href='lojas' class='btn btn-outline-secondary'>Ver lojas</a>"
     }

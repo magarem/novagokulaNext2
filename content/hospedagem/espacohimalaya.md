@@ -1,5 +1,5 @@
 ---
-title: 'Espaço Himalaya - Grupos e Retiros'
+title: 'Espaço Himalaya'
 description: 'meta description of the page'
 imgs: ['images/hospedagem/espacohimalaya/himalaya.jpg']
 ---

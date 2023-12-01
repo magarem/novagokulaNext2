@@ -61,4 +61,17 @@ defineProps(['items'])
     left: 0;
     min-height: 400px;
 }
+
+@media only screen and (min-device-width: 360px){
+
+  .carousel .carousel-item {
+  height: 400px;
+}
+}
+@media only screen and (min-device-width: 970px){
+
+.carousel .carousel-item {
+height: 500px;
+}
+}
 </style>

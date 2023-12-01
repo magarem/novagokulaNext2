@@ -1,42 +1,36 @@
 <template>
-    <div class="container pt-5">
-        <h5>Eventos</h5>
+    <div class="bg">
+    <div class="container pt-5 mt-5">
+        <h3 class="text-center pb-3">Eventos</h3>
         <section class="pt-0 products _section-padding">
             <div class="container">
+                <div v-if="id" class="row mb-4">
+                    <CardShow sessiontitle="Eventos" :item="data[index]"/> 
+                </div>
                 <div class="row">
-                    <CardShow sessiontitle="Eventos" :items="eventos" :id="id" /> 
+                    <div class="col-md-4 mb-4" v-for="item in data">
+                        <Cardgrid target="eventos" :item="item" />
+                    </div>
                 </div>
             </div>
         </section>
     </div>
-    <div class="container align-items-md-stretch mb-4">
-        <div class="col-md-12">
-        <div class="h-100 p-4 bg-light border rounded-3">
-            <h5>Eventos</h5>
-            <!-- <div class="row"> -->
-            <div class="row">
-                <div class="col-md-4 mb-4" v-for="item in eventos">
-                <Cardgrid target="eventos" :item="item" />
-                </div>
-            </div>
-            <!-- </div> -->
-        </div>
-        </div>
     </div>
 </template>
-<script setup>
-    import eventos from '../data/eventos.json'
-    const route = useRoute()
-    const id = route.query.id
-    console.log(11, id)
-</script>
-<style>
-.container2 {
-    padding-top: 80px;
-    height: 200px;
-    width: 100%;
-    text-align: center;
-    line-height: 400px;
-    background-image: url('/images/holi_festival.png');
-}
+<style scoped>
+ .bg {
+    background-color: #EFD0A1;
+ }
 </style>
+<script setup>
+    definePageMeta({
+        layout: 'default2'
+    })
+    let index 
+    import data from '../data/eventos.json'
+    const route = useRoute()
+    let id = route.query.id
+    // if (!id) {id = data.length-1}
+    index = data.findIndex(x=>x.id==(id||1))
+    console.log(11, id, index)
+</script>
