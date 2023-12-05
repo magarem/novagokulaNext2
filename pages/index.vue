@@ -3,11 +3,34 @@
 		<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="/images/slideshow/slide1.jpeg" class="d-block w-100" alt="...">
+        <img src="/img/homeslideshow/slide1.jpeg" class="d-block w-100" alt="...">
       </div>
-      <div class="carousel-item">
+	  <div class="carousel-item">
+        <img src="/img/homeslideshow/slide12.jpg" class="d-block w-100" alt="...">
+      </div>
+	  <div class="carousel-item">
+        <img src="/img/homeslideshow/slide17.jpg" class="d-block w-100" alt="...">
+      </div>
+	  <!-- <div class="carousel-item">
+        <img src="/img/homeslideshow/sllide15.jpeg" class="d-block w-100" alt="...">
+      </div> -->
+	  <div class="carousel-item">
+        <img src="/img/homeslideshow/slide10.jpg" class="d-block w-100" alt="...">
+      </div>
+	  <div class="carousel-item">
+        <img src="/img/homeslideshow/slide11.jpg" class="d-block w-100" alt="...">
+      </div>
+	  <div class="carousel-item">
+        <img src="/img/homeslideshow/slide14.jpg" class="d-block w-100" alt="...">
+      </div>
+	  <div class="carousel-item">
+        <img src="/img/homeslideshow/slide16.jpg" class="d-block w-100" alt="...">
+      </div>
+	  
+	  
+      <!-- <div class="carousel-item">
         <img src="/images/slideshow/slide8.png" class="d-block w-100" alt="...">
-      </div>
+      </div> -->
       <!-- <div class="carousel-item">
         <img src="/img/slide4.png" class="d-block w-100" alt="...">
       </div>  -->
@@ -38,9 +61,8 @@
 						<h2 class="text-white mt-0">Nova Gokula</h2>
 						<!-- <hr class="divider divider-light" /> -->
 						<p class="text-white-75 mb-4">
-							A Fazenda Nova Gokula é um santuário natural que oferece aos seus visitantes uma variedade de experiências baseadas no princípio de uma vida simples, natural e saudável e também uma área de preservação ambiental com riquíssima biodiversidade. A comunidade foi criada em 1978 com o intuito de desenvolver a prática de vida simples e pensamento elevado.
-						</p>  
-						<a class="btn btn-light btn-xl" href="#services">Saiba mais</a>
+							Localizada aos pés da Serra da Mantiqueira, em Pindamonhangaba, a Fazenda Nova Gokula cultiva, há 45 anos, valores de vida simples e uma cultura espiritual baseada nos antigos ensinamentos dos Vedas. A maior comunidade Hare Krishna da América Latina pertence à Sociedade Internacional para a Consciência de Krishna (ISKCON), conhecida como a maior escola de filosofia védica criada no ocidente. Foi fundada em 1966 em Nova Iorque por Swami Prabhupada, que trouxe esta ciência conhecida antes apenas por yogis e santos do oriente. </p>  
+						<a class="btn btn-light btn-xl" href="generic2?id=about">Saiba mais</a>
 					</div>
 				</div>
 			</div>
@@ -50,7 +72,9 @@
 	<!-- Prabhupada-->
 	<section class="page-section_ bg-primary_"  id="about" _style="margin-top: -70px;">
 		<div class="_container">
-			<img src="/img/1.png" class="w-100 img-fluid">
+			<a href="generic2?id=ofundador">
+				<img src="/img/banner_fundador_5.png" class="w-100 img-fluid">
+			</a>
 		</div>
 	</section>
 <!-- eventos-->
@@ -74,8 +98,8 @@
 	</div>
 	<!-- Call to action-->
 	<section class="page-section bg-dark text-white p-0" s_tyle="margin-top: 50px;">
-		<div class="container _px-4 _px-lg-5 text-center">
-		<img src="/img/doacao.png"  class="img-fluid">
+		<div class="container_ _px-4 _px-lg-5 text-center">
+		<a href="generic2?id=querodoar"><img src="/img/doacao.png"  class="img-fluid"></a>
 		</div>
 	</section>
 	
@@ -184,7 +208,7 @@
 <style scoped>
   @media screen and (max-width: 450px) {
 		.mh {
-			margin-top: 145px;
+			/* margin-top: 145px; */
 		}
 	}
 </style>

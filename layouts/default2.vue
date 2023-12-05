@@ -22,56 +22,16 @@
 	</head>
 	<body id="page-top">
 		<!-- Navigation-->
-	   
-		<nav id="mainNav" class="navbar navbar-shrink navbar-expand-md navbar-dark fixed-top" >
-			<div class="container"  _style="background-color: #d36858;">
-			  <a class="navbar-brand" href=""><img  id="logo" src="/img/logo2.png" ></a>
-			  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span> Menu
-			  </button>
-			  <div class="collapse navbar-collapse" id="navbarCollapse">
-					<ul class="navbar-nav me-auto mb-2 mb-md-0" style="padding-left: 10px; ">
-						<li class="nav-item"><a class="nav-Link" href="/" >HOME</a></li>
-						<!-- <li class="nav-item"><a class="nav-Link" href="generic2?id=about" >SOBRE</a></li> -->
-						<li class="nav-item dropdown"><a class="nav-Link dropdown-toggle" _href="atrativos"  href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" >SOBRE</a>
-							<ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-								<li><a class="dropdown-item" href="generic2?id=about">História</a></li>
-								<li><a class="dropdown-item" href="generic?type=hospedagem">Visitação</a></li>
-								<li><a class="dropdown-item" href="#">Fotos & vídeos</a></li>
-								<li><a class="dropdown-item" href="comochegar" >Localização</a></li>
-
-							</ul>
-						</li>
-						<li class="nav-item dropdown"><a class="nav-Link dropdown-toggle" _href="atrativos"  href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" >ATRATIVOS</a>
-							<ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-								<li><a class="dropdown-item" href="generic?type=templos">Templos</a></li>
-								<li><a class="dropdown-item" href="generic?type=hospedagem">Hospedagens</a></li>
-								<li><a class="dropdown-item" href="#">Alimentação</a></li>
-								<li><a class="dropdown-item" href="#">Espiritualidade</a></li>
-								<li><a class="dropdown-item" href="#">Bem estar </a></li>
-								<li><a class="dropdown-item" href="#">Hari shopping</a></li>
-							</ul>
-						</li>
-						<li class="nav-item"><a class="nav-Link" href="generic?type=eventos" >EVENTOS</a></li>
-						<li class="nav-item"><a class="nav-Link" href="generic2?id=filosofia" >FILOSOFIA</a></li>
-						<li class="nav-item"><a class="nav-Link" href="contact" >CONTATO</a></li>
-					
-					</ul>
-					<!-- <form class="d-flex">
-					  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-					  <button class="btn btn-outline-success" type="submit">Search</button>
-					</form> -->
-				  </div>
-			</div>
-		  </nav> 
-		  <main class="bg">
-			<slot />
-		  </main>
+		<nuxt-layout name="nav"></nuxt-layout>
+		
+		<main class="bg">
+		<slot />
+		</main>
 		  
 		<!-- Footer-->
 		 <!-- Footer Area -->
 	
-		 <nuxt-layout name="footer"></nuxt-layout>
+		<nuxt-layout name="footer"></nuxt-layout>
 		<!--/ End Footer Area -->
 
 

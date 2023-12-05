@@ -4,9 +4,9 @@
         <div class="footer-top">
             <div class="container">
                 <div class="row gy-5">
-                    <div class="col-lg-3 col-md-6 col-12">
+                    <div class="col-lg-3 col-md-6 col-12"><a href="generic2?id=ofundador">
                         <div class="single-footer">
-                            <h2>Sri Prabhupada</h2>
+                            <h2>Srila Prabhupada</h2>
                             <div class="text-center_" style="width: 100%;">
                             <img src="/img/vedabase-logo.svg" style="width: 180px; margin-bottom: 10px;">
                             </div>
@@ -20,7 +20,7 @@
                                 <li><a href="https://www.youtube.com/@FazendaNovaGokulaNG"><i class="icofont-flickr"></i></a></li>
                             </ul> -->
                             <!-- End Social -->
-                        </div>
+                        </div></a>
                     </div>
                     <div class="col-lg-3 col-md-6 col-12">
                         <div class="single-footer">
