@@ -3,7 +3,7 @@ title: 'Sobre nós'
 description: 'meta description of the page'
 imgs: ['/img/templo2b.jpeg']
 ---
-#### FAZENDA NOVA GOKULA
+## FAZENDA NOVA GOKULA
 
 ISKCON - Sociedade Internacional para Consciência de Krishna
 

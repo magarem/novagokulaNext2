@@ -58,7 +58,7 @@
 				</div>
 				<div class="col-lg-6 col-sm-12">
 					<div class="container">
-						<h2 class="text-white mt-0">Nova Gokula</h2>
+						<h2 class="text-white mt-0">Bem vindo!</h2>
 						<!-- <hr class="divider divider-light" /> -->
 						<p class="text-white-75 mb-4">
 							Localizada aos pés da Serra da Mantiqueira, em Pindamonhangaba, a Fazenda Nova Gokula cultiva, há 45 anos, valores de vida simples e uma cultura espiritual baseada nos antigos ensinamentos dos Vedas. A maior comunidade Hare Krishna da América Latina pertence à Sociedade Internacional para a Consciência de Krishna (ISKCON), conhecida como a maior escola de filosofia védica criada no ocidente. Foi fundada em 1966 em Nova Iorque por Swami Prabhupada, que trouxe esta ciência conhecida antes apenas por yogis e santos do oriente. </p>  
@@ -107,9 +107,7 @@
 	<h5 class="mb-5 text-center p-3" style="_margin-top: -25px; margin-bottom: 0px; _background-color:antiquewhite; font-size: 25px; color:#181201;">Opiniões de nossos visitantes</h5>
 		<div class="container">
 			<div class="row">
-
 				<div class="col-12">
-					
 					<div class="row text-center">
 						<div class="col-md-4 mb-5 mb-md-0">
 						<div class="d-flex justify-content-center mb-4">

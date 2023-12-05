@@ -28,10 +28,10 @@
     </div>
 </template>
 <style scoped>
-
- .bg {
+.bg {
     background-color: #E7B884;
  }
+
 </style>
 <script setup lang="ts">
 

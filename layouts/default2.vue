@@ -89,10 +89,22 @@ const showMenu = () => {
 showMobileMenu.value = !showMobileMenu.value
 }
 </script>
-<style lang="scss" scoped>
+<style lang="scss" >
+	h3, h2, p {
+		font-family: Montserrat;
+	}
+	p {
+		font-size: 18px;
+	}
+
+	h2 {
+		font-size: 22px;
+	}
+
 	h3 {
-    color: aqua;
-}
+		font-size: 20px;
+		// color: aqua;
+	}
 	.bg {
 		background-color: #EFD0A1;
 	}
@@ -265,13 +277,11 @@ h1 {
 	object-fit: cover;
 }
 
-h3, h2, p {
-	font-family: Montserrat;
-}
 
-h3 {
-	font-size: 40px;
-}
+
+// h3 {
+// 	font-size: 40px;
+// }
 
 #logo {
 	width: 350px;

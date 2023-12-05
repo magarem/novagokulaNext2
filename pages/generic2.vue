@@ -8,10 +8,19 @@
             <!-- <h4>{{data.title}}</h4> -->
             <section class="pt-0 products _section-padding ">
                 <div class="container">
-                    <img v-if="data.textImgs" :src="data.textImgs[0]" style="float: left;" _style="width: 100%; " class="mb-3 img-fluid"/>
-
-                    <div class="row mb-4">
-                        <ContentRenderer :value="data" />
+                    <div v-if="data.textImgs" class="row mb-4">
+                        <div class="col-12 col-md-4 text-end">
+                            <img :src="data.textImgs[0]" style="_float: left; max-width:100%;" _style="width: 100%; " class="mb-3 img-fluid"/>
+                        </div>
+                        <div class="col-12 col-md-8">
+                            <ContentRenderer :value="data" />
+                        </div>
+                    </div>
+                    <div v-else class="row mb-4">
+                        <div class="col-12" >
+                            <ContentRenderer :value="data" />
+                        </div>
+                        
                     </div>
                 </div>
             </section>    
@@ -49,7 +58,9 @@
                 
 </script>
 <style scoped>
+
  img {
     max-height: 400px;
  }
+
 </style>

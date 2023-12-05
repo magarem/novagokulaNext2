@@ -17,6 +17,7 @@
                             <li><a class="dropdown-item" href="generic2?id=filosofia" >Filosofia</a></li>
                             <li><a class="dropdown-item" href="generic2?id=ofundador" >O fundador</a></li>
                             <li><a class="dropdown-item" href="generic2?id=acharyadeva" >Acharyadeva</a></li>
+                            <li><a class="dropdown-item" href="generic2?id=mahamantra" >Mahamantra</a></li>
 
                             
 

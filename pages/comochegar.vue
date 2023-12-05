@@ -1,6 +1,7 @@
 <template>
    	<!-- Start Portfolio Details Area -->
-	   <h5 class="mb-5_ text-center p-3" style="margin-top: 70px; background-color:antiquewhite;">Como chegar</h5>
+	   <!-- <h5 class="mb-5_ text-center p-3" style="margin-top: 70px; background-color:antiquewhite;">Como chegar</h5> -->
+	   <h5 class="mb-5_ text-left py-3" style="padding-left: 120px; margin-top: 70px; margin-bottom: 0px; background-color:antiquewhite; font-size: 17px;"><a href="/">Home</a> > Como chegar</h5>
 
 		<section _class="pf-details section" style="padding-top: 20px; padding-bottom: 40px;">
 			<div class="container">
@@ -8,24 +9,8 @@
 					<!-- <h3 class="text-center pb-3">Como chegar</h3> -->
 					<div class="col-12">
 						<div class="inner-content">
-							
-							<div class="mb-3">
-								<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10386.513998052435!2d-45.46882941330622!3d-22.769403826861133!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cc8d6e7ee46f0f%3A0xa542f3b15b5b24e8!2sFazenda%20Nova%20Gokula!5e0!3m2!1spt-BR!2sbr!4v1699897715342!5m2!1spt-BR!2sbr" width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-								<!-- <div class="pf-details-slider">
-									<img src="/img/templo1.png" alt="#">
-									<img src="/img/templo2.jpeg" alt="#">
-								</div> -->
-							</div>
-							<!-- <div class="date">
-								<ul>
-									<li><span>Category :</span> Heart Surgery</li>
-									<li><span>Date :</span> April 20, 2019</li>
-									<li><span>Client :</span> Suke Agency</li>
-									<li><span>Ags :</span> Typo</li>
-								</ul>
-							</div>-->
 							<div class="body-text">
-								<h4 class="mb-3">Opções de transporte para a Fazenda Nova Gokula</h4>
+								<h2 class="mb-3">Opções de transporte para a Fazenda Nova Gokula</h2>
 								<p>A Fazenda Nova Gokula situa-se na região rural de Pindamonhangaba/SP, há 25km da cidade. Funciona sábados, domingos e feriados das 10h às 18h.</p>
 								<p>No Wase, somente digitar "Nova Gokula";</p>
 								<p>ÔNIBUS MUNICIPAL: Na imagem, a tabela de horários do ônibus da linha 110 - Ribeirão Grande, que atende os trechos: pinda x nova gokula x pinda.
@@ -54,6 +39,10 @@
 								<p><a href="https://vivapinda.com.br/linha1">Clique aqui para ver as opções de horários de ônibus de Pinda para a Fazenda Nova Gokula</a></p>			
 															
 							</div>
+							<div class="mb-3">
+								<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10386.513998052435!2d-45.46882941330622!3d-22.769403826861133!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cc8d6e7ee46f0f%3A0xa542f3b15b5b24e8!2sFazenda%20Nova%20Gokula!5e0!3m2!1spt-BR!2sbr!4v1699897715342!5m2!1spt-BR!2sbr" width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+							</div>
+							
 						</div>
 					</div>
 				</div>

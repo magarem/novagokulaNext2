@@ -2,7 +2,7 @@
     <section class="products  _section-padding"> 
             <div class="container_">
                 <div class="card shadow-sm_ mb-3 bg border-0" style="100%;">
-                    <h5 class="card-title">{{item.title}}</h5>
+                    <h2 class="card-title">{{item.title}}</h2>
 
                     <div class="row g-0">
                         <div class="col-md-4">
@@ -17,7 +17,7 @@
                         </div>
                         <div class="col-md-8">
                             
-                        <div class="card-body pt-3 pt-md-0" >
+                        <div class="card-body pt-3 pt-md-0 parag" >
                             <!-- {{ item.body }} -->
                             <p v-if="item.body.type!=='root'" class="card-text" v-html="item.body"></p>
                             <ContentRenderer v-else :value="item" />
@@ -71,6 +71,9 @@
     // console.log(props.sessiontitle, props.items, props.id);
 </script>
 <style scoped>
+ .p {
+    font-size: 100px !important;
+ }
 .crop {
  height: 100%;
  width: 100%;

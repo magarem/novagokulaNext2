@@ -34,7 +34,7 @@
     background-color: transparent;
  }
 img {
-    max-height: 500px; 
+    height: 400px; 
     object-fit: cover;
 }
 </style>
