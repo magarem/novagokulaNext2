@@ -1,8 +1,6 @@
 <template>
-    <h5 class="mb-5_ text-left py-3" style="padding-left: 120px; margin-top: 70px; margin-bottom: 0px; background-color:antiquewhite; font-size: 17px;"><a href="/">Home</a> > {{data.title}}</h5>
-   
+    <h5 class="mb-5_ text-left py-3" style="padding-left: 120px; margin-top: 70px; margin-bottom: 0px; background-color:antiquewhite; font-size: 17px;"><a href="/">Home</a> > {{data.id}}</h5>
     <img v-if="data.imgs" :src="data.imgs[0]" style="width: 100%; " class="mb-3 img-fluid"/> 
-   
     <div class="container pb-5">
         <div class=" pt-0" style="margin-top: 20px;">
             <!-- <h4>{{data.title}}</h4> -->

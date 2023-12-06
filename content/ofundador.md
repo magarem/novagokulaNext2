@@ -9,7 +9,7 @@ textImgs: ['/img/Prabhupada-1.jpg']
 
 "Um Santo no século XX"
 
-É com grande reverência que apresentamos um resumo da vida inspiradora e dos ensinamentos transformadores de Srila Prabhupada, o mestre fundador da Sociedade Internacional para a Consciência de Krishna (ISKCON).
+É com grande reverência que apresentamos um resumo da vida inspiradora e ensinamentos transformadores de A.C. Bhaktivedanta Swami Prabhupada, ou simplesmente, Srila Prabhupada, o mestre fundador da Sociedade Internacional para a Consciência de Krishna (ISKCON). É o trigésimo segundo de uma sucessão discipular de mestres que remontam ao Senhor Brahma, o ser vivo primordial, conhecido com o criador do universo material. Desta forma, é o representante fidedigno do conhecimento propagado pela porção Bhaktivedanta dos Vedas. Escola que versa sobre a bhakti-yoga ou amor devocional ao supremo.
 
 A Jornada Espiritual de Srila Prabhupada:
 A.C. Bhaktivedanta Swami Prabhupada nasceu em 1896, em Calcutá, Índia, mergulhando desde cedo nas práticas devocionais da tradição Gaudiya Vaishnava. Sua profunda dedicação à busca espiritual levou-o a aceitar a missão de espalhar a consciência de Krishna em todo o mundo.

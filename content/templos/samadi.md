@@ -1,7 +1,7 @@
 ---
 title: 'Samadhi de Prabhupada'
 description: 'meta description of the page'
-imgs: ['/img/samadi_prabhupada.jpg']
+imgs: ['/img/templos/samadi_prabhupada.jpg']
 ---
 O Templo do Samadhi de Prabhupada é um local sagrado e inspirador que faz parte da comunidade Hare Krishna. Este magnífico templo é dedicado a honrar e preservar a memória e o legado espiritual de A.C. Bhaktivedanta Swami Prabhupada, o fundador do movimento Hare Krishna. 
 

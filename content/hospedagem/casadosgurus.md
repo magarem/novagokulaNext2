@@ -1,7 +1,7 @@
 ---
 title: 'Casa dos gurus'
 description: 'meta description of the page'
-imgs: ['images/hospedagem/casadosgurus/casa_gurus.jpg']
+imgs: ['img/hospedagem/casadosgurus/casa_gurus.jpg']
 ---
 - Casa ampla com salão panorâmico.
 - Wifi

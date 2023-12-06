@@ -1,5 +1,5 @@
 <template>
-    <h5 class="mb-5_ text-left py-3" style="padding-left: 120px; margin-top: 70px; margin-bottom: 0px; background-color:antiquewhite; font-size: 17px;"><a href="/">Home</a> > {{meta.title}}</h5>
+    <h5 class="mb-5_ text-left py-3" style="padding-left: 120px; margin-top: 70px; margin-bottom: 0px; background-color:antiquewhite; font-size: 17px;"><a href="/">Home</a><a href="/">{{id||"".split('/')[1]}}</a></h5>
    
     <!-- <h5 class="mb-5_ text-center p-3" style="margin-top: 70px; background-color:antiquewhite; color:#a55e4a;">{{meta.title}}</h5> -->
 

@@ -27,7 +27,7 @@
                         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
                             <li><a class="dropdown-item" href="generic?type=templos">Templos</a></li>
                             <li><a class="dropdown-item" href="generic?type=hospedagem">Hospedagens</a></li>
-                            <li><a class="dropdown-item" href="#">Alimentação</a></li>
+                            <li><a class="dropdown-item" href="generic?type=alimentacao">Alimentação</a></li>
                             <!-- <li><a class="dropdown-item" href="#">Espiritualidade</a></li> -->
                             <!-- <li><a class="dropdown-item" href="#">Bem estar </a></li> -->
                             <li><a class="dropdown-item" href="#">Hari shopping</a></li>
