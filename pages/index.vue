@@ -26,7 +26,15 @@
 	  <div class="carousel-item">
         <img src="/img/homeslideshow/slide16.jpg" class="d-block w-100" alt="...">
       </div>
-	  
+	  <div class="carousel-item">
+        <img src="/img/homeslideshow/slide21.jpg" class="d-block w-100" alt="...">
+      </div> 
+	  <div class="carousel-item">
+        <img src="/img/homeslideshow/slide22.jpg" class="d-block w-100" alt="...">
+      </div> 
+	  <div class="carousel-item">
+        <img src="/img/homeslideshow/slide23.jpg" class="d-block w-100" alt="...">
+      </div>
 	  
       <!-- <div class="carousel-item">
         <img src="/images/slideshow/slide8.png" class="d-block w-100" alt="...">
