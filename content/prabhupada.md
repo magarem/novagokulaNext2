@@ -1,12 +1,9 @@
 ---
-title: 'Srila Prabhupada'
+title: 'Quem é A.C Bhaktivedanta Swami Prabhupada?'
 description: ''
-# imgs: ['/img/Prabhupada-1.jpg']
-textImgs: ['/img/Prabhupada-1.jpg']
-
+imgs: ['']
+textImgs: ['/img/prabhupada.jpg']
 ---
-### Quem é A.C Bhaktivedanta Swami Prabhupada?
-
 "Um Santo no século XX"
 
 É com grande reverência que apresentamos um resumo da vida inspiradora e ensinamentos transformadores de A.C. Bhaktivedanta Swami Prabhupada, ou simplesmente, Srila Prabhupada, o mestre fundador da Sociedade Internacional para a Consciência de Krishna (ISKCON). É o trigésimo segundo de uma sucessão discipular de mestres que remontam ao Senhor Brahma, o ser vivo primordial, conhecido com o criador do universo material. Desta forma, é o representante fidedigno do conhecimento propagado pela porção Bhaktivedanta dos Vedas. Escola que versa sobre a bhakti-yoga ou amor devocional ao supremo.

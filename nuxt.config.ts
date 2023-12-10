@@ -5,4 +5,7 @@ export default defineNuxtConfig({
   plugins: [
     { src: "~/plugins/jquery", mode: "client" },
   ],
+  server: {
+    host: '0' // default: localhost
+  }
 })

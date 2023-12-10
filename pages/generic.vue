@@ -1,24 +1,21 @@
 <template>
-    <h5 class="mb-5_ text-left py-3" style="padding-left: 120px; margin-top: 70px; margin-bottom: 0px; background-color:antiquewhite; font-size: 17px;"><a href="/">Home</a><a href="/">{{id||"".split('/')[1]}}</a></h5>
-   
-    <!-- <h5 class="mb-5_ text-center p-3" style="margin-top: 70px; background-color:antiquewhite; color:#a55e4a;">{{meta.title}}</h5> -->
-
+    <h5 class="bread text-left pl-5"><a href="/">Home</a> / <a :href="'generic?type='+type">{{type}}</a></h5>
     <div class="container pb-5">
-        <div class="container_ pt-4 _pt-5 _pb-3" _style="margin-top: 28px; ">
+        <div v-if="id" class="container_ pt-4 _pt-5 _pb-3" _style="margin-top: 28px; ">
             <section class="pt-0 products _section-padding ">
-                <div v-if="id" class="row mb-4">
+                <div  class="row mb-4">
                     <CardShow sessiontitle="Templos" :item="item" /> 
                 </div>
             </section>    
         </div>
-        <div class="container align-items-md-stretch mb-4 _mt-5" _style="background-color: bisque;">
-           
-            <div class="h-100 w-100 p-4 rounded-3_">
+        <div v-else class="container_ align-items-md-stretch mb-4 _mt-5">
+            <div class="h-100 w-100 rounded-3_">
                 <!-- <h5>Opções</h5> -->
                 <!-- <div class="row"> -->
                 <div class="row shadow-sm_ " v-if="itens" >
-                    <h5 class="_text-center mb-3 pt-4" v-if="id">Outros</h5>
-                    <div class="col-md-4 mb-4" v-for="item1 in itens">
+                    <h5 class="_text-center mb-3 pt-4" v-if="id">Opções</h5>
+                    <h4 class="_text-center mb-3 pt-4" v-else>{{ type }}</h4>
+                    <div class="col-md-3 mb-3" v-for="item1 in itens">
                         <Cardgrid target="templos" :item="item1" :type="type"/>
                     </div>
                 </div>

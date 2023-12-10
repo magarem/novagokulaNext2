@@ -1,5 +1,5 @@
 <template>
-	<header class="masthead_ mh">
+	<header class="masthead_ mh mt-5" >
 		<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
@@ -212,9 +212,9 @@
 </style>
 <script setup lang="ts">
 
-    // definePageMeta({
-    //     layout: 'default2'
-    // })
+    definePageMeta({
+        layout: 'default2'
+    })
 
     const route = useRoute()
     const id = route.query.id

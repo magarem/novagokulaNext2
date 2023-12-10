@@ -92,23 +92,3 @@
         <!--/ End Copyright -->
     </footer>
 </template>
-<style scoped>
-  	.footer {
-		color: white;
-        padding-top: 30px;
-		background-color: var(--main-bg-color);
-	}
-
-    #footer h2 {
-        font-size: 25px;
-        color:#181201;
-		padding-bottom: 10px;
-	}
-
-    #footer p {
-        font-size: 17px;
-        color:#604500;
-		padding-bottom: 10px;
-	}
-	
-</style>
