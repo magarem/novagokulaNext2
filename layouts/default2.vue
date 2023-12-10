@@ -33,9 +33,9 @@
 		<!-- Bootstrap core JS-->
 		<Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></Script>
 		<!-- SimpleLightbox plugin JS-->
-		<Script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></Script>
+		<!-- <Script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></Script> -->
 		<!-- Core theme JS-->
-		<Script src="js/scripts.js"></Script>
+		<!-- <Script src="js/scripts.js"></Script> -->
 		<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
 		<!-- * *                               SB Forms JS                               * *-->
 		<!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->

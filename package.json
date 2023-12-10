@@ -22,6 +22,7 @@
     "@tailwindcss/typography": "^0.5.10",
     "@vueuse/components": "^10.6.1",
     "jquery": "^3.7.1",
-    "vue3-carousel": "^0.3.1"
+    "vue3-carousel": "^0.3.1",
+    "vue3-carousel-nuxt": "^1.1.0"
   }
 }
