@@ -39,7 +39,7 @@
 </script>
 <style scoped>
   .card-img {
-		height: 200px; 
+		height: 280px; 
 		object-fit: cover;
 		border-radius: 4%;
 	}

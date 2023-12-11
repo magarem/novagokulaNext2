@@ -24,7 +24,7 @@
 		<!-- Navigation-->
 		<nuxt-layout name="nav"></nuxt-layout>
 		<main class="bg" >
-		<slot />
+			<slot />
 		</main>
 		<!-- Footer-->
 		 <!-- Footer Area -->
@@ -45,6 +45,8 @@
 </html>
 </template>
 <script setup>
+import { ModalsContainer } from 'vue-final-modal'
+
 const route = useRoute()
 console.log(route.name);
 const path=route.name||''
@@ -80,6 +82,7 @@ const path=route.name||''
 
 	.bg {
 		background-color: #DBAE58;
+		padding-bottom: 50px;
 		// background-color: #EBAA83;
 	}
 		
@@ -108,7 +111,7 @@ const path=route.name||''
 	}
 
     #footer h2 {
-        font-size: 25px;
+        font-size: 20px;
         color:#181201;
 		padding-bottom: 10px;
 	}

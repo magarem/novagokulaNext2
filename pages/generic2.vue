@@ -35,7 +35,7 @@
 <script setup lang="ts">
 
     definePageMeta({
-        layout: 'default2'
+        layout: 'default'
     })
 
     const route = useRoute()

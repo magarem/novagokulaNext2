@@ -34,7 +34,7 @@
 						</ul>
 					</li>
 					<li class="nav-item"><a class="nav-Link" href="generic?type=eventos" >EVENTOS</a></li>
-					<li class="nav-item"><a class="nav-Link" href="galeria">GALERIA</a></li>
+					<li class="nav-item"><a class="nav-Link" href="generic?type=galeria">GALERIA</a></li>
 					<li class="nav-item"><a class="nav-Link" href="generic2?id=comochegar">COMO CHEGAR</a></li>
 					<!-- <li><a class="dropdown-item" href="generic?type=hospedagem">Visitação</a></li> -->
 					<li class="nav-item"><a class="nav-Link" href="generic2?id=contact" >CONTATO</a></li>

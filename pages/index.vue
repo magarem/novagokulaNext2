@@ -1,7 +1,11 @@
 <template>
 	<header class="masthead_ mh mt-5" >
 		
-		<div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="5000">
+		<Slide2/>
+		<!-- <Slide/> -->
+
+
+		<!-- <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="5000">
 			<div class="carousel-inner">
 			<div class="carousel-item active">
 				<img src="/img/homeslideshow/slide1.jpeg" class="d-block w-100" alt="...">
@@ -45,7 +49,7 @@
 			<span class="carousel-control-next-icon" aria-hidden="true"></span>
 			<span class="visually-hidden">Next</span>
 			</button>
-		</div>
+		</div> -->
 	</header>
 
 	<section class="page-section bg-primary"  id="about">
@@ -83,13 +87,13 @@
 <div id="eventos" style="padding-top: 30px; padding-bottom: 50px; background-color: #E9BA86;">
 		<h5 class="mb-4 text-center p-3" style="margin-top: 0px; margin-bottom: 0px; _background-color:antiquewhite; font-size: 25px; color:#181201;">Próximos eventos</h5>
 		<div class="container-fluid _p-0">
-			<div class="container align-items-md-stretch mb-4 _mt-5">
+			<div class="container_ align-items-md-stretch pl-4 pr-4">
 				<div class="h-100 w-100 p-4 rounded-3" _style="background-color:bisque;">
 					<!-- <h5>Opções</h5> -->
 					<!-- <div class="row"> -->
 					<div class="row shadow-sm_ " v-if="itens" >
 						<h5 class="_text-center mb-3 pt-4" v-if="id">Outros</h5>
-						<div class="col-md-4 mb-4"  v-for="item in itens">
+						<div class="col-md-3 mb-3"  v-for="item in itens">
 							<Cardgrid target="templos" :item="item" type="eventos"/>
 						</div>
 					</div>
@@ -105,8 +109,8 @@
 		</div>
 	</section>
 	
-	<section class="blog section" id="opinioes" style="_margin-top: 20px; padding-top: 30px; padding-bottom: 50px; background-color: rgb(238, 217, 159);">
-	<h5 class="mb-5 text-center p-3" style="_margin-top: -25px; margin-bottom: 0px; _background-color:antiquewhite; font-size: 25px; color:#181201;">Opiniões de nossos visitantes</h5>
+	<section class="blog section" id="opinioes" style="_margin-top: 20px; padding-top: 30px; padding-bottom: 50px; _background-color: rgb(238, 217, 159);">
+	<h5 class="mb-5 text-center p-3" style="_margin-top: -25px; margin-bottom: 0px; padding-bottom: 100px; _background-color:antiquewhite; font-size: 25px; color:#181201;">Opiniões de nossos visitantes</h5>
 		<div class="container">
 			<div class="row">
 				<div class="col-12">
@@ -211,7 +215,7 @@
 <script setup lang="ts">
 
     definePageMeta({
-        layout: 'default2'
+        layout: 'default'
     })
 
     const route = useRoute()

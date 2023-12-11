@@ -1,25 +1,20 @@
 <template>
     <h5 class="bread text-left pl-5"><a href="/">Home</a> / <a :href="'generic?type='+type">{{type}}</a></h5>
-    <div class="container pb-5">
-        <div v-if="id" class="container_ pt-4 _pt-5 _pb-3" _style="margin-top: 28px; ">
+    <div class="pt-4 pb-4">
+        <div v-if="id" class="container" _style="padding-left: 50px; padding-right: 50px;">
             <section class="pt-0 products _section-padding ">
                 <div  class="row mb-4">
                     <CardShow sessiontitle="Templos" :item="item" /> 
                 </div>
             </section>    
         </div>
-        <div v-else class="container_ align-items-md-stretch mb-4 _mt-5">
-            <div class="h-100 w-100 rounded-3_">
-                <!-- <h5>Opções</h5> -->
-                <!-- <div class="row"> -->
-                <div class="row shadow-sm_ " v-if="itens" >
-                    <h5 class="_text-center mb-3 pt-4" v-if="id">Opções</h5>
-                    <h4 class="_text-center mb-3 pt-4" v-else>{{ type }}</h4>
-                    <div class="col-md-3 mb-3" v-for="item1 in itens">
-                        <Cardgrid target="templos" :item="item1" :type="type"/>
-                    </div>
+        <div v-else _class="pt-1" style="padding-left: 50px; padding-right: 50px;">
+            <div class="row shadow-sm_ " v-if="itens" >
+                <h5 class="_text-center mb-3 pt-4" v-if="id">Opções</h5>
+                <h4 class="_text-center mb-3 _pt-4" v-else>{{ type }}</h4>
+                <div class="col-md-3 mb-3" v-for="item1 in itens">
+                    <Cardgrid target="templos" :item="item1" :type="type"/>
                 </div>
-                <!-- </div> -->
             </div>
         </div>
     </div>
@@ -33,7 +28,7 @@
 <script setup lang="ts">
 
     definePageMeta({
-        layout: 'default2'
+        layout: 'default'
     })
 
     const route = useRoute()

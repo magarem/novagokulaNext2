@@ -49,6 +49,6 @@
 </template>
 <script setup>
   definePageMeta({
-        layout: 'default2'
+        layout: 'default'
     })
 </script>
