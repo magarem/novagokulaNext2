@@ -5,7 +5,10 @@
 		<!-- <Slide/> -->
 
 
-		<!-- <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="5000">
+	
+
+
+		<!-- <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel"  data-bs-interval="2000">
 			<div class="carousel-inner">
 			<div class="carousel-item active">
 				<img src="/img/homeslideshow/slide1.jpeg" class="d-block w-100" alt="...">
@@ -52,7 +55,7 @@
 		</div> -->
 	</header>
 
-	<section class="page-section bg-primary"  id="about">
+	<section class="page-section _bg-primary" style="background-color: #919748;" id="about">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6 col-sm-12">
@@ -203,6 +206,7 @@
 				</div>
 			</div>
 		</div>
+		
 	</section>
 </template>
 <style scoped>
@@ -213,15 +217,23 @@
 	}
 </style>
 <script setup lang="ts">
-
+	// import * as Bootstrap from 'bootstrap'
     definePageMeta({
         layout: 'default'
     })
+
+	
+
 
     const route = useRoute()
     const id = route.query.id
     const type = route.query.type
     
+	
+
+	// var myCarousel = querySelector('#carouselExampleControls')
+	// new Bootstrap.Carousel(myCarousel)
+ 
     console.log(11, id)
     let hasLoaded = false
 

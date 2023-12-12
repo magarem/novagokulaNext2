@@ -9,14 +9,14 @@
 		<!-- Favicon-->
 		<Link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
 		<!-- Bootstrap Icons-->
-		<Link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+		<!-- <Link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" /> -->
 		<!-- Google fonts-->
 		<Link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
 		<Link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
 		<!-- SimpleLightbox plugin CSS-->
-		<Link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
+		<!-- <Link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" /> -->
 		<!-- Core theme CSS (includes Bootstrap)-->
-		<Link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+		<!-- <Link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" /> -->
 		<Link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"/>
 		<Link href="css/styles.css" rel="stylesheet" />
 	</head>
@@ -31,7 +31,7 @@
 		<nuxt-layout name="footer"></nuxt-layout>
 		<!--/ End Footer Area -->
 		<!-- Bootstrap core JS-->
-		<Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></Script>
+		<!-- <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></Script> -->
 		<!-- SimpleLightbox plugin JS-->
 		<!-- <Script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></Script> -->
 		<!-- Core theme JS-->
@@ -40,7 +40,8 @@
 		<!-- * *                               SB Forms JS                               * *-->
 		<!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
 		<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-		<Script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></Script>
+		<!-- <Script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></Script> -->
+		
 	</body>
 </html>
 </template>
