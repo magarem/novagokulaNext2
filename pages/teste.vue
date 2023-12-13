@@ -1,12 +1,13 @@
 <template>
+  <div class="p-5">
+    {{ appConfig }}
+  </div>
     
-  </template>
+</template>
   
-  <script>
-  // If you are using PurgeCSS, make sure to whitelist the carousel CSS classes
-  import 'vue3-carousel/dist/carousel.css'
-//   import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
-  
-  
-  </script>
+<script setup>
+const appConfig = useAppConfig()
+
+console.log(appConfig.theme.primaryColor)
+</script>
   

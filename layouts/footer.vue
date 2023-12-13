@@ -28,24 +28,18 @@
                             <!-- <p> Estrada Jesus Antonio de Miranda Bairro: Riberão Grande Pindamonhangaba - São Paulo - Brasil</p> -->
                             <!-- Facebook -->
                         <!-- Facebook -->
-                            <a class="btn btn-primary" style="background-color: #3b5998;" href="#!" role="button"
-                            ><i class="fab fa-facebook-f"></i
-                            ></a>
-
-
+                            <a class="btn btn-primary border-0" style="margin-right:10px; background-color: #3b5998;" href="https://www.facebook.com/FazendaNovaGokula" role="button"
+                            ><i class="fab fa-facebook-f"></i></a>
                             <!-- Instagram -->
-                            <a class="btn btn-primary" style="background-color: #ac2bac;" href="#!" role="button"
+                            <a class="btn btn-primary border-0" style="margin-right:10px; background-color: #ac2bac;" href="https://www.instagram.com/novagokula/" role="button"
                             ><i class="fab fa-instagram"></i
                             ></a>
-
                             <!-- Youtube -->
-                            <a class="btn btn-primary" style="background-color: #ed302f;" href="#!" role="button"
+                            <a class="btn btn-primary border-0" style="margin-right:10px; background-color: #ed302f;" href="https://www.youtube.com/c/FazendaNovaGokulaNG" role="button"
                             ><i class="fab fa-youtube"></i
                             ></a>
-
-
                             <!-- Whatsapp -->
-                            <a class="btn btn-primary" style="background-color: #25d366;" href="#!" role="button"
+                            <a class="btn btn-primary border-0" style="background-color: #25d366;" href="https://www.tiktok.com/@novagokula!" role="button"
                             ><i class="fab fa-tiktok"></i
                             ></a>
                         </div>
