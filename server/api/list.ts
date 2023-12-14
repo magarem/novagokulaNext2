@@ -1,14 +1,17 @@
-import fs from 'fs';
+import { readdir } from 'node:fs/promises';
 var fileList
 export default defineEventHandler((event) => {
-  fileList = fs.readdirSync('./public/img')
-  console.log('file list: ', fileList)
-  let out = []
-  fileList.map((item, index)=>{
-    out.push('<img src="/img/'+item+'">')
-    console.log(index, item);
-    
-  })
-  return out
   
+async function go(){
+  try {
+    const files =  await readdir('/home/magaweb/Desenv/novagokulaNuxt2/content', { recursive: true });
+    console.log(files);
+    return files
+  } catch (err) {
+    console.error(err);
+  }
+}
+  
+
+  return go()
 })

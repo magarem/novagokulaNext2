@@ -38,8 +38,8 @@
                             <a class="btn btn-primary border-0" style="margin-right:10px; background-color: #ed302f;" href="https://www.youtube.com/c/FazendaNovaGokulaNG" role="button"
                             ><i class="fab fa-youtube"></i
                             ></a>
-                            <!-- Whatsapp -->
-                            <a class="btn btn-primary border-0" style="background-color: #25d366;" href="https://www.tiktok.com/@novagokula!" role="button"
+                            <!-- Tiktok -->
+                            <a class="btn btn-primary border-0" style="background-color: #25d366;" href="https://www.tiktok.com/@novagokula" role="button"
                             ><i class="fab fa-tiktok"></i
                             ></a>
                         </div>
@@ -77,6 +77,7 @@
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-12">
                         <div class="copyright-content text-center">
+                            <a :href="'/testesave?id=' + id" target="_blank">Editar página</a>
                             <p>© Copyright 2023  |  Todos os direitos reservados novagokula.com.br </p>
                         </div>
                     </div>
@@ -86,3 +87,8 @@
         <!--/ End Copyright -->
     </footer>
 </template>
+<script setup>
+    const route = useRoute()
+    const id = route.query.id
+    // console.log(urlParams.get('yourParam')); // "MyParam"
+</script>
