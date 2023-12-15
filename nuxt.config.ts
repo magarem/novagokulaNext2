@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ['~/assets/css/bootstrap.scss'],
-  modules: ["formidable", "vue3-carousel-nuxt", "@nuxt/image", "@nuxtjs/google-fonts", '@nuxt/content', '@vueuse/nuxt'],
+  modules: ["formidable", "@nuxt/image", "@nuxtjs/google-fonts", '@nuxt/content', '@vueuse/nuxt'],
   plugins: [
     { src: '~/plugins/bootstrap.js', mode: 'client'},
   ],

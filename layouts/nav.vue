@@ -14,12 +14,12 @@
 							<li><a class="dropdown-item" href="/generic2?id=about">Quem somos</a></li>
 							<li><a class="dropdown-item" href="/generic2?id=historia">História</a></li>
 							<!-- <li><a class="dropdown-item" href="generic?type=hospedagem">Visitação</a></li> -->
-							<li><a class="dropdown-item" href="/generic2?id=filosofia" >Filosofia</a></li>
 							<li><a class="dropdown-item" href="/generic2?id=acharyadeva" >O fundador</a></li>
 							<li><a class="dropdown-item" href="/generic2?id=prabhupada" >Srila Prabhupada</a></li>
-							<li><a class="dropdown-item" href="/generic2?id=instituicao" >ISCKON</a></li>
+							<li><a class="dropdown-item" href="/generic2?id=instituicao" >ISKCON</a></li>
 
 							<li><a class="dropdown-item" href="/generic2?id=mahamantra" >O Mantra</a></li>
+							<li><a class="dropdown-item" href="/generic2?id=filosofia" >Filosofia</a></li>
 
 							
 

@@ -8,3 +8,7 @@ A comunidade Hare Krishna!!!, oficialmente conhecida como Movimento Internaciona
 As comunidades Hare Krishna, como a Nova Gokula em Pindamonhangaba, costumam ser baseadas em valores espirituais e têm o propósito de fornecer um ambiente onde os membros possam se dedicar à prática espiritual, ao estudo dos escritos sagrados e à vida em comunidade. Essas comunidades geralmente seguem um estilo de vida simples, com ênfase na simplicidade, vegetarianismo e serviço devocional.
 
 Para obter informações específicas sobre a história da comunidade Hare Krishna Nova Gokula em Pindamonhangaba, recomendo entrar em contato diretamente com a comunidade local ou procurar fontes locais, como jornais, registros comunitários ou sites oficiais da comunidade. Eles podem fornecer uma visão mais detalhada da história, desenvolvimento e atividades específicas dessa comunidade em particular.
+
+<div>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/MUp9oJ2PB1Y?si=2iOD404odD5_vRY3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
