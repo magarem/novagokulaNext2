@@ -12,7 +12,7 @@
             <div class="row shadow-sm_ " v-if="itens" >
                 <h5 class="_text-center mb-3 pt-4" v-if="id">Opções</h5>
                 <h4 class="_text-center mb-3 _pt-4" v-else>{{ type }}</h4>
-                <p>{{ meta.description }}</p>
+                <p> {{ meta.description }} </p>
                 <div class="col-md-3 mb-3" v-for="item1 in itens">
                     <Cardgrid target="templos" :item="item1" :type="type"/>
                 </div>
