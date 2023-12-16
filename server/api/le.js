@@ -1,5 +1,5 @@
 import markdownit from 'markdown-it'
-import * as matter from 'gray-matter';
+// import * as matter from 'gray-matter';
 export default defineEventHandler((event) => {
   const { id } = getQuery(event);
   const md = markdownit()
@@ -8,7 +8,7 @@ export default defineEventHandler((event) => {
       console.log(content)
       const result = md.render(content);
       console.log(result)
-      return matter(result)
+      return result
   }
  
 
