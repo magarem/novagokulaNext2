@@ -21,8 +21,10 @@
     "sass": "^1.69.4"
   },
   "dependencies": {
+    "@mdit-vue/plugin-frontmatter": "^2.0.0",
     "@nuxt/image": "^1.1.0",
     "@tailwindcss/typography": "^0.5.10",
+    "@types/marked": "^6.0.0",
     "@vueuse/components": "^10.6.1",
     "bootstrap": "^5.3.2",
     "formidable": "^3.5.1",
@@ -32,7 +34,9 @@
     "gray-matter": "^4.0.3",
     "h3-formidable": "^1.0.0",
     "jquery": "^3.7.1",
+    "markdown": "^0.5.0",
     "markdown-it": "^14.0.0",
+    "marked": "^11.1.0",
     "multer": "^1.4.5-lts.1",
     "node-dir": "^0.1.17",
     "vue-final-modal": "^4.5.0"

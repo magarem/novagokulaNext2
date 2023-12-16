@@ -1,19 +1,16 @@
 <template>
-    <div style="padding-top: 200px;" v-html="ret">
+  <div class="px-5" style="padding-top: 100px;" >
+    <h2>{{ ret.env.frontmatter.title }}</h2>
+    <div v-html="ret.body">
     </div>
-    
-  </template>
-  
-  <script setup>
-//   import * as matter from 'gray-matter';
+  </div>
+ 
+
+</template>
+
+<script setup>
   const route = useRoute()
   console.log(route.params.id) // { id: '123' }
-  // const { data: ret } = await useFetch('/api/le?id='+route.params.id)
-  const { data: ret } = await useFetch('https://novagokula.com.br/teste/' + route.params.id + '.md')
-  
+  const { data: ret } = await useFetch('/api/le?id='+route.params.id)
   console.log(ret.value);
-
-//   const { data: ret2 } = await useAsyncData('home', () => queryContent(ret).findOne())
-
-//   console.log(matter(ret.value));
-  </script>
+</script>
