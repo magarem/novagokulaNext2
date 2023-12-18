@@ -77,7 +77,7 @@
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-12">
                         <div class="copyright-content text-center">
-                            <a :href="'/testesave?id=' + id" target="_blank">Editar página</a>
+                            <a :href="'https://f55b-45-167-160-82.ngrok-free.app/testesave?id=' + id" target="_blank">Editar página</a>
                             <p>© Copyright 2023  |  Todos os direitos reservados novagokula.com.br </p>
                         </div>
                     </div>
@@ -85,10 +85,36 @@
             </div>
         </div>
         <!--/ End Copyright -->
+        <nav class="nuxt_preview navbar navbar-light navbar-expand bg-light fixed-bottom">
+        teste
+        </nav>
     </footer>
 </template>
 <script setup>
     const route = useRoute()
-    const id = route.query.id
+    const id = route.params.id
     // console.log(urlParams.get('yourParam')); // "MyParam"
 </script>
+<style scoped>
+.nuxt_preview_ {
+    align-items: center;
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    background: hsla(0, 94%, 47%, 0.998);
+    border-top: 1px solid #eee;
+    bottom: -60px;
+    color: #000;
+    display: flex;
+    font-family: Helvetica,sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    gap: 10px;
+    height: 50px;
+    justify-content: center;
+    left: 0;
+    position: fixed;
+    right: 0;
+    transition: bottom .3s ease-in-out;
+    z-index: 10000;
+}
+</style>

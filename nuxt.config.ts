@@ -8,5 +8,8 @@ export default defineNuxtConfig({
   ],
   server: {
     host: '0' // default: localhost
-  }
+  },
+  buildModules: [
+    '@nuxtjs/ngrok',
+  ]
 })

@@ -9,11 +9,38 @@ function getSubstring(string, char1, char2) {
   );
 }
 export default defineEventHandler((event) => {
-  const { id } = getQuery(event);
+  
+  const { id, preview } = getQuery(event);
   // const md = markdownit()
   async function le() {
-      const content = await $fetch('https://novagokula.com.br/teste/' + id + '.md')
-      // console.log(content)
+    // let file = 'https://novagokula.com.br/teste/' + id + (preview=='true'?'_preview.md':'.md')
+    let file = 'https://3999-45-167-160-82.ngrok-free.app/content/' + id + (preview=='true'?'_preview.md':'.md')
+    console.log(file);
+    // if (fse.pathExistsSync(file)){
+      let content
+      try {
+        content =  await $fetch(file)
+      } catch (error) {
+          if (preview=='true'){
+            try {
+              file = 'https://3999-45-167-160-82.ngrok-free.app/content/' + id + '.md'
+              console.log(file);
+              content =  await $fetch(file)
+            } catch (error) {
+              content = '  Página não encontrada'
+            }
+          }else{
+            content = '  Página não encontrada'
+          }
+        
+      }
+      
+      // console.log('https://novagokula.com.br/teste/' + id + (preview=='true'?'_preview.md':'.md'));
+    //  if (!content){
+    //    content =  await $fetch('https://novagokula.com.br/teste/' + id + '.md')
+    //  }
+    // }
+       // console.log(content)
       // const result = md.render(content);
       // const md = MarkdownIt({ html: true }).use(frontmatterPlugin, {
       //   grayMatterOptions: {
@@ -41,7 +68,7 @@ export default defineEventHandler((event) => {
       const ymlToObj = YAML.parse(subStr)
       console.log(YAML.parse(subStr))
       console.log(content.substring(content.indexOf('---',3)+3));
-      return ({content: content.substring(content.indexOf('---',3)+3), yml: ymlToObj})
+      return ({content: content.substring(content.indexOf('---',3)+3), raw: content, yml: ymlToObj})
   }
  
  

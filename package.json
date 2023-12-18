@@ -23,6 +23,7 @@
   "dependencies": {
     "@mdit-vue/plugin-frontmatter": "^2.0.0",
     "@nuxt/image": "^1.1.0",
+    "@nuxtjs/ngrok": "^2.0.0",
     "@tailwindcss/typography": "^0.5.10",
     "@types/marked": "^6.0.0",
     "@vueuse/components": "^10.6.1",
@@ -30,6 +31,7 @@
     "formidable": "^3.5.1",
     "front-matter": "^4.0.2",
     "frontmatter-markdown-loader": "^3.7.0",
+    "fs-extra": "^11.2.0",
     "glob": "^10.3.10",
     "gray-matter": "^4.0.3",
     "h3-formidable": "^1.0.0",

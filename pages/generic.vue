@@ -28,21 +28,12 @@
 </style>
 <script setup lang="ts">
 
-    definePageMeta({
-        layout: 'default'
-    })
-
     const route = useRoute()
     const id = route.query.id
     const type = route.query.type
    
-    console.log(11, id)
-    let hasLoaded = false
-
     const { data: meta } = await useAsyncData('home', () => queryContent('/' + type + '/meta').findOne())
   
-    console.log('meta:', meta.value);
-    
     const { data: data } = await useAsyncData('page-data', () => {
             return queryContent('/' + type).find()
         }
@@ -52,16 +43,10 @@
         return obj._path !== '/' + type + '/meta';
     });
 
-    // console.log('data:', data.value);
-    
-
     const itens = data.value
-    hasLoaded = true
                  
     const item = data.value.filter( x => 
     x._path == id
     )[0];
 
-    console.log('id-->', item);
-                
 </script>

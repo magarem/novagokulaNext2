@@ -19,7 +19,6 @@
                             <div class="col-12" >
                                 <ContentRenderer :value="data" />
                             </div>
-                            
                         </div>
                     </div>
                 </section>    
@@ -27,40 +26,14 @@
         </div>
     </section>
 </template>
-<style scoped>
-    .bg {
-        background-color: #E7B884;
-    }
-</style>
 <script setup lang="ts">
-
-    definePageMeta({
-        layout: 'default'
-    })
-
-    const route = useRoute()
-    const id = route.query.id
-    // const type = route.query.type
-    
-    console.log(11, id)
-    let hasLoaded = false
-
-    const { data: data } = await useAsyncData('home', () => queryContent('/' + id).findOne())
-  
-    console.log('data:', data.value);
-    
-    // console.log('data:', data.value);
-
-    // const item = data.value
-    hasLoaded = true
-                 
-   
-                
+    const { data: data } = await useAsyncData('home', () => queryContent('/' + useRoute().query.id).findOne())
 </script>
 <style scoped>
-
+.bg {
+        background-color: #E7B884;
+    }
  img {
     max-height: 400px;
  }
-
 </style>
