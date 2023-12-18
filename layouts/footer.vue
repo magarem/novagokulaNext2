@@ -77,7 +77,7 @@
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-12">
                         <div class="copyright-content text-center">
-                            <a :href="'https://f55b-45-167-160-82.ngrok-free.app/testesave?id=' + id" target="_blank">Editar página</a>
+                            <a :href="'https://3999-45-167-160-82.ngrok-free.app/testesave?id=' + id" target="_blank">Editar página</a>
                             <p>© Copyright 2023  |  Todos os direitos reservados novagokula.com.br </p>
                         </div>
                     </div>
