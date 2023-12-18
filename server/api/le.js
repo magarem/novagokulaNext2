@@ -14,7 +14,7 @@ export default defineEventHandler((event) => {
   // const md = markdownit()
   async function le() {
     // let file = 'https://novagokula.com.br/teste/' + id + (preview=='true'?'_preview.md':'.md')
-    let file = 'https://3999-45-167-160-82.ngrok-free.app/content/' + id + (preview=='true'?'_preview.md':'.md')
+    let file = 'http://159.89.143.16:3000/api/read?filename=' + id + (preview=='true'?'_preview.md':'.md')
     console.log(file);
     // if (fse.pathExistsSync(file)){
       let content
@@ -23,7 +23,7 @@ export default defineEventHandler((event) => {
       } catch (error) {
           if (preview=='true'){
             try {
-              file = 'https://3999-45-167-160-82.ngrok-free.app/content/' + id + '.md'
+              file = 'http://159.89.143.16:3000/api/read?filename=' + id + '.md'
               console.log(file);
               content =  await $fetch(file)
             } catch (error) {
