@@ -37,10 +37,15 @@
         }, 3500);
     }
     // timerStart()
-
-      if (process.client){
-        window.parent.postMessage({"pageid": id}, '/');
-      }
+    const refreshDo = (event) => {
+        refresh()
+    }
+    if (process.client){
+        if (window.parent){
+            window.parent.postMessage({"pageid": id}, '/');
+            window.parent.addEventListener("message", refreshDo, false);
+        }
+    }
 </script>
 <style scoped>
 

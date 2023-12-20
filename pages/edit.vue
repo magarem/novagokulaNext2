@@ -79,7 +79,8 @@ const readFile = () => {
   }
   if (process.client){
 			//Event Listener for Iframe
-    window.addEventListener("message",iframeEvent, false);
+      window.addEventListener("message", iframeEvent, false);
+      window.postMessage({"refresh": true}, '/');
   }	
 
 </script>
