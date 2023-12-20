@@ -39,7 +39,7 @@
     // timerStart()
 
       if (process.client){
-        window.parent.postMessage({"pageid": id}, 'http://localhost:3000');
+        window.parent.postMessage({"pageid": id}, '/');
       }
 </script>
 <style scoped>
