@@ -1,6 +1,6 @@
 ---
 title: 'Filosofia'
-description: 'meta description of the page'
+description: ''
 imgs: ['/img/rashkrsna.webp']
 ---
 Vaishnavismo é uma das principais tradições dentro da cultura espiritual védica, ou hindu. Ao contrário de algumas tradições védica, @s Vaishnavas acreditam que a realidade última é pessoal. Assim, el@s entendem que Deus é a Pessoa Suprema toda-atrativa, ou Krishna. El@s reconhecem que todos os seres vivos são pessoas eternas, e que todos os problemas da vida estão enraizados no esquecimento da alma individual de seu relacionamento com Deus.

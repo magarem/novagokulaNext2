@@ -1,6 +1,6 @@
 ---
 title: 'Festival de domingo na fazenda nova gokula'
-description: 'meta description of the page'
+description: ''
 imgs: ['/img/eventos/festivaldedomingo.jpeg']
 ---
 Passe o dia com os devotos de Krishna!

@@ -1,6 +1,6 @@
 ---
 title: 'Filosofia'
-description: 'meta description of the page'
+description: ''
 imgs: ['/img/rashkrsna.webp']
 ---
 ## Quem é Krishna?

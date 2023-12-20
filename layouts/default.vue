@@ -43,7 +43,7 @@
 		<!-- <Script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></Script> -->
 		
 	</body>
-</html>
+	</html>
 </template>
 <script setup>
 import { ModalsContainer } from 'vue-final-modal'

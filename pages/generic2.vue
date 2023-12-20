@@ -1,10 +1,10 @@
 <template>
-    <section class=" pb-5">
-        <h5 class="bread mb-5_ text-left" ><a href="/">Home</a> > {{data.title}}</h5>
-        <img v-if="data.imgs" :src="data.imgs[0]" style="width: 100%; " class="mb-3 img-fluid"/> 
-        <div class="container pb-5 _pt-4">
-            <div class="pt-0" _style="margin-top: 20px;">
-                <section class="pt-0 products _section-padding ">
+    <section class="pb-0">
+        <h5 class="bread text-left" ><a href="/">Home</a> > {{data.title}}</h5>
+        <img v-if="data.imgs" :src="data.imgs[0]" style="width: 100%;" class="mb-4 img-fluid"/> 
+        <div class="container">
+            <div class="pt-1">
+                <section>
                     <h4 class="pb-3">{{data.title}}</h4>
                     <div class="container">
                         <div v-if="data.textImgs" class="row mb-4">
@@ -21,15 +21,29 @@
                             </div>
                         </div>
                     </div>
-                </section>    
+                </section>   
+                <!-- <button @click="refresh">refresh</button> -->
             </div>
         </div>
     </section>
 </template>
 <script setup lang="ts">
-    const { data: data } = await useAsyncData('home', () => queryContent('/' + useRoute().query.id).findOne())
+    const id = useRoute().query.id
+    const { data: data, refresh  } = await useAsyncData('home', () => queryContent('/' + id).findOne())
+    const timerStart = () => {
+        setInterval(() => {
+            console.log('refresh')
+            refresh()
+        }, 3500);
+    }
+    // timerStart()
+
+      if (process.client){
+        window.parent.postMessage({"pageid": id}, 'http://localhost:3000');
+      }
 </script>
 <style scoped>
+
 .bg {
         background-color: #E7B884;
     }

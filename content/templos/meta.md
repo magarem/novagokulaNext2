@@ -1,6 +1,6 @@
 ---
 title: 'Templos'
-description: 'meta description of the page'
+description: ''
 # imgs: ['/img/templo1.png']
 ---
 Templo principal asd asd

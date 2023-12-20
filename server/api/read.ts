@@ -17,7 +17,7 @@ export default defineEventHandler( (event) => {
     
     const read =  (filename) => {
         // const filePath = path.join(process.cwd(), 'public', 'test.txt')
-        const data =  fs.readFileSync('content/'+filename, 'utf-8')
+        const data =  fs.readFileSync('content/' + filename, 'utf-8')
         // readFileAsync('content/'+filename, 'utf8', function(err, data) {
         //     if (err) throw err;
         console.log('tt', data);

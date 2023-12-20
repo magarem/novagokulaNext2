@@ -1,6 +1,6 @@
 ---
 title: 'Casa dos gurus'
-description: 'meta description of the page'
+description: ''
 imgs: ['img/hospedagem/casadosgurus/casa_gurus.jpg']
 ---
 - Casa ampla com salão panorâmico.

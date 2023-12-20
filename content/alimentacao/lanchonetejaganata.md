@@ -1,6 +1,6 @@
 ---
 title: 'Lanchonete Jagannatha'
-description: 'meta description of the page'
+description: ''
 imgs: ['/img/alimentacao/lanchonetejagannatha.jpeg']
 ---
 Bem-vindo à Lanchonete Jagannatha: O Sabor Divino aos Pés do Templo

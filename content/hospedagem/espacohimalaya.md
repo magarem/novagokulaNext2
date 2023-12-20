@@ -1,6 +1,6 @@
 ---
 title: 'Espaço Himalaya'
-description: 'meta description of the page'
+description: ''
 imgs: ['img/hospedagem/espacohimalaya/himalaya.jpg']
 ---
 - Estrutura ampla.

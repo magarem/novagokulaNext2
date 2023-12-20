@@ -77,7 +77,7 @@
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-12">
                         <div class="copyright-content text-center">
-                            <a :href="'http://159.89.143.16:3000/testesave?id=' + id" target="_blank">Editar página</a>
+                            <!-- <a :href="'http://159.89.143.16:3000/testesave?id=' + id" target="_blank">Editar página</a> -->
                             <p>© Copyright 2023  |  Todos os direitos reservados novagokula.com.br </p>
                         </div>
                     </div>

@@ -1,7 +1,7 @@
 <template>
     <nav id="mainNav" class="navbar navbar-shrink  navbar-expand-md _navbar-dark fixed-top" >
         <div class="container"  _style="background-color: #d36858;">
-			<a class="navbar-brand" href=""><img  id="logo" src="/img/logo2.png" ></a>
+			<a class="navbar-brand" href="/"><img  id="logo" src="/img/logo2.png" ></a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span> Menu
 			</button>
@@ -20,9 +20,6 @@
 
 							<li><a class="dropdown-item" href="/generic2?id=mahamantra" >O Mantra</a></li>
 							<li><a class="dropdown-item" href="/generic2?id=filosofia" >Filosofia</a></li>
-
-							
-
 						</ul>
 					</li>
 					<li class="nav-item dropdown"><a class="nav-Link dropdown-toggle" _href="atrativos"  href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" >ATRATIVOS</a>
@@ -36,7 +33,7 @@
 						</ul>
 					</li>
 					<li class="nav-item"><a class="nav-Link" href="generic?type=eventos" >EVENTOS</a></li>
-					<li class="nav-item"><a class="nav-Link" href="generic?type=galeria">GALERIA</a></li>
+					<!-- <li class="nav-item"><a class="nav-Link" href="generic?type=galeria">GALERIA</a></li> -->
 					<li class="nav-item"><a class="nav-Link" href="generic2?id=comochegar">COMO CHEGAR</a></li>
 					<!-- <li><a class="dropdown-item" href="generic?type=hospedagem">Visitação</a></li> -->
 					<li class="nav-item"><a class="nav-Link" href="generic2?id=contact" >CONTATO</a></li>

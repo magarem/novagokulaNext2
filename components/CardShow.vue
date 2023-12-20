@@ -1,7 +1,7 @@
 <template>
     <section> 
         <div class="card shadow-sm_ mb-3 border-0" style="100%;">
-            <h2 class="card-title">{{item.title}}</h2>
+            <h2 class="pb-2 _card-title">{{item.title}}</h2>
             <div class="row g-0">
                 <div class="col-md-4">
                     <div v-if="item.imgs.length>0" v-for="img in item.imgs" _class="mb-4" >

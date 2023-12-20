@@ -1,6 +1,6 @@
 ---
 title: 'Como chegar'
-description: 'meta description of the page'
+description: ''
 imgs: []
 ---
 ### Opções de transporte para a Fazenda Nova Gokula

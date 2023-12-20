@@ -1,6 +1,6 @@
 ---
 title: 'Templo de Narasinha'
-description: 'meta description of the page'
+description: ''
 imgs: ['/img/templos/narashinratemplo.png']
 ---
 Nrisimhadeva: A encarnação protetora dos devotos

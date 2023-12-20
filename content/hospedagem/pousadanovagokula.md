@@ -1,6 +1,6 @@
 ---
 title: 'Pousada Nova Gokula'
-description: 'meta description of the page'
+description: ''
 imgs: ['img/hospedagem/pousadanovagokula/pousada_novagokula.jpg']
 ---
 - Ladeada por rio cristalino, muito verde e jardins.

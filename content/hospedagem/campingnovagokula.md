@@ -1,6 +1,6 @@
 ---
 title: 'Camping Nova Gokula'
-description: 'meta description of the page'
+description: ''
 imgs: ['img/hospedagem/campingnovagokula/camping.jpg']
 ---
 - Área gramada medindo 200 m2 ao lado do rio.
