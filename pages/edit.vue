@@ -41,6 +41,7 @@ async function save(data) {
       if (response.ok) {
           //return json
           console.log(response.body);
+          document.getElementById('iframe').contentWindow.postMessage({"refresh": true}, '/');
           
       } else {
           //
@@ -80,8 +81,10 @@ const readFile = () => {
   if (process.client){
 			//Event Listener for Iframe
       window.addEventListener("message", iframeEvent, false);
-      window.postMessage({"refresh": true}, '/');
-  }	
+      // console.log(22, document.getElementById('iframe').contentWindow);
+  
+    }	
+
 
 </script>
 
@@ -99,7 +102,7 @@ const readFile = () => {
         <!-- <button @click="saveHandler">Salvar</button> -->
         </div>
         <div class="col-12 col-lg-7">
-          <iframe src="/" width="100%" height="650"></iframe>	
+          <iframe id="iframe" name="iframe" src="/" width="100%" height="650"></iframe>	
         </div>
       </div>
     </div>

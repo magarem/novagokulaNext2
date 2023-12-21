@@ -38,13 +38,17 @@
     }
     // timerStart()
     const refreshDo = (event) => {
+        console.log("recebido na iframe");
+        
         refresh()
     }
     if (process.client){
         if (window.parent){
+            // alert('client run script!')
             window.parent.postMessage({"pageid": id}, '/');
-            window.parent.addEventListener("message", refreshDo, false);
         }
+        window.addEventListener("message", refreshDo, false);
+
     }
 </script>
 <style scoped>
