@@ -89,24 +89,30 @@ const readFile = () => {
 </script>
 
 <template>
-  <div class="bg-dark">
-    <div class="_container mx-2" >
+  <div class="bg-dark container-fluid pb-4" style="height: 100%;">
       <div class="row">
-        <div class="col-12 col-lg-7">
+        <div class="col-12 col-lg-8 pt-2">
           <iframe id="iframe" name="iframe" src="/" width="100%" height="650"></iframe>	
         </div>
-        <div class="col-12 col-lg-5">
-          <span style="font-size: 20px;">Editar página:</span> <input class="mt-3" v-model="filename"/><button @click="readFile">>></button><br/>
-        <!-- <div class="mx-lg-5 mt-3"> -->
-          <textarea v-model="txt" style="width: 100%; height: 600px;"></textarea>
-        <!-- </div> -->
-        <!-- <img :src="'/img/'+ret[0]"> -->
-        <!-- <br/><br/> -->
-        <!-- <button @click="saveHandler">Salvar</button> -->
+        <div class="col-12 col-lg-4" style="background-color: blueviolet;">
+          <div class="row mb-1" style="background-color: blueviolet;">
+            <div class="col-4" style="padding-top: 13px; padding-left: 25px; color: white; font-size: 25px;">MWnotes</div>
+            <div class="col-8" style="padding-bottom: 15px;"><input class="mt-3" v-model="filename" style="width: 237px;"/><button @click="readFile">>></button></div>
+          </div>
+          <textarea class="txt" spellcheck="false" v-model="txt" style="width: 100%; height: 85%;"></textarea>
         </div>
-       
+      
       </div>
-    </div>
+      
   </div>
   
 </template>
+<style scoped>
+  .txt {
+    font-size: 18px;
+    padding: 6px;
+    color:aliceblue;
+    background-color:rgb(42, 41, 41);
+    outline:none;
+  }
+</style>

@@ -24,7 +24,7 @@
 
 
   <div class="card border-0 shadow-none rounded-3" style="width: 100%; border-radius: 20%;">
-    <a :href="'generic' + '?type=' + type + '&id=' + (item._path||item.id)">
+    <a :href="'getItem' + '?id=' + (item._path||item.id)">
       <img v-if="item.imgs" class="card-img card-img-top" :src="item.imgs[0]" alt="Card image cap"/>
     </a>
     <div class="card-body">

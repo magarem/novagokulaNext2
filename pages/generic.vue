@@ -4,7 +4,8 @@
         <div v-if="id" class="container" _style="padding-left: 50px; padding-right: 50px;">
             <section class="pt-0 products _section-padding ">
                 <div  class="row mb-4">
-                    <CardShow sessiontitle="Templos" :item="item" /> 
+                    {{item.title}}
+                    <CardShow  sessiontitle="Templos" :item="item" /> 
                 </div>
             </section>    
         </div>
@@ -19,6 +20,9 @@
             </div>
         </div>
     </div>
+   {{ componentFlag }}
+    <button @click="refreshDo">troca</button>
+   
 </template>
 <style scoped>
 .bg {
@@ -27,17 +31,38 @@
 
 </style>
 <script setup lang="ts">
+    // definePageMeta({
+    //     layout: ''
+    // })
+    const componentKey = ref(0);
 
+    const forceRerender = () => {
+        componentKey.value += 1;
+    };
+  
+    let componentFlag = ref(true)
+
+//    let rr = ref(true)
     const route = useRoute()
     const id = route.query.id
+    
     const type = route.query.type
    
     const { data: meta } = await useAsyncData('home', () => queryContent('/' + type + '/meta').findOne())
-  
-    const { data: data } = await useAsyncData('page-data', () => {
+
+ 
+
+    
+    // if (id){
+    //     const { data: data, refresh  } = await useAsyncData('home', () => queryContent('/' + id.substring(1) + '.md').findOne())
+    // }else{
+        const { data: data, refresh } = await useAsyncData('page-data', () => {
             return queryContent('/' + type).find()
         }
     )
+    // }
+   
+  
 
     data.value = data.value.filter(function( obj ) {
         return obj._path !== '/' + type + '/meta';
@@ -48,5 +73,27 @@
     const item = data.value.filter( x => 
     x._path == id
     )[0];
+
+    async function refreshDo() {
+        console.log("recebido na iframe");
+        
+        refresh()
+
+        forceRerender()
+        // componentFlag.value = true
+        // componentFlag.value = true
+        // rr.value=2
+        // refreshComponent()
+    }
+
+    if (process.client) {
+
+        if (window.parent){
+            // alert('client run script!')
+            window.parent.postMessage({"pageid": id}, '/');
+        }
+        window.addEventListener("message", refreshDo, false);
+
+    }
 
 </script>

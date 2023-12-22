@@ -1,5 +1,5 @@
 ---
-title: 'Templo de Radha-gokulananda'
+title: 'Templo de Radha-gokulananda1'
 description: ''
 imgs: ['/img/templo1.png']
 ---

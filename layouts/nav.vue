@@ -17,22 +17,21 @@
 							<li><a class="dropdown-item" href="/generic2?id=acharyadeva" >O fundador</a></li>
 							<li><a class="dropdown-item" href="/generic2?id=prabhupada" >Srila Prabhupada</a></li>
 							<li><a class="dropdown-item" href="/generic2?id=instituicao" >ISKCON</a></li>
-
 							<li><a class="dropdown-item" href="/generic2?id=mahamantra" >O Mantra</a></li>
 							<li><a class="dropdown-item" href="/generic2?id=filosofia" >Filosofia</a></li>
 						</ul>
 					</li>
 					<li class="nav-item dropdown"><a class="nav-Link dropdown-toggle" _href="atrativos"  href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" >ATRATIVOS</a>
 						<ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-							<li><a class="dropdown-item" href="generic?type=templos">Templos</a></li>
-							<li><a class="dropdown-item" href="generic?type=hospedagem">Hospedagens</a></li>
-							<li><a class="dropdown-item" href="generic?type=alimentacao">Alimentação</a></li>
+							<li><a class="dropdown-item" href="getSession?id=templos">Templos</a></li>
+							<li><a class="dropdown-item" href="getSession?id=hospedagem">Hospedagens</a></li>
+							<li><a class="dropdown-item" href="getSession?id=alimentacao">Alimentação</a></li>
 							<!-- <li><a class="dropdown-item" href="#">Espiritualidade</a></li> -->
 							<!-- <li><a class="dropdown-item" href="#">Bem estar </a></li> -->
-							<li><a class="dropdown-item" href="#">Hari shopping</a></li>
+							<!-- <li><a class="dropdown-item" href="#">Hari shopping</a></li> -->
 						</ul>
 					</li>
-					<li class="nav-item"><a class="nav-Link" href="generic?type=eventos" >EVENTOS</a></li>
+					<li class="nav-item"><a class="nav-Link" href="getSession?id=eventos" >EVENTOS</a></li>
 					<!-- <li class="nav-item"><a class="nav-Link" href="generic?type=galeria">GALERIA</a></li> -->
 					<li class="nav-item"><a class="nav-Link" href="generic2?id=comochegar">COMO CHEGAR</a></li>
 					<!-- <li><a class="dropdown-item" href="generic?type=hospedagem">Visitação</a></li> -->
