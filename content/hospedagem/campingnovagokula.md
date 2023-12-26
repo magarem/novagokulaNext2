@@ -1,7 +1,7 @@
 ---
 title: 'Camping Nova Gokula'
 description: ''
-imgs: ['img/hospedagem/campingnovagokula/camping.jpg']
+textImg: ['img/hospedagem/campingnovagokula/camping.jpg']
 ---
 Bem-vindo ao nosso paraíso natural!
 

@@ -1,12 +1,12 @@
 ---
 title: 'Retiro de réveillon 2024'
 description: ''
-imgs: ['/img/eventos/retirodereveillon.jpeg']
+textImg: ['/img/eventos/retirodereveillon.jpeg']
 ---
 De 30 de dezembro a 01 de janeiro
 OPULENTA CEIA E PROGRAMAÇÃO VARIADA
 Com hospedagem e alimentação completa!
-Na Fazenda Nova Gokula, Pindamonhangaba/SP
+Na Fazenda Nova Gokula, Pindamonhangaba/SP.
 
 Valores de 1o lote válidos até dia 30/11
 Pague em até 12 vezes pela plataforma Sympla

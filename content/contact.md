@@ -1,7 +1,6 @@
 ---
 title: 'Contato'
 description: ''
-imgs: ['']
 ---
 <div>
     <section>

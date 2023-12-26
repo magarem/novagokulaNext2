@@ -14,8 +14,9 @@
     "@nuxt/content": "^2.8.5",
     "@nuxt/devtools": "latest",
     "@nuxtjs/google-fonts": "^3.1.0",
+    "@nuxtjs/vuetify": "^1.12.3",
     "@types/formidable": "^3.4.5",
-    "@vueuse/core": "^10.6.1",
+    "@vueuse/core": "^10.7.0",
     "@vueuse/nuxt": "^10.6.1",
     "nuxt": "^3.7.3",
     "sass": "^1.69.4"
@@ -42,7 +43,10 @@
     "marked": "^11.1.0",
     "multer": "^1.4.5-lts.1",
     "node-dir": "^0.1.17",
-    "vue-final-modal": "^4.5.0",
+    "sharp": "^0.33.1",
+    "vue-core-image-upload": "^2.4.14",
+    "vue-final-modal": "^4.5.3",
+    "vue-image-upload-resize": "^2.3.0",
     "yaml": "^2.3.4"
   }
 }

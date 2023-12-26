@@ -13,9 +13,9 @@
                 <section class="pt-0 products _section-padding ">
                     <h4 class="pb-3">{{ret.yml?.title}}</h4>
                     <div class="container">
-                        <div v-if="ret.yml?.textImgs" class="row mb-4">
+                        <div v-if="ret.yml?.textImg" class="row mb-4">
                             <div class="col-12 col-md-4 text-end">
-                                <img :src="ret.yml?.textImgs[0]" style="_float: left; max-width:100%;" _style="width: 100%; " class="mb-3 img-fluid"/>
+                                <img :src="ret.yml?.textImg[0]" style="_float: left; max-width:100%;" _style="width: 100%; " class="mb-3 img-fluid"/>
                             </div>
                             <div class="col-12 col-md-8" >
                                 <div v-html="body">

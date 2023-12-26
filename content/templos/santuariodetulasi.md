@@ -1,7 +1,7 @@
 ---
 title: 'Casa de Tulasi'
 description: ''
-imgs: ['/img/templos/tulasitemplo.jpeg']
+textImg: ['/img/templos/tulasitemplo.jpeg']
 ---
 Santuário dedicado à deusa Tulasi Devi em reverência a natureza devocional e divina de toda a alma.
 

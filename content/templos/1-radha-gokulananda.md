@@ -1,7 +1,7 @@
 ---
-title: 'Templo de Radha-gokulananda1'
+title: 'Templo de Radha-gokulananda'
 description: ''
-imgs: ['/img/templo1.png']
+textImg: ['/img/templo1.png']
 ---
 Este templo representa o coração de nossa comunidade. É a razão da existência de Nova Gokula - “casa das vacas”, referindo-se ao humor pastoril de Krishna e sua consorte Radha, consistindo em uma vida rural de simplicidade e cultivo, para os devotos, do pensamento elevado em Deus. Sendo assim, local de prática da Bhakti-yoga (a yoga da devoção).
 

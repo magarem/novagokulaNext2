@@ -1,7 +1,7 @@
 ---
 title: 'Réveillon 2024'
 description: ''
-imgs: ['/img/eventos/evento10.jpeg']
+textImg: ['/img/eventos/evento10.jpeg']
 ---
 RÉVEILLOM 2024 -
 Equilíbrio & Espiritualidade na Fazenda Nova Gokula 

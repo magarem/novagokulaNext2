@@ -1,7 +1,7 @@
 ---
 title: 'Trilha ecológia + yoga + almoço consciente'
 description: ''
-imgs: ['/img/eventos/yogaemeditacao.jpeg']
+textImg: ['/img/eventos/yogaemeditacao.jpeg']
 ---
 Todos os sábados e domingos a partir das 9h
 Mediante reserva

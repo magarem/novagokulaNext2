@@ -1,8 +1,7 @@
 ---
 title: 'Srila Hridayananda Das Goswami (Acharyadeva) '
 description: ''
-imgs: ['']
-textImgs: ['/img/acharyadeva.jpg']
+textImg: ['/img/acharyadeva.jpg']
 ---
 Hridayananda Das Goswami – Srila Acharyadeva, cujo nome de nascimento é Howard J. Resnick, é um líder religioso, professor e autor de vários livros. Líder espiritual da tradição Gaudiya Vaishnava e discípulo de A.C. Bhaktivedanta Swami Prabhupada, tem uma conexão significativa com o Brasil. Foi enviado por Srila Prabhupada nos anos 70 para desempenhar um papel importante na expansão e no estabelecimento da consciência de Krishna no país. Alguns dos marcos notáveis de sua contribuição incluem:
 

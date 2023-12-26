@@ -11,14 +11,14 @@
 					<!-- <li class="nav-item"><a class="nav-Link" href="generic2?id=about" >SOBRE</a></li> -->
 					<li class="nav-item dropdown"><a class="nav-Link dropdown-toggle" _href="atrativos"  href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" >SOBRE</a>
 						<ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-							<li><a class="dropdown-item" href="/generic2?id=about">Quem somos</a></li>
-							<li><a class="dropdown-item" href="/generic2?id=historia">História</a></li>
+							<li><a class="dropdown-item" href="/getItem?id=about">Quem somos</a></li>
+							<li><a class="dropdown-item" href="/getItem?id=historia">História</a></li>
 							<!-- <li><a class="dropdown-item" href="generic?type=hospedagem">Visitação</a></li> -->
-							<li><a class="dropdown-item" href="/generic2?id=acharyadeva" >O fundador</a></li>
-							<li><a class="dropdown-item" href="/generic2?id=prabhupada" >Srila Prabhupada</a></li>
-							<li><a class="dropdown-item" href="/generic2?id=instituicao" >ISKCON</a></li>
-							<li><a class="dropdown-item" href="/generic2?id=mahamantra" >O Mantra</a></li>
-							<li><a class="dropdown-item" href="/generic2?id=filosofia" >Filosofia</a></li>
+							<li><a class="dropdown-item" href="/getItem?id=acharyadeva" >O fundador</a></li>
+							<li><a class="dropdown-item" href="/getItem?id=prabhupada" >Srila Prabhupada</a></li>
+							<li><a class="dropdown-item" href="/getItem?id=instituicao" >ISKCON</a></li>
+							<li><a class="dropdown-item" href="/getItem?id=mahamantra" >O Mantra</a></li>
+							<li><a class="dropdown-item" href="/getItem?id=filosofia" >Filosofia</a></li>
 						</ul>
 					</li>
 					<li class="nav-item dropdown"><a class="nav-Link dropdown-toggle" _href="atrativos"  href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" >ATRATIVOS</a>
@@ -33,9 +33,9 @@
 					</li>
 					<li class="nav-item"><a class="nav-Link" href="getSession?id=eventos" >EVENTOS</a></li>
 					<!-- <li class="nav-item"><a class="nav-Link" href="generic?type=galeria">GALERIA</a></li> -->
-					<li class="nav-item"><a class="nav-Link" href="generic2?id=comochegar">COMO CHEGAR</a></li>
+					<li class="nav-item"><a class="nav-Link" href="getItem?id=comochegar">COMO CHEGAR</a></li>
 					<!-- <li><a class="dropdown-item" href="generic?type=hospedagem">Visitação</a></li> -->
-					<li class="nav-item"><a class="nav-Link" href="generic2?id=contact" >CONTATO</a></li>
+					<li class="nav-item"><a class="nav-Link" href="getItem?id=contact" >CONTATO</a></li>
 				
 				</ul>
 			</div>

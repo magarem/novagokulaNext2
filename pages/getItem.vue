@@ -1,15 +1,31 @@
 <template>
-    <h5 class="bread text-left pl-5"><a href="/">Home</a><a :href="'generic?type='+id">{{id}}</a></h5>
-    <div class="pt-4 pb-4">
-        <div v-if="id" class="container" _style="padding-left: 50px; padding-right: 50px;">
-            <section class="pt-0 products _section-padding ">
-                <div class="row mb-4">
-                    <!-- {{item.title}} -->
-                    <CardShow sessiontitle="Templos" :item="data" /> 
-                </div>
-            </section>    
+    <section class="pb-0">
+        <h5 class="bread text-left" ><a href="/">Home</a> > {{data.title}}</h5>
+        <img v-if="data.imgs" :src="data.imgs[0]" style="width: 100%;" class="img-fluid"/> 
+        <div class="container">
+            <div class="pt-1">
+                <section>
+                    <h4 class="pb-3 mt-3">{{data.title}}</h4>
+                    <div class="container ">
+                        <div v-if="data.textImg" class="row ">
+                            <div class="col-12 col-md-4 text-end">
+                                <img :src="data.textImg[0]" style="_float: left; max-width:100%;" _style="width: 100%; " class="mb-3 img-fluid"/>
+                            </div>
+                            <div class="col-12 col-md-8">
+                                <ContentRenderer :value="data" />
+                            </div>
+                        </div>
+                        <div v-else class="row">
+                            <div class="col-12" >
+                                <ContentRenderer :value="data" />
+                            </div>
+                        </div>
+                    </div>
+                </section>   
+                <!-- <button @click="refresh">refresh</button> -->
+            </div>
         </div>
-    </div>
+    </section>
 </template>
 <style scoped>
 .bg {
@@ -21,15 +37,7 @@
     // definePageMeta({
     //     layout: ''
     // })
-    const componentKey = ref(0);
 
-    const forceRerender = () => {
-        componentKey.value += 1;
-    };
-  
-    let componentFlag = ref(true)
-
-//    let rr = ref(true)
     const route = useRoute()
     const id = route.query.id
     
@@ -38,14 +46,7 @@
 
     async function refreshDo() {
         console.log("recebido na iframe");
-        
         refresh()
-
-        // forceRerender()
-        // componentFlag.value = true
-        // componentFlag.value = true
-        // rr.value=2
-        // refreshComponent()
     }
 
     if (process.client) {

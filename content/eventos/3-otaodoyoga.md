@@ -1,7 +1,7 @@
 ---
 title: 'O Tao do yoga'
 description: ''
-imgs: ['/img/eventos/otaodayoga.jpeg']
+textImg: ['/img/eventos/otaodayoga.jpeg']
 ---
 Uma conexão entre a tradição Védica, o Taoismo e a Psicologia!
 Dias 19 a 21 de janeiro de 2024

@@ -61,17 +61,17 @@
 				<div class="col-lg-6 col-sm-12">
 					<div class="container">
 						<h2 class="text-white mt-0"></h2>
-						<iframe width="100%" height="315" src="https://www.youtube.com/embed/Ir6E7wEcJfE?si=PV-68z2bSndZXJna" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+						<iframe width="100%" height="315" :src="dataHome.video" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 						<p class="text-white-75 mb-4"></p>
 					</div>
 				</div>
 				<div class="col-lg-6 col-sm-12">
 					<div class="container">
-						<h2 class="text-white mt-0">Bem vindo!</h2>
-						<!-- <hr class="divider divider-light" /> -->
+						<ContentRenderer  class="text-white" :value="dataHome" />
+						<!-- <h2 class="text-white mt-0">Bem vindo!</h2>
 						<p class="text-white-75 mb-4">
-							Localizada aos pés da Serra da Mantiqueira, em Pindamonhangaba, a Fazenda Nova Gokula cultiva, há 45 anos, valores de vida simples e uma cultura espiritual baseada nos antigos ensinamentos dos Vedas. A maior comunidade Hare Krishna da América Latina pertence à Sociedade Internacional para a Consciência de Krishna (ISKCON), conhecida como a maior escola de filosofia védica criada no ocidente. Foi fundada em 1966 em Nova Iorque por Swami Prabhupada, que trouxe esta ciência conhecida antes apenas por yogis e santos do oriente. </p>  
-						<a class="btn btn-light btn-xl" href="generic2?id=about">Saiba mais</a>
+							Localizada aos pés da Serra da Mantiqueira, em Pindamonhangaba, a Fazenda Nova Gokula cultiva, há 45 anos, valores de vida simples e uma cultura espiritual baseada nos antigos ensinamentos dos Vedas. A maior comunidade Hare Krishna da América Latina pertence à Sociedade Internacional para a Consciência de Krishna (ISKCON), conhecida como a maior escola de filosofia védica criada no ocidente. Foi fundada em 1966 em Nova Iorque por Swami Prabhupada, que trouxe esta ciência conhecida antes apenas por yogis e santos do oriente. </p>  -->
+						<a class="btn btn-light btn-xl" href="getItem?id=about">Saiba mais</a> 
 					</div>
 				</div>
 			</div>
@@ -97,7 +97,7 @@
 					<div class="row shadow-sm_ " v-if="itens" >
 						<h5 class="_text-center mb-3 pt-4" v-if="id">Outros</h5>
 						<div class="col-md-3 mb-3"  v-for="item in itens">
-							<Cardgrid target="templos" :item="item" type="eventos"/>
+							<Cardgrid target="eventos" :item="item" type="eventos"/>
 						</div>
 					</div>
 					<!-- </div> -->
@@ -108,10 +108,9 @@
 	<!-- Call to action-->
 	<section class="page-section bg-dark text-white p-0" s_tyle="margin-top: 50px;">
 		<div class="container_ _px-4 _px-lg-5 text-center">
-		<a href="generic2?id=querodoar"><img src="/img/doacao.png"  class="img-fluid"></a>
+		<a href="getItem?id=querodoar"><img src="/img/doacao.png"  class="img-fluid"></a>
 		</div>
 	</section>
-	
 	<section class="blog section" id="opinioes" style="_margin-top: 20px; padding-top: 30px; padding-bottom: 50px; _background-color: rgb(238, 217, 159);">
 	<h5 class="mb-5 text-center p-3" style="_margin-top: -25px; margin-bottom: 0px; padding-bottom: 100px; _background-color:antiquewhite; font-size: 25px; color:#181201;">Opiniões de nossos visitantes</h5>
 		<div class="container">
@@ -241,6 +240,14 @@
   
     // console.log('meta:', meta.value);
     
+	// const { data: dataHome } = await useAsyncData('home', () => {
+    //         return queryContent('home.md').find()
+    //     }
+    // )
+
+	// console.log(dataHome);
+	
+
     const { data: data } = await useAsyncData('page-data', () => {
             return queryContent('/eventos').find()
         }
@@ -259,10 +266,29 @@
     const itens = data.value
     hasLoaded = true
                  
-    // const item = data.value.filter( x => 
-    // x._path == id
-    // )[0];
+	const { data: dataHome, refresh } = await useAsyncData('home', () => queryContent('/home').findOne())
+	 console.log(66, dataHome.value);
 
-    // console.log('id-->', item);
+    async function refreshDo() {
+        console.log("recebido na iframe");
+        
+        refresh()
+
+        // forceRerender()
+        // componentFlag.value = true
+        // componentFlag.value = true
+        // rr.value=2
+        // refreshComponent()
+    }
+
+    if (process.client) {
+
+        if (window.parent){
+            // alert('client run script!')
+            window.parent.postMessage({"pageid": "home"}, '/');
+        }
+        window.addEventListener("message", refreshDo, false);
+
+    }
                 
 </script>

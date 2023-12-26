@@ -1,8 +1,7 @@
 ---
 title: 'ISKCON'
 description: ''
-imgs: ['']
-textImgs: ['/img/iskcon_logo.jpg']
+textImg: ['/img/iskcon_logo.jpg']
 ---
 Popularmente conhecida como Movimento Hare Krishna, a Sociedade Internacional para a Consciência de Krishna (ISKCON) é uma confederação mundial com mais de 400 templos, 100 restaurantes vegetarianos e uma grande variedade de projetos comunitários.
 

@@ -1,7 +1,5 @@
 ---
 title: 'Doação para Nossos Projetos'
-description: ''
-imgs: ['']
 ---
 É com grande alegria e gratidão que recebemos seu interesse em apoiar os projetos significativos da nossa comunidade. Na tradição da Bhakti-yoga, a caridade é considerada uma virtude fundamental, e é através da contribuição amorosa de pessoas que se importam, como você, que podemos expandir nossos esforços para disseminar a paz, compaixão e sabedoria espiritual.
 

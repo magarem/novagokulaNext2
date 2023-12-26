@@ -1,8 +1,7 @@
 ---
 title: 'Quem é A.C Bhaktivedanta Swami Prabhupada?'
 description: ''
-imgs: ['']
-textImgs: ['/img/prabhupada.jpg']
+textImg: ['/img/prabhupada.jpg']
 ---
 "Um Santo no século XX"
 

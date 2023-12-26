@@ -1,7 +1,7 @@
 ---
 title: 'Festival de domingo na fazenda nova gokula'
 description: ''
-imgs: ['/img/eventos/festivaldedomingo.jpeg']
+textImg: ['/img/eventos/festivaldedomingo.jpeg']
 ---
 Passe o dia com os devotos de Krishna!
 Todos as domingos das 6h30 às 18h
