@@ -61,7 +61,7 @@
                 <div class="card text-center" style="width: 15rem; _height: 500px;">
                     <div v-if="item[1]">
                         <a :href="'?dir='+ dir + '/' + item[0]">
-                          <img src="img/folder.png" style="width: 100px; margin-right: 10px;">
+                          <img src="/img/folder.png" style="width: 100px; margin-right: 10px;">
                           {{ item[0] }}
                         </a>    
                     </div>
