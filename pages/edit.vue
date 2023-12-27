@@ -20,35 +20,6 @@
           <div class="row" style="background-color: blueviolet;">
             <div class="col-4" style="padding-top: 17px; padding-left: 25px; color: white; font-size: 29px;">
               webGuru
-              <div class="mb-1 row " style="width: 200px;">
-                <div class="col-3">
-                  <button @click="editPanelClose" class="btn btn-primary btn-sm" style="margin-right: 10px;">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
-                      <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z"/>
-                    </svg>
-                  </button>
-                </div>
-                <div class="col-3">
-                   <button @click="reloadIframe" class="btn btn-primary btn-sm" style="margin-right: 10px;">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
-                      <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z"/>
-                      <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466"/>
-                    </svg>
-                  </button>
-                </div>
-                <div class="col-3">
-                  <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-card-image" viewBox="0 0 16 16">
-                    <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/>
-                    <path d="M1.5 2A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2zm13 1a.5.5 0 0 1 .5.5v6l-3.775-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12v.54A.505.505 0 0 1 1 12.5v-9a.5.5 0 0 1 .5-.5z"/>
-                  </svg>
-                </button>
-                </div>
-                
-               
-                
-                
-              </div>
             </div>
             <div class="col-8" style="padding-bottom: 15px;">
               <div class="row">
@@ -60,6 +31,34 @@
               </div>
             </div>
             </div>
+          </div>
+        
+            <div class="mb-1 row gap-1" style="width: 400px;">
+                <div class="col-12">
+                  <button @click="editPanelClose" class="btn btn-primary btn-sm" style="margin-right: 10px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
+                      <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z"/>
+                    </svg>
+                  </button>
+               
+                   <button @click="reloadIframe" class="btn btn-primary btn-sm" style="margin-right: 10px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z"/>
+                      <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466"/>
+                    </svg>
+                  </button>
+                
+                  <button type="button" class="btn btn-primary btn-sm" style="margin-right: 10px;" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-card-image" viewBox="0 0 16 16">
+                      <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/>
+                      <path d="M1.5 2A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2zm13 1a.5.5 0 0 1 .5.5v6l-3.775-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12v.54A.505.505 0 0 1 1 12.5v-9a.5.5 0 0 1 .5-.5z"/>
+                    </svg>
+                  </button>
+             
+                  <button type="button" @click="copile" class="btn btn-primary btn-sm" >
+                   C
+                  </button>
+                </div>
           </div>
           <textarea v-if="txt" class="txt" spellcheck="false" v-model="txt" style="width: 100%; height: 83%;"></textarea>
         </div>
@@ -97,34 +96,42 @@ let filename = ref(id)
 let txt = ref()
 let aleradySaved = ref(false)
 let showModal = ref(true)
+
+
 async function read(filename) {
   try {
-     if (filename) {
-      const { data: ret } = await useFetch('/api/read?filename=' + filename)
-      txt.value = ret.value
-     }
+    if (filename) {
+    const { data: ret } = await useFetch('/api/read?filename=' + filename)
+    txt.value = ret.value
+    }
   } catch (error) {
-      console.log("Load file error");
+    console.log("Load file error");
+  }
+}
+
+async function copile() {
+  try {
+    if(confirm("Confirma copilação do site?")){
+      const { data: ret } = await useFetch('/api/copile')
+      console.log(ret);
+    }
+  } catch (error) {
+      console.log("Copile error");
   }
 }
 
 function aa(){
-   
-    if (filename.value=="home.md"){
-      page_id.value = "/"
-    }else{
-
-       if (filename.value.includes('meta.md')){
+  if (filename.value=="home.md"){
+    page_id.value = "/"
+  }else{
+    if (filename.value.includes('meta.md')){
       page_id.value = "getSession?id=" + filename.value.replace('/meta.md','')
     }
-    
     if (!filename.value.includes('meta.md')){
       page_id.value = "getItem?id=" + filename.value.replace('.md','')
     }
-    }
-
-   
   }
+}
 
 function editPanelClose(){
   aa()

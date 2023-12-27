@@ -44,6 +44,7 @@
     "multer": "^1.4.5-lts.1",
     "node-dir": "^0.1.17",
     "sharp": "^0.33.1",
+    "shelljs": "^0.8.5",
     "vue-core-image-upload": "^2.4.14",
     "vue-final-modal": "^4.5.3",
     "vue-image-upload-resize": "^2.3.0",

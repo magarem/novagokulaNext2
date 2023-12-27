@@ -1,6 +1,5 @@
 #!/bin/bash 
-echo "$*" 
 git status
 git add .
-git commit -m "$*"
-git push origin main
+git commit -m $(date +%s)
+git push -f main main
