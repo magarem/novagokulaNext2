@@ -44,7 +44,9 @@
     const { data: data, refresh } = await useAsyncData('home', () => queryContent( id  ).findOne())
     console.log(data);
 
-    async function refreshDo() {
+    async function refreshDo(val) {
+        console.log(val);
+        
         console.log("recebido na iframe");
         refresh()
     }

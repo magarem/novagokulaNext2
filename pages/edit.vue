@@ -1,38 +1,54 @@
 <template>
+  <nav v-if="!editPanel" class="floating-menu">
+    <div class="pt-2">
+      <a @click="editPanelOpen" style="padding-left:8px;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
+          <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"/>
+        </svg>
+      </a>
+    </div>
+  </nav>
   <div class="bg-dark container-fluid pb-4" style="height: 100%;">
       <div class="row">
-        <div class="col-12 col-lg-8 pt-2">
-          <iframe id="iframe" name="iframe" src="/" width="100%" height="650"></iframe>	
+        <div v-if="editPanel"  class="col-12 col-lg-8 pt-2">
+          <iframe id="iframe" name="iframe" :src="page_id" width="100%" height="650"></iframe>	
         </div>
-        <div class="col-12 col-lg-4" style="background-color: blueviolet;">
+        <div v-else :class="'col-12 pt-2 col-lg-12'">
+          <iframe id="iframe" name="iframe" :src="page_id" :style="editPanel?'':'overflow:hidden;overflow-x:hidden;overflow-y:hidden;height:100%;width:100%;position:absolute;top:0px;left:0px;right:0px;bottom:0px'" height="100%" width="100%"></iframe>	
+        </div>
+        <div v-if="editPanel" class="col-12 col-lg-4" style="background-color: blueviolet;">
           <div class="row mb-1" style="background-color: blueviolet;">
             <div class="col-4" style="padding-top: 20px; padding-left: 25px; color: white; font-size: 25px;">
               MWnotes
+              <div class="mb-1">
+                <button @click="editPanelClose" class="btn btn-primary btn-sm" style="margin-right: 10px;">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
+                    <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z"/>
+                  </svg>
+                </button>
+                <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-card-image" viewBox="0 0 16 16">
+                    <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/>
+                    <path d="M1.5 2A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2zm13 1a.5.5 0 0 1 .5.5v6l-3.775-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12v.54A.505.505 0 0 1 1 12.5v-9a.5.5 0 0 1 .5-.5z"/>
+                  </svg>
+                </button>
+              </div>
             </div>
             <div class="col-8" style="padding-bottom: 15px;">
               <div class="row">
-              <div class="col-9">
+              <div class="col-11">
                 <div class="input-group input-group-sm mb-0 mt-4">
                   <input type="text" class="form-control" v-model="filename" placeholder=""  aria-describedby="button-addon2">
                   <button class="btn btn-dark" @click="readFile" type="button" id="button-addon2">Editar</button>
                 </div>
               </div>
-              <div class="col-3 pt-4">
-                <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-card-image" viewBox="0 0 16 16">
-                      <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/>
-                      <path d="M1.5 2A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2zm13 1a.5.5 0 0 1 .5.5v6l-3.775-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12v.54A.505.505 0 0 1 1 12.5v-9a.5.5 0 0 1 .5-.5z"/>
-                    </svg>
-                </button>
-              </div>
+             
             </div>
             </div>
           </div>
           <textarea v-if="txt" class="txt" spellcheck="false" v-model="txt" style="width: 100%; height: 85%;"></textarea>
         </div>
-      
       </div>
-      
   </div>
   <!-- Modal -->
 <div class="modal fade modal-xl" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -43,7 +59,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <iframe id="iframe" name="iframe" src="/list" width="100%" height="650"></iframe>	
+        <iframe id="iframe" name="iframe" src="/list?dir=" width="100%" height="650"></iframe>	
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
@@ -59,6 +75,8 @@ definePageMeta({
 
 const route = useRoute()
 const id = route.query.id||''
+let page_id = ref("/")
+let editPanel = ref(true)
 let filename = ref(id)
 let txt = ref()
 let aleradySaved = ref(false)
@@ -72,6 +90,34 @@ async function read(filename) {
   } catch (error) {
       console.log("Load file error");
   }
+}
+
+function aa(){
+   
+    if (filename.value=="home.md"){
+      page_id.value = "/"
+    }else{
+
+       if (filename.value.includes('meta.md')){
+      page_id.value = "getSession?id=" + filename.value.replace('/meta.md','')
+    }
+    
+    if (!filename.value.includes('meta.md')){
+      page_id.value = "getItem?id=" + filename.value.replace('.md','')
+    }
+    }
+
+   
+  }
+
+function editPanelClose(){
+  aa()
+  editPanel.value=false
+}
+
+function editPanelOpen(){
+  aa()
+  editPanel.value=true
 }
 
 async function save(data) {
@@ -90,7 +136,7 @@ async function save(data) {
           console.log(response.body);
           console.log("Retorna info");
           
-          document.getElementById('iframe').contentWindow.postMessage({"refresh": true}, '/');
+          document.getElementById('iframe').contentWindow.postMessage({"refresh": true, "filename": filename.value}, '/');
           aleradySaved.value = true
         } else {
         console.log("save file error");
@@ -137,7 +183,22 @@ if (process.client){
 </script>
 
 <style scoped>
-  .txt {
+.floating-menu {
+  
+    font-family: sans-serif;
+    background: rgb(99, 130, 46);
+    color: white;
+    padding: 5px;;
+    width: 50px;
+    height: 50px;
+    z-index: 100;
+    position: fixed;
+    top: 50%;
+    right: 0px;
+    border-radius: 25px 0px 0px 25px;
+    /* transform: translate(-50%, -50%); */
+  }
+.txt {
     font-size: 18px;
     padding: 6px;
     color:aliceblue;

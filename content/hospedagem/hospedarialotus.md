@@ -1,7 +1,7 @@
 ---
 title: 'Hospedaria Lótus'
 description: ''
-imgs: ['img/hospedagem/hospedarialotus/hospedarialotus.jpg']
+textImg: ['img/hospedagem/hospedarialotus/hospedarialotus.jpg']
 ---
 - Todas as três suítes com uma cama de casal e uma de solteiro.
 - Roupas de cama e banho.

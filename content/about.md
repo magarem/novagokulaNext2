@@ -1,7 +1,7 @@
 ---
 title: 'FAZENDA NOVA GOKULA'
 description: ''
-imgs: ['/upload/1703546170592.734.jpg']
+imgs: ['/upload//1703642812976.6528.jpg']
 ---
 ISKCON - Sociedade Internacional para Consciência de Krishna.
 

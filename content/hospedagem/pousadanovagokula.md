@@ -1,7 +1,7 @@
 ---
 title: 'Pousada Nova Gokula'
 description: ''
-imgs: ['img/hospedagem/pousadanovagokula/pousada_novagokula.jpg']
+textImg: ['img/hospedagem/pousadanovagokula/pousada_novagokula.jpg']
 ---
 - Ladeada por rio cristalino, muito verde e jardins.
 - Um ambiente confortável e acolhedor.

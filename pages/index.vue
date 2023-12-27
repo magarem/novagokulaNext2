@@ -1,60 +1,7 @@
 <template>
 	<header class="masthead_ mh mt-5" >
-		
 		<Slide2/>
-		<!-- <Slide/> -->
-
-
-	
-
-
-		<!-- <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel"  data-bs-interval="2000">
-			<div class="carousel-inner">
-			<div class="carousel-item active">
-				<img src="/img/homeslideshow/slide1.jpeg" class="d-block w-100" alt="...">
-			</div>
-			<div class="carousel-item">
-				<img src="/img/homeslideshow/slide12.jpg" class="d-block w-100" alt="...">
-			</div>
-			<div class="carousel-item">
-				<img src="/img/homeslideshow/slide17.jpg" class="d-block w-100" alt="...">
-			</div>
-			
-			<div class="carousel-item">
-				<img src="/img/homeslideshow/slide10.jpg" class="d-block w-100" alt="...">
-			</div>
-			<div class="carousel-item">
-				<img src="/img/homeslideshow/slide11.jpg" class="d-block w-100" alt="...">
-			</div>
-			<div class="carousel-item">
-				<img src="/img/homeslideshow/slide14.jpg" class="d-block w-100" alt="...">
-			</div>
-			<div class="carousel-item">
-				<img src="/img/homeslideshow/slide16.jpg" class="d-block w-100" alt="...">
-			</div>
-			<div class="carousel-item">
-				<img src="/img/homeslideshow/slide21.jpg" class="d-block w-100" alt="...">
-			</div> 
-			<div class="carousel-item">
-				<img src="/img/homeslideshow/slide22.jpg" class="d-block w-100" alt="...">
-			</div> 
-			<div class="carousel-item">
-				<img src="/img/homeslideshow/slide23.jpg" class="d-block w-100" alt="...">
-			</div>
-			
-			
-			</div>
-			<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-			<span class="visually-hidden">Previous</span>
-			</button>
-			<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-			<span class="carousel-control-next-icon" aria-hidden="true"></span>
-			<span class="visually-hidden">Next</span>
-			</button>
-		</div> -->
 	</header>
-
 	<section class="page-section _bg-primary" style="background-color: #919748;" id="about">
 		<div class="container">
 			<div class="row">

@@ -1,7 +1,7 @@
 ---
 title: 'Bistro Nova Gokula'
 description: ''
-imgs: ['/img/alimentacao/bistro.jpeg']
+textImg: ['/img/alimentacao/bistro.jpeg']
 ---
 Bem-vindo ao Bistro Nova Gokula: O Sabor Vegetariano que Nutre Corpo e Alma, Diante do Templo Principal
 

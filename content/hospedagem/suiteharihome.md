@@ -1,7 +1,7 @@
 ---
 title: 'Suite Hari Home'
 description: ''
-imgs: ['img/hospedagem/suiteharihome/suite_harihome.jpg']
+textImg: ['img/hospedagem/suiteharihome/suite_harihome.jpg']
 ---
 - Terraço panorâmico, belo jardim e bosque com acesso ao rio.
 - Ampla sala social com mobília oriental de fino requinte.

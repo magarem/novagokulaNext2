@@ -1,7 +1,7 @@
 ---
 title: 'Lanchonete Jagannatha'
 description: ''
-imgs: ['/img/alimentacao/lanchonetejagannatha.jpeg']
+textImg: ['/img/alimentacao/lanchonetejagannatha.jpeg']
 ---
 Bem-vindo à Lanchonete Jagannatha: O Sabor Divino aos Pés do Templo
 

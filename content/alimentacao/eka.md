@@ -1,7 +1,7 @@
 ---
 title: 'Quiosque Da Eka'
 description: ''
-imgs: ['/img/alimentacao/quiosquedaeka.jpeg']
+textImg: ['/img/alimentacao/quiosquedaeka.jpeg']
 ---
 Bem-vindo ao Quiosque da Eka: O Sabor Vegetariano na Comunidade Hare Krishna
 

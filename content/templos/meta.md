@@ -1,3 +1,3 @@
 ---
-title: 'Templos'
+title: Templos
 ---

@@ -17,14 +17,15 @@
 definePageMeta({
         layout: ''
     })
+let selectedFile = ref()
  function  fileSelected(evt) {
             evt.preventDefault()
             console.log(evt);
-            this.selectedFile = evt.target.files[0]
+            selectedFile.value = evt.target.files[0]
         }
 function  uploadImage() {
             var data = new FormData();
-            data.append('image', this.selectedFile, this.selectedFile.data)
+            data.append('image', selectedFile.value, selectedFile.data)
             var token = sessionStorage.getItem('token')
             const config = {
                 headers: {
@@ -32,7 +33,7 @@ function  uploadImage() {
                 }
             }
             window.API.post('https://110.10.56.10:8000/images/?token=' + token, data, config)
-                .then(response => this.$router.push('/listImage'))
+                .then(response => $router.push('/listImage'))
                 .catch((error) => {
                     console.log(JSON.stringify(error))
                 })

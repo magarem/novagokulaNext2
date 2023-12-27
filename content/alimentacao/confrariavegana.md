@@ -1,7 +1,7 @@
 ---
 title: 'Confraria vegana'
 description: ''
-imgs: ['/img/alimentacao/confrariavegana.jpeg']
+textImg: ['/img/alimentacao/confrariavegana.jpeg']
 ---
 Espaço Cultural e Restaurante Confraria Vegana
 

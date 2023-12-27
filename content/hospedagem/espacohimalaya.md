@@ -1,7 +1,7 @@
 ---
 title: 'Espaço Himalaya'
 description: ''
-imgs: ['img/hospedagem/espacohimalaya/himalaya.jpg']
+textImg: ['img/hospedagem/espacohimalaya/himalaya.jpg']
 ---
 - Estrutura ampla.
 - Localização privilegiada em meio a mata verdejante.
