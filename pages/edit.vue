@@ -8,30 +8,46 @@
       </a>
     </div>
   </nav>
-  <div class="bg-dark container-fluid pb-4" style="height: 100%;">
+  <div class="bg-dark container-fluid" style="padding-bottom: 27px; height: 100%;">
       <div class="row">
-        <div v-if="editPanel"  class="col-12 col-lg-8 pt-2">
-          <iframe id="iframe" name="iframe" :src="page_id" width="100%" height="650"></iframe>	
+        <div v-if="editPanel" style="height: 680px;" class="col-12 col-lg-8 pt-2">
+          <iframe :key="iframeUpdate" id="iframe" name="iframe" :src="page_id" style="height: 100%;" width="100%" height="650"></iframe>	
         </div>
         <div v-else :class="'col-12 pt-2 col-lg-12'">
-          <iframe id="iframe" name="iframe" :src="page_id" :style="editPanel?'':'overflow:hidden;overflow-x:hidden;overflow-y:hidden;height:100%;width:100%;position:absolute;top:0px;left:0px;right:0px;bottom:0px'" height="100%" width="100%"></iframe>	
+          <iframe :key="iframeUpdate" id="iframe" name="iframe" :src="page_id" style="overflow:hidden;overflow-x:hidden;overflow-y:hidden;height:100%;width:100%;position:absolute;top:0px;left:0px;right:0px;bottom:0px" height="100%" width="100%"></iframe>	
         </div>
-        <div v-if="editPanel" class="col-12 col-lg-4" style="background-color: blueviolet;">
-          <div class="row mb-1" style="background-color: blueviolet;">
-            <div class="col-4" style="padding-top: 20px; padding-left: 25px; color: white; font-size: 25px;">
-              MWnotes
-              <div class="mb-1">
-                <button @click="editPanelClose" class="btn btn-primary btn-sm" style="margin-right: 10px;">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
-                    <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z"/>
-                  </svg>
-                </button>
-                <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <div v-if="editPanel" class="col-12 col-lg-4" style="height: 680px; background-color: blueviolet;">
+          <div class="row" style="background-color: blueviolet;">
+            <div class="col-4" style="padding-top: 17px; padding-left: 25px; color: white; font-size: 29px;">
+              webGuru
+              <div class="mb-1 row " style="width: 200px;">
+                <div class="col-3">
+                  <button @click="editPanelClose" class="btn btn-primary btn-sm" style="margin-right: 10px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
+                      <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z"/>
+                    </svg>
+                  </button>
+                </div>
+                <div class="col-3">
+                   <button @click="reloadIframe" class="btn btn-primary btn-sm" style="margin-right: 10px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z"/>
+                      <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466"/>
+                    </svg>
+                  </button>
+                </div>
+                <div class="col-3">
+                  <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-card-image" viewBox="0 0 16 16">
                     <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/>
                     <path d="M1.5 2A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2zm13 1a.5.5 0 0 1 .5.5v6l-3.775-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12v.54A.505.505 0 0 1 1 12.5v-9a.5.5 0 0 1 .5-.5z"/>
                   </svg>
                 </button>
+                </div>
+                
+               
+                
+                
               </div>
             </div>
             <div class="col-8" style="padding-bottom: 15px;">
@@ -42,11 +58,10 @@
                   <button class="btn btn-dark" @click="readFile" type="button" id="button-addon2">Editar</button>
                 </div>
               </div>
-             
             </div>
             </div>
           </div>
-          <textarea v-if="txt" class="txt" spellcheck="false" v-model="txt" style="width: 100%; height: 85%;"></textarea>
+          <textarea v-if="txt" class="txt" spellcheck="false" v-model="txt" style="width: 100%; height: 83%;"></textarea>
         </div>
       </div>
   </div>
@@ -59,7 +74,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <iframe id="iframe" name="iframe" src="/list?dir=" width="100%" height="650"></iframe>	
+        <iframe  id="iframe" name="iframe" src="/list?dir=" width="100%" height="650"></iframe>	
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
@@ -76,6 +91,7 @@ definePageMeta({
 const route = useRoute()
 const id = route.query.id||''
 let page_id = ref("/")
+let iframeUpdate = ref(false)
 let editPanel = ref(true)
 let filename = ref(id)
 let txt = ref()
@@ -162,6 +178,14 @@ const readFile = () => {
   })
  
 }
+
+const reloadIframe = () => {
+  iframeUpdate.value = !iframeUpdate.value
+  // console.log(iframeUpdate.value);
+  
+
+}
+
 
 const iframeEvent = (event) => {
   //Verify App Domain

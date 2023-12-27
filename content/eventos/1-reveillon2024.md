@@ -4,7 +4,7 @@ description: ''
 textImg: ['/img/eventos/evento10.jpeg']
 ---
 RÉVEILLOM 2024 -
-Equilíbrio & Espiritualidade na Fazenda Nova Gokula 
+Equilíbrio & Espiritualidade na Fazenda Nova Gokula.
 
 - Ritual de fogo para queima do Karma;
 - Ceia lacto-vegetariana e vegana com 15 tipos de preparações diferentes;
