@@ -3,7 +3,7 @@ title: 'FAZENDA NOVA GOKULA'
 description: ''
 imgs: ['/upload/1703715649998.8743.jpg']
 ---
-ISKCON - Sociedade Internacional para Consciência de Krishna...:
+ISKCON - Sociedade Internacional para Consciência de Krishna.
 
 Nova Gokula faz parte do circuito turístico da Serra da Mantiqueira, no Vale do Paraíba, e ocupa uma área de 119,5 hectares, um privilegiado espaço de terra na APA (Área de Proteção Ambiental) da Mantiqueira, unidade de conservação do governo federal. É um bioma com nascentes de água e vegetação nativa.
 
