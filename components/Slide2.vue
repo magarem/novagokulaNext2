@@ -27,19 +27,20 @@
     } 
 </style>
 <script setup>
-
-
+import items from '/public/homeSlide.json'
+// import item from 'homeSlide.json'
+console.log('mydata:', items);
 // const stateStore = useState()
 let b = ref(0)
 
-const { data: items } = await useAsyncData(
-        'mountains',
-            () => $fetch('/api/list?dir=public/upload/slideshow', {
-                method: 'get'
-            }
-        ))
+    // const { data: items } = await useAsyncData(
+    //     'mountains',
+    //         () => $fetch('/api/list?dir=public/upload/slideshow', {
+    //             method: 'get'
+    //         }
+    //     ))
 
-        console.log('....', items.value.length);
+    // console.log('....', items.value.length);
 // stateStore.value
 
 
@@ -63,7 +64,7 @@ const { data: items } = await useAsyncData(
 //     const teste = await require("/img/mahamantra.png")
 // }
 // tt()
-let item = ref(items.value[0])
+let item = ref(items[0])
 let a = 0
 const INTERVAL = 5000;
 let timerId = null
@@ -72,9 +73,9 @@ let count = 0
 
 const aaa = () => {
     timerId = setInterval(() => {
-        item.value = items.value[timer]
+        item.value = items[timer]
         timer++;
-        if (timer==items.value.length) {timer=0}
+        if (timer==items.length) {timer=0}
     }, 3500);
 }
 

@@ -19,7 +19,7 @@
         <div v-if="editPanel" class="col-12 col-lg-4" style="height: 680px; background-color: blueviolet;">
           <div class="row" style="background-color: blueviolet;">
             <div class="col-4" style="padding-top: 17px; padding-left: 25px; color: white; font-size: 29px;">
-              webGuru
+              Sirius
             </div>
             <div class="col-8" style="padding-bottom: 15px;">
               <div class="row">
@@ -112,8 +112,9 @@ async function read(filename) {
 async function copile() {
   try {
     if(confirm("Confirma copilação do site?")){
-      const { data: ret } = await useFetch('/api/copile')
-      console.log(ret);
+      // const { data: ret1 } = await useFetch('/api/writeSlideFile')
+      const { data: ret2 } = await useFetch('/api/copile')
+      console.log(ret1, ret2);
       alert("Site copilado com sucesso!")
     }
   } catch (error) {
