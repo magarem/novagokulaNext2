@@ -2,4 +2,4 @@
 git status
 git add .
 git commit -m $(date +%s)
-git push -f main main
+git push -f origin main
