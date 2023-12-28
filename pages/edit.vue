@@ -114,6 +114,7 @@ async function copile() {
     if(confirm("Confirma copilação do site?")){
       const { data: ret } = await useFetch('/api/copile')
       console.log(ret);
+      alert("Site copilado com sucesso!")
     }
   } catch (error) {
       console.log("Copile error");
