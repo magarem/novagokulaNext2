@@ -55,8 +55,8 @@
                     </svg>
                   </button>
              
-                  <button type="button" @click="copile" class="btn btn-primary btn-sm" >
-                   C
+                  <button type="button" @click="copile" class="btn btn-success btn-sm" >
+                   Copilar site
                   </button>
                 </div>
           </div>
