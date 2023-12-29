@@ -1,9 +1,9 @@
 ---
 title: 'O Maha-Mantra'
 description: ''
-textImg: ['/img/mahamantra.png']
+textImg: ['/upload/1703812723262.9277.jpg']
 ---
-## As Glórias da Recitação Constante do Maha-Mantra Hare Krishna: Um Caminho para a Elevação Espiritual
+## As Glórias da Recitação Constante do Maha-Mantra Hare Krishna: Um Caminho para a Elevação Espiritual.
 
 Explore conosco as magníficas glórias que se desdobram quando mergulhamos na prática contínua da recitação do Maha-Mantra Hare Krishna. Este mantra, repleto de significado espiritual profundo, não é apenas uma sequência de palavras, mas uma porta de entrada para uma experiência transformadora e um caminho para a elevação espiritual. Vamos contemplar as grandiosas realizações daqueles que dedicam seus corações a esse sublime mantrar.
 
