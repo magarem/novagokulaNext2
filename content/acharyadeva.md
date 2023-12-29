@@ -7,7 +7,7 @@ Hridayananda Das Goswami – Srila Acharyadeva, cujo nome de nascimento é Howar
 
 Formação acadêmica:
 
-HD Goswami obteve um Ph.D. em Estudos Religiosos pela Temple University e se tornou professor de Harvard com sólida formação em sânscrito. 
+HD Goswami obteve um Ph.D. em Estudos Religiosos pela Temple University e se tornou professor de Harvard com sólida formação em sânscrito.
 Estabelecimento de Templos e Comunidades:
 HD Goswami esteve envolvido na fundação de templos e comunidades Hare Krishna em várias partes do Brasil. Ele contribuiu para a criação de centros culturais e templos dedicados à prática da Bhakti-yoga em várias capitais.
 
