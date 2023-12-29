@@ -1,42 +1,27 @@
 <template>
-    <nav id="mainNav" class="navbar navbar-shrink  navbar-expand-md _navbar-dark fixed-top" >
+    <nav id="mainNav" v-if="navbar" class="navbar navbar-shrink  navbar-expand-md _navbar-dark fixed-top" >
         <div class="container"  _style="background-color: #d36858;">
-			<a class="navbar-brand" href="/"><img  id="logo" src="/img/logo2.png" ></a>
+			
+			<a class="navbar-brand" :href="navbar.logo.link"><img  id="logo" :src="navbar.logo.img" ></a>
+			
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span> Menu
 			</button>
 			<div class="collapse navbar-collapse" id="navbarCollapse">
-				<ul class="navbar-nav me-auto mb-2 mb-md-0" style="padding-left: 10px; ">
-					<li class="nav-item"><a class="nav-Link" href="/" >HOME</a></li>
-					<!-- <li class="nav-item"><a class="nav-Link" href="generic2?id=about" >SOBRE</a></li> -->
-					<li class="nav-item dropdown"><a class="nav-Link dropdown-toggle" _href="atrativos"  href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" >SOBRE</a>
-						<ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-							<li><a class="dropdown-item" href="/getItem?id=about">Quem somos</a></li>
-							<li><a class="dropdown-item" href="/getItem?id=historia">História</a></li>
-							<!-- <li><a class="dropdown-item" href="generic?type=hospedagem">Visitação</a></li> -->
-							<li><a class="dropdown-item" href="/getItem?id=acharyadeva" >O fundador</a></li>
-							<li><a class="dropdown-item" href="/getItem?id=prabhupada" >Srila Prabhupada</a></li>
-							<li><a class="dropdown-item" href="/getItem?id=instituicao" >ISKCON</a></li>
-							<li><a class="dropdown-item" href="/getItem?id=mahamantra" >O Mantra</a></li>
-							<li><a class="dropdown-item" href="/getItem?id=filosofia" >Filosofia</a></li>
-						</ul>
-					</li>
-					<li class="nav-item dropdown"><a class="nav-Link dropdown-toggle" _href="atrativos"  href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" >ATRATIVOS</a>
-						<ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-							<li><a class="dropdown-item" href="getSession?id=templos">Templos</a></li>
-							<li><a class="dropdown-item" href="getSession?id=hospedagem">Hospedagens</a></li>
-							<li><a class="dropdown-item" href="getSession?id=alimentacao">Alimentação</a></li>
-							<!-- <li><a class="dropdown-item" href="#">Espiritualidade</a></li> -->
-							<!-- <li><a class="dropdown-item" href="#">Bem estar </a></li> -->
-							<!-- <li><a class="dropdown-item" href="#">Hari shopping</a></li> -->
-						</ul>
-					</li>
-					<li class="nav-item"><a class="nav-Link" href="getSession?id=eventos" >EVENTOS</a></li>
-					<!-- <li class="nav-item"><a class="nav-Link" href="generic?type=galeria">GALERIA</a></li> -->
-					<li class="nav-item"><a class="nav-Link" href="getItem?id=comochegar">COMO CHEGAR</a></li>
-					<!-- <li><a class="dropdown-item" href="generic?type=hospedagem">Visitação</a></li> -->
-					<li class="nav-item"><a class="nav-Link" href="getItem?id=contact" >CONTATO</a></li>
-				
+				<ul class="navbar-nav me-auto mb-2 mb-md-0" style="padding-left: 10px; text-transform: uppercase;">
+					<template v-for="item in navbar.menu">
+						<li class="nav-item" v-if="!item.sub">
+							<a class="nav-Link" :href="item.link">{{ item.name }}</a>
+						</li>
+						<li v-else class="nav-item dropdown">
+							<a class="nav-Link dropdown-toggle" _href="atrativos"  href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ item.name }}</a>
+							<ul class="dropdown-menu dropdown-menu-dark">
+								<li v-for="subItem in item.sub" style="font-size: 13px;">
+									<a class="dropdown-item" :href="subItem.link">{{ subItem.name }}</a>
+								</li>
+							</ul>
+						</li>
+					</template>
 				</ul>
 			</div>
         </div>
@@ -106,3 +91,8 @@
 	
 	
 </style>
+
+<script setup>
+	import data from "~/public/config.json"
+	const navbar = data.topbar
+</script>

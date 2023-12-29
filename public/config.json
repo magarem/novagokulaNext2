@@ -1,0 +1,78 @@
+{
+    "topbar": {
+        "logo": {
+            "img": "/img/logo2.png",
+            "link": "/"
+        },
+        "menu": [
+            {"name": "Home", "link": "/", "sub": null},
+            {"name": "Sobre", "link": "", "sub": 
+                [
+                    {"name": "Quem somos","link": "getItem?id=about", "sub": null},
+                    {"name": "História","link": "getItem?id=historia", "sub": null},
+                    {"name": "O fundador","link": "getItem?id=acharyadeva", "sub": null},
+                    {"name": "Srila Prabhupada","link": "getItem?id=prabhupada", "sub": null},
+                    {"name": "ISKCON","link": "getItem?id=instituicao", "sub": null},
+                    {"name": "O Mantra","link": "getItem?id=mahamantra", "sub": null},
+                    {"name": "Filosofia","link": "getItem?id=filosofia", "sub": null}
+                ]
+            },
+            {"name": "Atrativos", "link": "", "sub": 
+                [
+                    {"name": "Templos","link": "getSession?id=templos", "sub": null},
+                    {"name": "Hospedagem","link": "getSession?id=hospedagem", "sub": null},
+                    {"name": "Alimentação","link": "getSession?id=hospedagem", "sub": null}
+                ]
+            }, 
+            {"name": "Eventos", "link": "getSession?id=eventos","sub":null},
+            {"name": "Como chegar", "link": "getItem?id=comochegar","sub": null},       
+            {"name": "Contato", "link": "getItem?id=contact","sub": null}
+        ]
+    },
+    "footer": {
+        "box1": {
+            "title": "Srila Prabhupada",
+            "img": "/img/vedabase-logo.svg",
+            "body": "Sua Divina Graça A.C. Bhaktivedanta Swami Prabhupada Mestre Fundador da Sociedade Internacional para a Consciência de Krishna",
+            "link": {
+                "label": "Saiba mais",
+                "target": "/getItem?id=prabhupada"
+            }
+        },
+        "box2": {
+            "title": "Mídias sociais",
+            "body": "Conecte-se conosco nas redes sociais para as últimas novidades, eventos exclusivos e inspiração. Siga-nos e faça parte de nossa comunidade. Juntos, construímos conexões fortes e significativas.",
+            "links":{
+                "facebook": "https://www.facebook.com/FazendaNovaGokula",
+                "instagram": "https://www.instagram.com/novagokula/",
+                "youtube": "https://www.youtube.com/c/FazendaNovaGokulaNG",
+                "tiktok": "https://www.tiktok.com/@novagokula"
+            }
+        },
+        "box3": {
+            "title": "Endereço",
+            "img": "",
+            "body": "Estrada Jesus Antonio de Miranda!<br/>Bairro:<br/>Riberão Grande Pindamonhangaba<br/>São Paulo<br/>Brasil",
+            "link": {
+                "label": "Como chegar",
+                "target": "getItem?id=comochegar"
+            }
+        },
+        "box4": {
+            "title": "Contato",
+            "img": "",
+            "body": "Entre em contato conosco para esclarecer dúvidas, enviar sugestões ou compartilhar seus comentários.",
+            "link": {
+                "label": "Entre em contato",
+                "target": "getItem?id=contact"
+            }
+        },
+        "copyright": {
+            "body": "© Copyright 2023 | Todos os direitos reservados novagokula.com.br",
+            "link":{
+                "label": "site",
+                "target": "novagokula.com.br"
+            }
+        }
+    }
+}

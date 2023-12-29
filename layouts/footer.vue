@@ -6,65 +6,59 @@
                 <div class="row gy-5">
                     <div class="col-lg-3 col-md-6 col-12"><a href="generic2?id=ofundador">
                         <div class="single-footer">
-                            <h2>Srila Prabhupada</h2>
+                            <h2>{{footer.box1.title}}</h2>
                             <div class="text-center_" style="width: 100%;">
-                            <img src="/img/vedabase-logo.svg" style="width: 180px; margin-bottom: 10px;">
+                            <img :src="footer.box1.img" style="width: 180px; margin-bottom: 10px;">
                             </div>
-                            <p>Sua Divina Graça A.C. Bhaktivedanta Swami Prabhupada Mestre Fundador da Sociedade Internacional para a Consciência de Krishna</p>
-                            <!-- Social -->
-                            <!-- <ul class="social">
-                                <li><a href="https://www.facebook.com/FazendaNovaGokula"><i class="icofont-facebook"></i></a></li>
-                                <li><a href="https://www.instagram.com/novagokula/"><i class="icofont-instagram"></i></a></li>
-                                <li><a href="https://www.tiktok.com/@novagokula"><i class="icofont-tiktok"></i></a></li>
-                                <li><a href="https://www.flickr.com/photos/novagokula"><i class="icofont-flickr"></i></a></li>
-                                <li><a href="https://www.youtube.com/@FazendaNovaGokulaNG"><i class="icofont-flickr"></i></a></li>
-                            </ul> -->
-                            <!-- End Social -->
+                            <p v-html="footer.box1.body"></p>
+                            <a v-if="footer.box1.link.label" :href="footer.box1.link.target">{{footer.box1.link.label}}</a>
+
                         </div></a>
                     </div>
                     <div class="col-lg-3 col-md-6 col-12">
                         <div class="single-footer">
-                            <h2>Mídias sociais</h2>
-                            <!-- <p> Estrada Jesus Antonio de Miranda Bairro: Riberão Grande Pindamonhangaba - São Paulo - Brasil</p> -->
+                            <h2>{{footer.box2.title}}</h2>
                             <!-- Facebook -->
-                        <!-- Facebook -->
-                            <a class="btn btn-primary border-0" style="margin-right:10px; background-color: #3b5998;" href="https://www.facebook.com/FazendaNovaGokula" role="button"
+                            <!-- Facebook -->
+                            <div class="mb-3">
+                                <a class="btn btn-primary border-0" style="margin-right:10px; background-color: #3b5998;" :href="footer.box2.links.facebook" role="button"
                             ><i class="fab fa-facebook-f"></i></a>
                             <!-- Instagram -->
-                            <a class="btn btn-primary border-0" style="margin-right:10px; background-color: #ac2bac;" href="https://www.instagram.com/novagokula/" role="button"
+                            <a class="btn btn-primary border-0" style="margin-right:10px; background-color: #ac2bac;" :href="footer.box2.links.instagram" role="button"
                             ><i class="fab fa-instagram"></i
                             ></a>
                             <!-- Youtube -->
-                            <a class="btn btn-primary border-0" style="margin-right:10px; background-color: #ed302f;" href="https://www.youtube.com/c/FazendaNovaGokulaNG" role="button"
+                            <a class="btn btn-primary border-0" style="margin-right:10px; background-color: #ed302f;" :href="footer.box2.links.youtube" role="button"
                             ><i class="fab fa-youtube"></i
                             ></a>
                             <!-- Tiktok -->
-                            <a class="btn btn-primary border-0" style="background-color: #25d366;" href="https://www.tiktok.com/@novagokula" role="button"
+                            <a class="btn btn-primary border-0" style="background-color: #25d366;" :href="footer.box2.links.tiktok" role="button"
                             ><i class="fab fa-tiktok"></i
-                            ></a>
+                            ></a> 
+                            </div>
+                           
+                            <p>{{footer.box2.body}}</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 col-12">
                         <div class="single-footer">
-                            <h2>Endereço</h2>
-                            <p> Estrada Jesus Antonio de Miranda Bairro: <br/>Riberão Grande Pindamonhangaba <br/> São Paulo <br/> Brasil</p>
-                            <!-- <ul class="time-sidual">
-                                <li class="day">Monday - Fridayp <span>8.00-20.00</span></li>
-                                <li class="day">Saturday <span>9.00-18.30</span></li>
-                                <li class="day">Monday - Thusday <span>9.00-15.00</span></li>
-                            </ul> -->
+                            <h2>{{footer.box3.title}}</h2>
+                            <p v-html="footer.box3.body"></p>
+                            <a v-if="footer.box3.link.label" :href="footer.box3.link.target">{{footer.box3.link.label}}</a>
+
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 col-12">
                         <div class="single-footer">
-                            <h2>Newsletter</h2>
-                            <p>Inscreva-se em nossa newsletter e seja o primeiro a saber sobre todas as novidades da nossa comunidade Hare Krishna em Pindamonhangaba. Receba atualizações exclusivas diretamente na sua caixa de entrada."</p>
-                            <form action="mail/mail.php" method="get" target="_blank" class="newsletter-inner">
+                            <h2>{{footer.box4.title}}</h2>
+                            <p v-html="footer.box4.body"></p>
+                            <a v-if="footer.box4.link.label" :href="footer.box4.link.target">{{footer.box4.link.label}}</a>
+                            <!-- <form action="mail/mail.php" method="get" target="_blank" class="newsletter-inner">
                                 <div class="input-group mb-3">
                                     <input type="text" class="form-control" placeholder="Email" aria-label="Recipient's username" aria-describedby="button-addon2">
                                     <button class="btn btn-outline-primary" type="button" id="button-addon2">Enviar</button>
                                 </div>
-                            </form>
+                            </form> -->
                         </div>
                     </div>
                 </div>
@@ -78,7 +72,8 @@
                     <div class="col-lg-12 col-md-12 col-12">
                         <div class="copyright-content text-center">
                             <!-- <a :href="'http://159.89.143.16:3000/testesave?id=' + id" target="_blank">Editar página</a> -->
-                            <p>© Copyright 2023  |  Todos os direitos reservados novagokula.com.br </p>
+                            <p>{{ footer.copyright.body }}</p>
+                            <a v-if="footer.copyright.link.label" :href="footer.copyright.link.target">{{footer.copyright.link.label}}</a>
                         </div>
                     </div>
                 </div>
@@ -91,6 +86,8 @@
     </footer>
 </template>
 <script setup>
+    import data from "~/public/config.json"
+	const footer = data.footer
     const route = useRoute()
     const id = route.params.id
     // console.log(urlParams.get('yourParam')); // "MyParam"

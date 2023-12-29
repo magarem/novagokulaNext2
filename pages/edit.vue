@@ -56,11 +56,15 @@
                   </button>
              
                   <button type="button" @click="copile" class="btn btn-success btn-sm" style="margin-right: 10px;"  >
-                   Copilar site
+                   Copilar
+                  </button>
+
+                  <button type="button" @click="filename='../public/config.json'; readFile()" style="padding: 0px 0px; margin-right: 10px;" class="btn btn-warning btn-sm" >
+                    Config
                   </button>
 
                   <button type="button" @click="systemUpdate" style="padding: 0px 0px;" class="btn btn-warning btn-sm" >
-                    Atualizar sistema
+                    Sysupdate
                   </button>
                 </div>
           </div>
