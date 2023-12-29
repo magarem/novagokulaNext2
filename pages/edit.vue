@@ -1,4 +1,4 @@
-<template>
+<template id="bodyedit">
   <nav v-if="!editPanel" class="floating-menu">
     <div class="pt-2">
       <a @click="editPanelOpen" style="padding-left:8px;">
@@ -55,8 +55,12 @@
                     </svg>
                   </button>
              
-                  <button type="button" @click="copile" class="btn btn-success btn-sm" >
+                  <button type="button" @click="copile" class="btn btn-success btn-sm" style="margin-right: 10px;"  >
                    Copilar site
+                  </button>
+
+                  <button type="button" @click="systemUpdate" style="padding: 0px 0px;" class="btn btn-warning btn-sm" >
+                    Atualizar sistema
                   </button>
                 </div>
           </div>
@@ -109,6 +113,19 @@ async function read(filename) {
   }
 }
 
+async function systemUpdate() {
+  try {
+    if(confirm("Atualizar sistema?")){
+      // const { data: ret1 } = await useFetch('/api/writeSlideFile')
+      const { data: ret2 } = await useFetch('/api/systemUpdate')
+      alert("Sistema atualizado com sucesso!")
+    }
+  } catch (error) {
+      console.log("Copile error");
+  }
+}
+
+
 async function copile() {
   try {
     if(confirm("Confirma copilação do site?")){
@@ -160,7 +177,6 @@ async function save(data) {
       if (response.ok) {
           console.log(response.body);
           console.log("Retorna info");
-          
           document.getElementById('iframe').contentWindow.postMessage({"refresh": true, "filename": filename.value}, '/');
           aleradySaved.value = true
         } else {
@@ -216,6 +232,8 @@ if (process.client){
 </script>
 
 <style scoped>
+
+
 .floating-menu {
   
     font-family: sans-serif;
