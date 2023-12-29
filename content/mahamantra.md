@@ -1,7 +1,7 @@
 ---
 title: 'O Maha-Mantra'
 description: ''
-textImg: ['/img/mahamantra.png']
+textImg: ['/upload/1703812723262.9277.jpg']
 ---
 ## As Glórias da Recitação Constante do Maha-Mantra Hare Krishna: Um Caminho para a Elevação Espiritual
 
