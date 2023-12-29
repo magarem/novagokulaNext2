@@ -60,11 +60,14 @@
                   </button>
 
                   <button type="button" @click="filename='../public/config.json'; readFile()" style="padding: 0px 0px; margin-right: 10px;" class="btn btn-warning btn-sm" >
-                    Config
+                    Cfg
                   </button>
 
-                  <button type="button" @click="systemUpdate" style="padding: 0px 0px;" class="btn btn-warning btn-sm" >
+                  <button type="button" @click="systemUpdate" style="padding: 0px 0px; margin-right: 10px;" class="btn btn-warning btn-sm" >
                     Sysupdate
+                  </button>
+                  <button type="button" @click="gitreset" style="padding: 0px 0px;" class="btn btn-warning btn-sm" >
+                    reset
                   </button>
                 </div>
           </div>
@@ -116,6 +119,19 @@ async function read(filename) {
     console.log("Load file error");
   }
 }
+
+async function gitreset() {
+  try {
+    if(confirm("Apagar últimas mudanças?")){
+      // const { data: ret1 } = await useFetch('/api/writeSlideFile')
+      const { data: ret2 } = await useFetch('/api/gitreset')
+      alert("Site recuperado com sucesso!")
+    }
+  } catch (error) {
+      console.log("Error");
+  }
+}
+
 
 async function systemUpdate() {
   try {

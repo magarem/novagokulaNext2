@@ -68,11 +68,7 @@
             }
         },
         "copyright": {
-            "body": "© Copyright 2023 | Todos os direitos reservados novagokula.com.br",
-            "link":{
-                "label": "site",
-                "target": "novagokula.com.br"
-            }
+            "body": "© Copyright 2023 | Todos os direitos reservados novagokula.com.br"
         }
     }
 }

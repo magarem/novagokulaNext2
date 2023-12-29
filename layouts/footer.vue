@@ -11,7 +11,7 @@
                             <img :src="footer.box1.img" style="width: 180px; margin-bottom: 10px;">
                             </div>
                             <p v-html="footer.box1.body"></p>
-                            <a v-if="footer.box1.link.label" :href="footer.box1.link.target">{{footer.box1.link.label}}</a>
+                            <a v-if="footer.box1.link?.label" :href="footer.box1.link?.target">{{footer.box1.link?.label}}</a>
 
                         </div></a>
                     </div>
@@ -44,7 +44,7 @@
                         <div class="single-footer">
                             <h2>{{footer.box3.title}}</h2>
                             <p v-html="footer.box3.body"></p>
-                            <a v-if="footer.box3.link.label" :href="footer.box3.link.target">{{footer.box3.link.label}}</a>
+                            <a v-if="footer.box3.link?.label" :href="footer.box3.link?.target">{{footer.box3.link?.label}}</a>
 
                         </div>
                     </div>
@@ -52,7 +52,7 @@
                         <div class="single-footer">
                             <h2>{{footer.box4.title}}</h2>
                             <p v-html="footer.box4.body"></p>
-                            <a v-if="footer.box4.link.label" :href="footer.box4.link.target">{{footer.box4.link.label}}</a>
+                            <a v-if="footer.box4.link?.label" :href="footer.box4.link?.target">{{footer.box4.link?.label}}</a>
                             <!-- <form action="mail/mail.php" method="get" target="_blank" class="newsletter-inner">
                                 <div class="input-group mb-3">
                                     <input type="text" class="form-control" placeholder="Email" aria-label="Recipient's username" aria-describedby="button-addon2">
@@ -73,7 +73,7 @@
                         <div class="copyright-content text-center">
                             <!-- <a :href="'http://159.89.143.16:3000/testesave?id=' + id" target="_blank">Editar página</a> -->
                             <p>{{ footer.copyright.body }}</p>
-                            <a v-if="footer.copyright.link.label" :href="footer.copyright.link.target">{{footer.copyright.link.label}}</a>
+                            <a v-if="footer.copyright.link?.label" :href="footer.copyright.link?.target">{{footer.copyright.link?.label}}</a>
                         </div>
                     </div>
                 </div>
