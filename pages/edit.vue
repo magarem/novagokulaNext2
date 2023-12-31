@@ -33,7 +33,7 @@
             </div>
           </div>
         
-            <div class="mb-1 row gap-1" style="width: 400px;">
+            <div class="mb-1 row gap-1" style="width: 100%;">
                 <div class="col-12">
                   <button @click="editPanelClose" class="btn btn-primary btn-sm" style="margin-right: 10px;">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
@@ -66,8 +66,11 @@
                   <button type="button" @click="systemUpdate" style="padding: 0px 0px; margin-right: 10px;" class="btn btn-warning btn-sm" >
                     Sysupdate
                   </button>
-                  <button type="button" @click="gitreset" style="padding: 0px 0px;" class="btn btn-warning btn-sm" >
+                  <button type="button" @click="gitreset" style="padding: 0px 0px; margin-right: 10px;" class="btn btn-warning btn-sm" >
                     reset
+                  </button>
+                  <button type="button" @click="logout" style="padding: 0px 0px;" class="btn btn-warning btn-sm" >
+                    sair
                   </button>
                 </div>
           </div>
@@ -95,9 +98,20 @@
 </template>
 <script setup lang="ts">
 definePageMeta({
-  layout: ''
+  layout: '',
+	// middleware: 'auth'
 })
+import { storeToRefs } from 'pinia';
+import { useAuthStore } from '~/store/auth';
+const router = useRouter();
 
+const { logUserOut } = useAuthStore();
+const { authenticated } = storeToRefs(useAuthStore()); // make authenticated state reactive
+
+const logout = () => {
+  logUserOut();
+  router.push('/login');
+};
 const route = useRoute()
 const id = route.query.id||''
 let page_id = ref("/")

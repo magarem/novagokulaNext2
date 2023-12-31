@@ -1,7 +1,7 @@
 {
   "name": "nuxt-app",
   "private": true,
-  "type": "module",
+ 
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
@@ -25,10 +25,12 @@
     "@mdit-vue/plugin-frontmatter": "^2.0.0",
     "@nuxt/image": "^1.1.0",
     "@nuxtjs/ngrok": "^2.0.0",
+    "@pinia/nuxt": "^0.5.1",
     "@tailwindcss/typography": "^0.5.10",
     "@types/marked": "^6.0.0",
     "@vueuse/components": "^10.6.1",
     "bootstrap": "^5.3.2",
+    "cookie-universal": "^2.2.2",
     "exec-sh": "^0.4.0",
     "formidable": "^3.5.1",
     "front-matter": "^4.0.2",
@@ -43,6 +45,7 @@
     "marked": "^11.1.0",
     "multer": "^1.4.5-lts.1",
     "node-dir": "^0.1.17",
+    "pinia": "^2.1.7",
     "sharp": "^0.33.1",
     "shelljs": "^0.8.5",
     "vue-core-image-upload": "^2.4.14",

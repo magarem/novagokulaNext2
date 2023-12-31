@@ -5,12 +5,21 @@
 // Vue.use( VueCoreImageUpload );
 
 export default defineNuxtConfig({
+  // ssr: false,
   devtools: { enabled: true },
   content: {
     watch: false,
   },
   css: ['~/assets/css/bootstrap.scss', 'vue-final-modal/style.css'],
-  modules: ["@vueuse/nuxt", "formidable", "@nuxt/image", "@nuxtjs/google-fonts", '@nuxt/content', '@vueuse/nuxt'],
+  modules: [[
+    '@pinia/nuxt',
+    {
+      autoImports: [
+        // automatically imports `defineStore`
+        'defineStore',
+      ],
+    },
+  ],"@vueuse/nuxt", "formidable", "@nuxt/image", "@nuxtjs/google-fonts", '@nuxt/content', '@vueuse/nuxt'],
   plugins: [
     { src: '~/plugins/bootstrap.js', mode: 'client'},
     { src: '~/plugins/vue-final-modal.ts', ssr: false }
