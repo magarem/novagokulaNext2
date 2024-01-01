@@ -27,11 +27,29 @@
         <div class="row mt-1" style="width: 100%;">
           <div class="col-12">
             <div class="btn-group" role="group" aria-label="Basic example">
-              <button @click="editPanelClose" class="btn btn-primary px-3 btn-sm" >
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark" viewBox="0 0 16 16">
-                  <path d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5z"/>
-                </svg>
-              </button>
+
+              <div class="btn-group btn-sm">
+                <button class=" btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
+                    <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0"/>
+                    <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8m8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7"/>
+                  </svg>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+                <li><button @click="editViewMode = 0" class="dropdown-item" >
+                  Misto
+                </button></li>
+                    <li><button @click="editViewMode = 1" class="dropdown-item" >
+                Editor
+                </button></li>
+                    <li><button @click="editViewMode = 2" class="dropdown-item" >
+                  Site
+                </button></li>
+                  </ul>
+                </div>
+              
+              
+              
               <button @click="reloadIframe" class="btn btn-primary px-3 btn-sm" >
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
                   <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z"/>
@@ -44,16 +62,16 @@
                   <path d="M1.5 2A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2zm13 1a.5.5 0 0 1 .5.5v6l-3.775-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12v.54A.505.505 0 0 1 1 12.5v-9a.5.5 0 0 1 .5-.5z"/>
                 </svg>
               </button>
-              <button type="button" @click="filename='public/config.json'; readFile()" class="btn btn-primary px-3 btn-sm" >
+              <button type="button" @click="configMode" class="btn btn-primary px-3 btn-sm" >
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear-fill" viewBox="0 0 16 16">
                   <path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z"/>
                 </svg>
               </button>
               <div class="btn-group btn-sm">
-                <button class=" btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
                   Sistema
                 </button>
-                <ul class="dropdown-menu dropdown-menu-primary" aria-labelledby="dropdownMenuButton2">
+                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
                 <li><button type="button" @click="copile" class="dropdown-item"   >
                   Publicar
                 </button></li>
@@ -75,7 +93,8 @@
     </div>
   </nav>
   <div class="bg-dark container-fluid " style="_padding-bottom: 27px; ">
-      <div class="row text-center" >
+     
+      <div v-if="editViewMode==0" class="row text-center" >
         <div class="col-12 col-lg-4" style="_margin-left: -15px; height: 610px; _background-color: blueviolet;">
           <div v-if="txt" class="h-100">
             <textarea v-if="txt" class="txt mt-2" spellcheck="false" v-model="txt" style="width: 450px; height: 90%;"></textarea>
@@ -85,13 +104,27 @@
           </div>
         </div>
         <div v-if="editPanel" class="col-12 col-lg-8 pt-2">
-          <iframe :key="iframeUpdate" id="iframe" name="iframe" :src="page_id"  width="100%" style="height: 600px;"></iframe>	
+          <iframe :key="iframeUpdate" id="iframe" name="iframe" :src="page_id"  width="100%" style="height: 87vh;"></iframe>	
         </div>
-        <div v-else :class="'col-12 pt-2 col-lg-12'">
-          <iframe :key="iframeUpdate" id="iframe" name="iframe" :src="page_id" style="overflow:hidden;overflow-x:hidden;overflow-y:hidden;height:100%;width:100%;position:absolute;top:70px;left:0px;right:0px;bottom:0px" height="100%" width="100%"></iframe>	
-        </div>
-       
       </div>
+
+      <div v-if="editViewMode==1" class="row text-center" >
+        <div class="col-12 col-lg-12" style="_margin-left: -15px; height: 610px; _background-color: blueviolet;">
+          <div v-if="txt" class="h-100">
+            <textarea v-if="txt" class="txt mt-2" spellcheck="false" v-model="txt" style="width: 100%; height: 90%;"></textarea>
+            <div class="btn-group w-100" role="group" aria-label="Basic outlined example">
+              <button style="margin-right: 10px;" @click="fileContentUndo" class="mt-1 btn btn-warning rounded-pill">Reverter</button><button class="mt-1 btn btn-success rounded-pill">Salvar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div v-if="editViewMode==2" class="row text-center" >
+        <div :class="'col-12 pt-2 col-lg-12'">
+          <iframe :key="iframeUpdate" id="iframe" name="iframe" :src="page_id" style="overflow:hidden;overflow-x:hidden;overflow-y:hidden;height:89vh;width:100%;position:absolute;top:70px;left:0px;right:0px;bottom:0px" height="100%" width="100%"></iframe>	
+        </div>
+      </div>
+
   </div>
   <!-- Modal -->
   <div class="modal fade modal-xl" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -131,6 +164,7 @@ const logout = () => {
 const route = useRoute()
 const id = route.query.id||''
 let page_id = ref("/")
+let editViewMode = ref(0)
 let iframeUpdate = ref(false)
 let editPanel = ref(true)
 let filename = ref(id)
@@ -139,6 +173,11 @@ let aleradySaved = ref(false)
 let showModal = ref(true)
 
 
+function configMode() {
+  if (editViewMode.value == 2) {editViewMode.value = 1}
+  filename.value='public/config.json'; 
+  readFile(); 
+}
 async function read(filename) {
   try {
     if (filename) {
@@ -210,6 +249,18 @@ function aa(){
     if (!filename.value.includes('meta.md')){
       page_id.value = "getItem?id=" + filename.value.replace('.md','')
     }
+  }
+}
+
+function editView(op){
+  if (op==0){
+
+  }
+  if (op==1){
+    
+  }
+  if (op==2){
+    
   }
 }
 
@@ -300,8 +351,21 @@ if (process.client){
 
 <style scoped>
 
+iframe::-webkit-scrollbar {
+    width: 0.5em;
+}
+
+iframe::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+iframe::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+
 textarea::-webkit-scrollbar {
-    width: 1em;
+    width: 0.5em;
 }
 
 textarea::-webkit-scrollbar-track {

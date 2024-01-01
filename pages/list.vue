@@ -59,14 +59,14 @@
             <div class="col-sm-3 mb-4" v-for="item in stateStore">
                 <div class="card text-center" style="width: 15rem; _height: 500px; background-color: rgb(53, 52, 52);">
                     <div v-if="item[1]">
-                        <a :href="'?dir=' + dir + '/' + item[0]">
+                        <a :href="'?dir=' + dir + '/' + item[0]" style="text-decoration: none; ">
                           <img src="/img/folder.png" style="width: 100px; margin-right: 10px;">
                           {{ item[0] }}
                         </a>    
                     </div>
                     <img v-else :src="'/upload/' + dir + '/' + item[0]"  class="card-img-top" _style="width: 200px; padding: 10px;"/>
                     <div v-if="imageCardPanelFlag" class="card-body">
-                        <input class="card-text" style="margin-bottom: 10px; width: 150px; font-size: 15px;"           
+                        <input class="card-text bg-dark text-light border-0" style="margin-bottom: 10px; width: 150px; font-size: 15px;"           
                             :value=" '/upload' + dir + '/' + item[0] " />
                         <div>
                          <button style="margin-right: 5px;" class="btn btn-danger btn-sm" @click="deleteFile('/upload' + dir + '/' + item[0])">
@@ -247,6 +247,20 @@ function handleFile(e) {
 
 </script>
 <style scoped>
+
+textarea::-webkit-scrollbar {
+    width: 0.5em;
+}
+
+textarea::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+textarea::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+
 input[type="file"] {
     margin-left: -2px !important;
 
