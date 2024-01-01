@@ -1,7 +1,6 @@
 <template>
-   
-    <div class="container-fluid pb-5" style="padding-top: 0px;">
-        <h5>
+    <div class="container-fluid pb-5 bg-dark" style="padding-top: 0px; height: 100vh;">
+        <h5 class="text-light" style="font-family: 'Courier New', Courier, monospace; font-size: 15px;">
             Local: <a href='?dir='>upload</a>
             <span v-for="item in montaBradCrumbs(dir)">
                 <a :href="'?dir='+item[1]">{{ item[0] }}</a> /
@@ -58,9 +57,9 @@
         </div>
         <div class="row gap-0">
             <div class="col-sm-3 mb-4" v-for="item in stateStore">
-                <div class="card text-center" style="width: 15rem; _height: 500px;">
+                <div class="card text-center" style="width: 15rem; _height: 500px; background-color: rgb(53, 52, 52);">
                     <div v-if="item[1]">
-                        <a :href="'?dir='+ dir + '/' + item[0]">
+                        <a :href="'?dir=' + dir + '/' + item[0]">
                           <img src="/img/folder.png" style="width: 100px; margin-right: 10px;">
                           {{ item[0] }}
                         </a>    

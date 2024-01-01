@@ -7,7 +7,7 @@ export default defineEventHandler(async (event) => {
         if (body.txt=="" || !body.txt) return ""
         console.log(body)
         const bodyTxt = new Uint8Array(Buffer.from(body.txt));
-        writeFile('content/' + body.filename, bodyTxt, (err) => {
+        writeFile( body.filename, bodyTxt, (err) => {
             if (err) throw err;
             console.log('The file has been saved!');
         });

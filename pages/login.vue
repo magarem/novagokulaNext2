@@ -1,25 +1,28 @@
 <template>
     <div class="body">
-        <div id="login-container">
-            <img src="/img/cirius_logo.png" alt="Logo do Sistema">
+        <div id="container1">
+            <img src="/img/edit/logo.png" alt="Logo do Sistema">
+            <div id="login-container">
             <form>
                 <input
-        v-model="user.username"
-        type="text"
-        class="input"
-        placeholder="Enter Username"
-        name="uname"
-        required
-      />
-      <input
-        v-model="user.password"
-        type="password"
-        class="input"
-        placeholder="Enter Password"
-        name="psw"
-        required
-      />  <button @click.prevent="login">Entrar</button>
+                    v-model="user.username"
+                    type="text"
+                    class="input"
+                    placeholder="Enter Username"
+                    name="uname"
+                    required
+                />
+                <input
+                    v-model="user.password"
+                    type="password"
+                    class="input"
+                    placeholder="Enter Password"
+                    name="psw"
+                    required
+                />  
+                <button @click.prevent="login">Entrar</button>
             </form>
+        </div>
         </div>
     </div>
 </template>
@@ -61,6 +64,29 @@ const login = async () => {
         height: 100vh; /* 100% da altura da viewport */
     }
 
+    #logo {
+        text-align: center;
+        max-width: 400px;
+        width: 100%;
+        padding: 20px;
+    } 
+    
+   
+    
+    #container1 {
+        text-align: center;
+        max-width: 400px;
+        width: 100%;
+        padding: 20px;
+        
+    } 
+    
+    #container1 img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
     #login-container {
         text-align: center;
         max-width: 400px;
@@ -71,6 +97,7 @@ const login = async () => {
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     }
 
+   
     #login-container img {
         max-width: 100%;
         height: auto;

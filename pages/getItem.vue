@@ -28,10 +28,9 @@
     </section>
 </template>
 <style scoped>
-.bg {
-    background-color: #E7B884;
- }
-
+    .bg {
+        background-color: #E7B884;
+    }
 </style>
 <script setup lang="ts">
     // definePageMeta({
@@ -39,9 +38,10 @@
     // })
 
     const route = useRoute()
-    const id = route.query.id
+    const id = route.query.id.replace('content/','').replace('.md','')
+    console.log(id);
     
-    const { data: data, refresh } = await useAsyncData('home', () => queryContent( id  ).findOne())
+    const { data: data, refresh } = await useAsyncData('home', () => queryContent( id ).findOne())
     console.log(data);
 
     async function refreshDo(val) {
