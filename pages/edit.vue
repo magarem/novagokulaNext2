@@ -59,9 +59,14 @@
                 Sistema
               </button>
               <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+               <li>
+                  <button type="button" @click="cleanup()" class="dropdown-item" >
+                    Limpar memória
+                  </button>
+                </li> 
                 <li>
                   <button type="button" @click="gitreset" class="dropdown-item" >
-                    Resetar
+                    Desfazer alterações
                   </button>
                 </li>
                 <li>
@@ -88,7 +93,10 @@
         <div v-if="txt" class="h-100">
           <textarea v-if="txt" class="txt mt-2" spellcheck="false" v-model="txt" style="width: 450px; height: 90%;"></textarea>
           <div class="btn-group w-100 " role="group" aria-label="Basic outlined example">
-            <button style="margin-right: 10px;" @click="fileContentUndo" class="mt-1 btn btn-warning rounded-pill">Reverter</button><button class="mt-1 btn btn-success rounded-pill">Salvar</button>
+            <button style="margin-right: 10px;" @click="fileContentUndo" class="mt-1 btn btn-warning rounded-pill">Reverter</button>
+            <button style="margin-right: 10px;" @click="save" class="mt-1 btn btn-success rounded-pill">Salvar!</button>
+            <button style="margin-right: 10px;" @click="novoDoc" class="mt-1 btn btn-primary rounded-pill">Novo</button>
+            <button @click="delDoc" class="mt-1 btn btn-primary rounded-pill">Excluir</button>
           </div>
         </div>
       </div>
@@ -163,11 +171,19 @@
   let txt = ref()
   let aleradySaved = ref(false)
   let showModal = ref(true)
-
+  let fileType
   function configMode() {
     if (editViewMode.value == 2) {editViewMode.value = 1}
     filename.value='public/config.json'; 
     readFile(); 
+  }
+
+  async function cleanup() {
+    try {
+      const { data: ret } = await useFetch('/api/cleanup')
+    } catch (error) {
+      console.log("Error");
+    }
   }
 
   async function read(filename) {
@@ -252,66 +268,131 @@
   //   editPanel.value=true
   // }
 
-  async function save(data) {
-    if (!aleradySaved.value){
-      try {
-        const config = {
-          method: 'POST',
-          headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(data)
-        }
-        const response = await fetch('/api/save', config)
-        if (response.ok) {
-          console.log(response.body);
-          console.log("Retorna info");
-          document.getElementById('iframe').contentWindow.postMessage({"refresh": true, "filename": filename.value}, '/');
-          aleradySaved.value = true
-        } else {
-          console.log("save file error");
-        }
-      } 
-      catch (error) {
-        console.log("save api error");
+function splitLastOccurrence(str, substring) {
+  const lastIndex = str.lastIndexOf(substring);
+  const before = str.slice(0, lastIndex);
+  const after = str.slice(lastIndex + 1);
+  return [before, after];
+}
+
+async function delDoc(){
+  if (confirm("Confirma exclusão do arquivo " + filename.value + '?') == true) {
+      const { data: count2 } = await useFetch('/api/deleteContent?id=' + filename.value)
+      // filename.value = ""
+      // filename.value = splitLastOccurrence(filename.value, "/")[0]
+      console.log('id--->', id);
+      let _dir = splitLastOccurrence(filename.value, '/')[0]
+      filename.value = _dir + '/_index.md'
+     
+      readFile()
+      page_id.value = "/getContentDir?id=" + _dir
+      document.getElementById('iframe').contentWindow.location = "/getContentDir?id=" + _dir
+      // reloadIframe()
+    }
+}
+ 
+
+async function novoDoc() {
+  if (true){
+    const newname = Date.now() + '.md'
+    txt.value = "---\n title: Novo doc\n textImg: ['img/generic.png']\n---\nTexto"
+    console.log({filename: splitLastOccurrence(filename.value, '/')[0] + '/' + newname, txt: txt.value});
+    try {
+      const config = {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({filename: splitLastOccurrence(filename.value,'/')[0] + '/' + newname, txt: txt.value})
       }
+      const response = await fetch('/api/novoDoc', config)
+      if (response.ok) {
+        console.log(response.body);
+        console.log("Retorna info");
+        // document.getElementById('iframe').contentWindow.postMessage({"refresh": true, "filename": filename.value}, '/');
+        // page_id.value = "/getContentDir?id=" + filename.value.replace('/_index.md','')
+        // page_id.value = "/getContentFile?id=" + filename.value.replace('/_index.md','/' + newname)
+        reloadIframe()
+        aleradySaved.value = true
+      } else {
+        console.log("save file error");
+      }
+    } 
+    catch (error) {
+      console.log("save api error");
     }
   }
+}
 
-  const saveHandler = (name, content) => {
-    console.log({filename: name, txt: content});
-    save({filename: name, txt: content})
-    console.log("edition saved")
+async function save() {
+  // if (!aleradySaved.value){
+    try {
+      const config = {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({filename: filename.value, txt: txt.value})
+      }
+      const response = await fetch('/api/save', config)
+      if (response.ok) {
+        console.log(response.body);
+        console.log("Retorna info");
+        document.getElementById('iframe').contentWindow.postMessage({"refresh": true, "filename": filename.value}, '/');
+        aleradySaved.value = true
+      } else {
+        console.log("save file error");
+      }
+    } 
+    catch (error) {
+      console.log("save api error");
+    }
   }
+  // }
 
   const readFile = () => {
     read(filename.value)
     watch(txt, (count) => {
       aleradySaved.value = false
-      saveHandler(filename.value, txt.value)
+      save()
     })
   }
 
   const reloadIframe = () => {
-    if (filename.value.includes('meta.md')){
-      page_id.value = "/getSession?id=" + filename.value
-    }else{
-      page_id.value = "/getItem?id=" + filename.value
-    }
-    iframeUpdate.value = !iframeUpdate.value
+    document.getElementById('iframe').contentWindow.location.reload(true)
   }
+  let flagA = false
 
   const iframeEvent = (event) => {
+    console.log("edit.vue: recebendo a mensagem:", event.data);
+    fileType = event.data.type
+    if (event.data.type == 'dir') {
+      filename.value = event.data.id + '/_index.md'
+    }else{
+      filename.value = event.data.id
+    }
+    
+      // if (event.data.includes('.md')&&!event.data.includes('_index.md')){
+      //     filename.value =  event.data
+      //     document.getElementById('iframe').contentWindow.location = 'getContentFile?id=' + filename.value
+      // }else{
+      //   filename.value =  event.data + "/_index.md"
+      //   document.getElementById('iframe').contentWindow.location = 'getContentDir?id=' + filename.value
+
+      // }
+      flagA = true
+      readFile()
     //Verify App Domain
     // if(event.origin !== 'http://localhost:3000') return;
-    if (event.data.sessionid){
-      filename.value = 'content/' + event.data.sessionid + "/meta.md"
-    }else{
-      console.log('data received:  ' + event.data.pageid);
-      filename.value = 'content/' + event.data.pageid + ".md"
-    }
-    readFile()
+    // if (event.data.id){
+    //   filename.value =  event.data.id + "/_index.md"
+    // }else{
+    //   console.log('data received:  ' + event.data.pageid);
+    //   filename.value =  event.data.pageid 
+    // }
+    // readFile()
   }
 
   if (process.client){

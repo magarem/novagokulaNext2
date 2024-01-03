@@ -188,22 +188,11 @@ const novapastaBoxOpen = () => {
 }
 
 if (process.server){
-    
-
-    
     fileList = fs.readdirSync('./public/upload/' + dir)
-
-    
     fileList.map((x, index) => {
         let isDir = fs.lstatSync('./public/upload/' + dir + '/' + x).isDirectory()
         totalFileList.push([x, isDir, isDir||sizeOf('./public/upload/' + dir + '/' + x)])   
     })
-    
-    // if (!totalFileList[index][1]){
-    //         img[index] = new Image();
-    //         img[index].src = './public/upload/' + dir + totalFileList[index][0]
-    //         // console.log(22, img[index].naturalWidth);
-    //     }
     console.log(totalFileList);
     stateStore.value = totalFileList.reverse()
 }

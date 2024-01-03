@@ -1,5 +1,5 @@
 ---
-title: 'Trilha ecológia + yoga + almoço consciente'
+title: 'Trilha ecológia + yoga + alimentação consciente'
 description: ''
 textImg: ['/img/eventos/yogaemeditacao.jpeg']
 ---

@@ -8,25 +8,25 @@
             {"name": "Home", "link": "/", "sub": null},
             {"name": "Sobre", "link": "", "sub": 
                 [
-                    {"name": "Quem somos","link": "getItem?id=about", "sub": null},
-                    {"name": "História","link": "getItem?id=historia", "sub": null},
-                    {"name": "O fundador","link": "getItem?id=acharyadeva", "sub": null},
-                    {"name": "Srila Prabhupada","link": "getItem?id=prabhupada", "sub": null},
-                    {"name": "ISKCON","link": "getItem?id=instituicao", "sub": null},
-                    {"name": "O Mantra","link": "getItem?id=mahamantra", "sub": null},
-                    {"name": "Filosofia","link": "getItem?id=filosofia", "sub": null}
+                    {"name": "Quem somos","link": "getContentFile?id=content/about.md", "sub": null},
+                    {"name": "História","link": "getContentFile?id=content/historia.md", "sub": null},
+                    {"name": "O fundador","link": "getContentFile?id=content/acharyadeva.md", "sub": null},
+                    {"name": "Srila Prabhupada","link": "getContentFile?id=content/prabhupada.md", "sub": null},
+                    {"name": "ISKCON","link": "getContentFile?id=content/instituicao.md", "sub": null},
+                    {"name": "O Mantra","link": "getContentFile?id=content/mahamantra.md", "sub": null},
+                    {"name": "Filosofia","link": "getContentFile?id=content/filosofia.md", "sub": null}
                 ]
             },
             {"name": "Atrativos", "link": "", "sub": 
                 [
-                    {"name": "Templos","link": "getSession?id=templos", "sub": null},
-                    {"name": "Hospedagem","link": "getSession?id=hospedagem", "sub": null},
-                    {"name": "Alimentação","link": "getSession?id=hospedagem", "sub": null}
+                    {"name": "Templos","link": "getContentDir?id=content/templos", "sub": null},
+                    {"name": "Hospedagem","link": "getContentDir?id=content/hospedagem", "sub": null},
+                    {"name": "Alimentação","link": "getContentDir?id=content/alimentacao", "sub": null}
                 ]
             }, 
-            {"name": "Eventos", "link": "getSession?id=eventos","sub":null},
-            {"name": "Como chegar", "link": "getItem?id=comochegar","sub": null},       
-            {"name": "Contato", "link": "getItem?id=contact","sub": null}
+            {"name": "Eventos", "link": "getContentDir?id=content/eventos","sub":null},
+            {"name": "Como chegar", "link": "getContentFile?id=content/comochegar.md","sub": null},       
+            {"name": "Contato", "link": "getContentFile?id=content/contact.md","sub": null}
         ]
     },
     "footer": {
@@ -36,7 +36,7 @@
             "body": "Sua Divina Graça A.C. Bhaktivedanta Swami Prabhupada Mestre Fundador da Sociedade Internacional para a Consciência de Krishna",
             "link": {
                 "label": "Saiba mais",
-                "target": "/getItem?id=prabhupada"
+                "target": "/getContentFile?id=prabhupada"
             }
         },
         "box2": {
@@ -55,7 +55,7 @@
             "body": "Estrada Jesus Antonio de Miranda!<br/>Bairro:<br/>Riberão Grande Pindamonhangaba<br/>São Paulo<br/>Brasil",
             "link": {
                 "label": "Como chegar",
-                "target": "getItem?id=comochegar"
+                "target": "getContentFile?id=comochegar"
             }
         },
         "box4": {
@@ -64,7 +64,7 @@
             "body": "Entre em contato conosco para esclarecer dúvidas, enviar sugestões ou compartilhar seus comentários.",
             "link": {
                 "label": "Entre em contato",
-                "target": "getItem?id=contact"
+                "target": "getContentFile?id=contact"
             }
         },
         "copyright": {

@@ -91,11 +91,11 @@ const path=route.name||''
 	.bread {
 		margin-top: 70px;
 		padding-left: 3vw; 
-		padding-top: 12px; 
-		padding-bottom: 12px; 
+		padding-top: 10px; 
+		padding-bottom: 8px; 
 		margin-bottom: 0px; 
 		background-color:#DBBE58; 
-		font-size: 17px;
+		font-size: 15px;
 	}
 
 	.bread a {

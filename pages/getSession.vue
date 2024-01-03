@@ -1,6 +1,6 @@
 <template>
     <h5 class="bread text-left pl-5"><a href="/">Home</a> / <a :href="'generic?type='+id">{{id}}</a></h5>
-    <div class="pt-4 pb-4">
+    <div v-if="meta" class="pt-4 pb-4">
         <div class="pt-1" style="padding-left: 50px; padding-right: 50px;">
             <div class="row shadow-sm_ "  >
                 <div  _class="pt-1" style="padding-left: 50px; padding-right: 50px;">
@@ -27,31 +27,40 @@
     //     layout: ''
     // })
     const componentKey = ref(0);
-
+    const page = ref(1)
     const refreshing = ref(false)
     const refreshAll = async () => {
-    refreshing.value = true
-    try {
-        await refreshNuxtData()
-    } finally {
-        refreshing.value = false
-    }
+        refreshing.value = true
+        try {
+            console.log("refrsh!");
+            
+            await refreshNuxtData('data')
+        } finally {
+            refreshing.value = false
+        }
     }
    
     const route = useRoute()
-    const id = route.query.id
+    let id = route.query.id.replace('meta.md/meta.md','meta.md')
+     id = id.replace('content/','')
    
-    const { data: meta, refresh } = await useAsyncData('home', () => queryContent('/' + id + '/meta').findOne())
+    console.log('id da session:', id);
+    
+    const { data: meta, refresh } = await useAsyncData('meta', () => queryContent('/' + id + '/meta').findOne())
 
-    const { data: data } = await useAsyncData('page-data', () => {
-            return queryContent('/' + id).find()
-    })
+    // const { data: data, refresh: refreshList } = await useAsyncData('data', () => {
+    //         return queryContent('/' + id).find()
+    // } )
+    const { data: data } = await useFetch('/api/lecontentdir?id='+id)
+
+    console.log('data ret:', data.value);
 
     data.value = data.value.filter(function( obj ) {
         return obj._path !== '/' + id + '/meta';
     });
 
     const itens = data.value
+    
 
     const reload = () => {
         console.log("chamou refresh");
@@ -61,7 +70,6 @@
     }
 
     if (process.client) {
-
         if (window.parent){
             // alert('client run script!')
             window.parent.postMessage({"sessionid": id}, '/');

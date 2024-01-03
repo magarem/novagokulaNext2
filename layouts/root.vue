@@ -34,16 +34,16 @@
 		</div>
 	</section>
 <!-- eventos-->
-<div id="eventos" class="text-center" style="padding-top: 30px; padding-bottom: 50px; background-color: #E9BA86;">
+<div id="eventos" style="padding-top: 30px; padding-bottom: 50px; background-color: #E9BA86;">
 		<h5 class="mb-4 text-center p-3" style="margin-top: 0px; margin-bottom: 0px; _background-color:antiquewhite; font-size: 25px; color:#181201;">Próximos eventos</h5>
-		<div class="container-fluid px-5" >
-			<div class="container_ text-center align-items-md-stretch pl-4 pr-4">
-				<div class="h-100   text-center p-4 rounded-3" _style="padding-left: 100px; padding-right: 100px">
+		<div class="container-fluid _p-0">
+			<div class="container_ align-items-md-stretch pl-4 pr-4">
+				<div class="h-100 w-100 p-4 rounded-3" _style="background-color:bisque;">
 					<!-- <h5>Opções</h5> -->
 					<!-- <div class="row"> -->
-					<div class="row text-center" v-if="itens" >
-						<h5 class="text-center mb-3 pt-4" v-if="id">Outros</h5>
-						<div class="col mb-3"  v-for="item in itens">
+					<div class="row shadow-sm_ " v-if="itens" >
+						<h5 class="_text-center mb-3 pt-4" v-if="id">Outros</h5>
+						<div class="col-md-3 mb-3"  v-for="item in itens">
 							<Cardgrid target="eventos" :item="item" type="eventos"/>
 						</div>
 					</div>
@@ -195,12 +195,12 @@
 	// console.log(dataHome);
 	
 
-    const { data: data } = await useAsyncData('page-data2', () => {
+    const { data: data } = await useAsyncData('page-data', () => {
             return queryContent('/eventos').find()
         }
     )
 	data.value = data.value.filter(function( obj ) {
-        return obj._path !== '/eventos/_index';
+        return obj._path !== '/eventos/meta';
     });
 
     // data.value = data.value.filter(function( obj ) {
@@ -232,7 +232,7 @@
 
         if (window.parent){
             // alert('client run script!')
-            window.parent.postMessage({type: 'file', id: 'content/home.md'}, '/');
+            window.parent.postMessage({"pageid": "content/home"}, '/');
         }
         window.addEventListener("message", refreshDo, false);
 
