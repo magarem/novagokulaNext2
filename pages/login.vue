@@ -1,14 +1,14 @@
 <template>
     <div class="body">
         <div id="container1">
-            <img src="/img/edit/logo.png" alt="Logo do Sistema">
+            <img id="logo" src="/img/edit/logo.png" alt="Logo do Sistema">
             <div id="login-container">
             <form>
                 <input
                     v-model="user.username"
                     type="text"
                     class="input"
-                    placeholder="Enter Username"
+                    placeholder="Usuário"
                     name="uname"
                     required
                 />
@@ -16,7 +16,7 @@
                     v-model="user.password"
                     type="password"
                     class="input"
-                    placeholder="Enter Password"
+                    placeholder="Senha"
                     name="psw"
                     required
                 />  
@@ -38,8 +38,8 @@ const { authenticateUser } = useAuthStore(); // use auth store
 const { authenticated } = storeToRefs(useAuthStore()); // make authenticated state reactive
 
 const user = ref({
-  username: 'kminchelle',
-  password: '0lelplR',
+  username: '',
+  password: '',
 });
 const router = useRouter();
 
@@ -63,12 +63,22 @@ const login = async () => {
         justify-content: center;
         height: 100vh; /* 100% da altura da viewport */
     }
+input {
+    color: aliceblue;
+    background-color: #636060;
+}
+
+::placeholder {
+  color: rgb(211, 212, 212);
+  opacity: 1; /* Firefox */
+}
 
     #logo {
         text-align: center;
         max-width: 400px;
-        width: 100%;
-        padding: 20px;
+        width: 80%;
+        margin-left: -30px;
+        /* padding: 20px; */
     } 
     
    

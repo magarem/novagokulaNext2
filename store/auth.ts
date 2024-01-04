@@ -13,7 +13,8 @@ export const useAuthStore = defineStore('auth', {
   actions: {
     async authenticateUser({ username, password }: UserPayloadInterface) {
       // useFetch from nuxt 3
-      const { data, pending }: any = await useFetch('https://dummyjson.com/auth/login', {
+      // const { data, pending }: any = await useFetch('https://dummyjson.com/auth/login', {
+      const { data, pending }: any = await useFetch('/api/login_do', {
         method: 'post',
         headers: { 'Content-Type': 'application/json' },
         body: {
@@ -21,6 +22,7 @@ export const useAuthStore = defineStore('auth', {
           password,
         },
       });
+      
       
       console.log("111111", data.value);
       this.loading = pending;
