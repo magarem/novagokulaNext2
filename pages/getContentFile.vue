@@ -60,12 +60,12 @@
     console.log('path:', path);
     
     const { data: data, refresh } = await useAsyncData('home', () => queryContent( path ).findOne())
-    console.log(data);
+    // console.log('data--->',data.value);
 
     async function refreshDo(val) {
-        console.log(val);
+        // console.log(val);
         
-        console.log("recebido na iframe");
+        // console.log("recebido na iframe");
         refresh()
     }
 

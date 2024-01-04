@@ -1,7 +1,7 @@
 ---
 title: 'Nossa história'
 ---
-A comunidade Hare Krishna, oficialmente conhecida como Movimento Internacional para a Consciência de Krishna (ISKCON), foi fundada por A.C. Bhaktivedanta Swami Prabhupada em 1966, nos Estados Unidos. Seus seguidores seguem os ensinamentos do Bhagavad-gita e adoram Krishna como a Suprema Personalidade de Deus. O movimento é conhecido por sua abordagem devocional intensa, incluindo a prática do canto do mantra Hare Krishna, meditação e distribuição de literatura espiritual.
+A comunidade Hare Krishna, oficialmente conhecida como Movimento Internacional para a Consciência de Krishna (ISKCON), foi fundada por A.C. .Bhaktivedanta Swami Prabhupada em 1966, nos Estados Unidos. Seus seguidores seguem os ensinamentos do Bhagavad-gita e adoram Krishna como a Suprema Personalidade de Deus. O movimento é conhecido por sua abordagem devocional intensa, incluindo a prática do canto do mantra Hare Krishna, meditação e distribuição de literatura espiritual.
 
 As comunidades Hare Krishna, como a Nova Gokula em Pindamonhangaba, costumam ser baseadas em valores espirituais e têm o propósito de fornecer um ambiente onde os membros possam se dedicar à prática espiritual, ao estudo dos escritos sagrados e à vida em comunidade. Essas comunidades geralmente seguem um estilo de vida simples, com ênfase na simplicidade, vegetarianismo e serviço devocional.
 

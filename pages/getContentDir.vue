@@ -59,7 +59,7 @@
     const { data: meta, refresh } = await useAsyncData('meta', () => queryContent(_index_cleaned).findOne())
     const { data: data } = await useFetch('/api/readDir?id=' + _dir)
 
-    console.log('data ret:', data.value);
+    // console.log('data ret:', data.value);
 
     // data.value = data.value.filter(function( obj ) {
     //     return obj._path !== '/' + id + '/meta';
@@ -67,17 +67,17 @@
 
     const itens = data.value
     
-    console.log('meta ret:', meta.value);
+    // console.log('meta ret:', meta.value);
 
     const reload = () => {
-        console.log("chamou refresh");
-        console.log(meta);
+        // console.log("chamou refresh");
+        // console.log(meta);
         refresh()
     }
 
     if (process.client) {
         if (window.parent){
-            console.log('getContentDir - emitindo uma mensagem', id);
+            // console.log('getContentDir - emitindo uma mensagem', id);
             
             window.parent.postMessage({type: 'dir', id: id}, '/');
         }

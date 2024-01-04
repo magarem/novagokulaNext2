@@ -1,4 +1,4 @@
 ---
- title: Novo doc
+ title: Templos
  textImg: generic.png
 ---

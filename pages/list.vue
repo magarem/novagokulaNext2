@@ -138,7 +138,7 @@ const rename_ = {
     oldName: '',
     newName: '',
     do: async function(){
-        const { data: ret } = await useFetch('/api/rename?oldname=' + this.dir + '/' + this.oldName + '&newname=' + this.dir + '/' + this.newName)
+        const { data: ret } = await useFetch('/api/rename?oldname=public/' + this.dir + '/' + this.oldName + '&newname=public/' + this.dir + '/' + this.newName)
         this.flag = false
         this.ret = ret
         location.reload()
@@ -160,6 +160,7 @@ const rename = ref(rename_)
 
 // import { Modal } from 'bootstrap';
 const route = useRoute()
+const router = useRouter()
 let imgZoom = ref(null)
 let imageCardPanelFlag = ref(false)
 let dirname = ref("")
@@ -241,6 +242,7 @@ async function handleImageUpload() {
 
         console.log('data from backend is ', data.value);
         stateStore.value.unshift([data.value, false])
+        router.go(); 
     } catch (error) {
         console.log(error);
     }

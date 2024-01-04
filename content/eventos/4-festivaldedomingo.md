@@ -4,7 +4,7 @@ description: ''
 textImg: ['/img/eventos/festivaldedomingo.jpeg']
 ---
 Passe o dia com os devotos de Krishna!
-Todos as domingos das 6h30 às 18h
+Todos as domingos das 6h30 às 18h.
 
 Gostaria de participar de um domingo recheado de filosofia, alimentação consciente e programas espirituais na associação dos devotos Krishna?
 

@@ -1,4 +1,4 @@
 ---
- title: Novo doc
+ title: Hospedagem
  textImg: generic.png
 ---

@@ -10,18 +10,44 @@
     </div>
   </nav>
   <nav class="navbar navbar-expand-lg bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand mt-0" href="#" style="margin-left: 2px;">              
-        <img src="/img/edit/logo.png" alt="Logo do Sistema" style="width: 70%;">
+    <div class="container-fluid mt-2">
+      <a class="navbar-brand_ mt-0" href="#" style="margin-left: 2px;">              
+        <img src="/img/edit/logo.png" alt="Logo do Sistema" style="width: 90%;">
       </a>
-      <div style="width: 400px; margin-right: 20px;" class="mt-1 input-group input-group-sm mb-0">
-        <input type="text" class="form-control text-white  border-dark"  @keyup.enter="readFile" style="background-color:rgb(88, 86, 86);" v-model="filename" placeholder=""  aria-describedby="button-addon2">
-        <!-- <button class="btn btn-dark" @click="readFile" type="button" id="button-addon2">Editar</button> -->
+      
+      <div style="width: 50vw; margin-right: 20px;" class=" input-group input-group-sm mb-0">
+        <div class="input-group">
+          <input v-model="filename" @keyup.enter="readFile" type="text" class="form-control bg-dark text-light form-control-sm" placeholder="Recipient's username" aria-label="Recipient's username with two button addons">
+          <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+          </button>
+          <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end" aria-labelledby="dropdownMenuButton2">
+            <li>
+              <button @click="localsave(); save();"  class="dropdown-item"  type="button">Salvar</button>
+            </li>
+            <li v-if="fileType=='dir'"><button @click="novoDoc" class="dropdown-item" type="button">Novo</button>
+            </li> 
+            
+            <li>
+            <button @click="fileContentUndo" class="dropdown-item" type="button">Reverter edição</button>
+
+            </li> 
+            <li>
+              <button v-if="fileType=='file'&&!filename.includes('_index')&&!filename.includes('home.md')" @click="delDoc" class="dropdown-item" type="button">Excluir</button>
+
+            </li>
+            <li>
+              <button v-if="fileType=='file'&&!filename.includes('_index')&&!filename.includes('home.md')" type="button" @click="rename" class="dropdown-item" >
+                Renomear
+              </button>
+            </li>
+            
+          </ul>
+        </div>
       </div>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="row mt-1" style="width: 100%;">
+      <div class="row" style="width: 100%;">
         <div class="col-12">
           <div class="btn-group" role="group" aria-label="Basic example">
             <div class="btn-group btn-sm">
@@ -59,7 +85,7 @@
                 Sistema
               </button>
               <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
-               <li>
+              <li>
                   <button type="button" @click="cleanup()" class="dropdown-item" >
                     Limpar memória
                   </button>
@@ -82,28 +108,33 @@
             <button type="button" @click="logout"  class="btn btn-outline-secondary px-3 btn-sm" >
               sair
             </button>
+            <!-- <span class="text-success mt-1 " style="margin-left: 10px;">
+              {{status}}
+            </span> -->
           </div>
         </div>
       </div>
+
+
     </div>
   </nav>
-  <div class="bg-dark container-fluid">
-    <div v-if="editViewMode==0" class="row text-center" >
-      <div class="col-12 col-lg-4" style="_margin-left: -15px; height: 610px; _background-color: blueviolet;">
-        <div v-if="txt" class="h-100">
-          <textarea v-if="txt" class="txt mt-2" spellcheck="false" v-model="txt" style="width: 450px; height: 90%;"></textarea>
-          <div class="btn-group w-100 " role="group" aria-label="Basic outlined example">
-            <button style="margin-right: 10px;" @click="fileContentUndo" class="mt-1 btn btn-warning rounded-pill">Reverter</button>
-            <button style="margin-right: 10px;" @click="save" class="mt-1 btn btn-success rounded-pill">Salvar!</button>
-            <button style="margin-right: 10px;" @click="novoDoc" class="mt-1 btn btn-primary rounded-pill">Novo</button>
-            <button @click="delDoc" class="mt-1 btn btn-primary rounded-pill">Excluir</button>
-          </div>
+  <div class="bg-dark container-fluid m-0 mt-3" style="height: calc(100% - 85px);">
+    <div v-if="editViewMode==0" class="row gap-0 h-100" >
+      <div class="col-12 col-lg-4 bg-success px-0 " >
+        <div v-if="txt" class="h-100 w-100" >
+          <textarea v-if="txt" class="txt" spellcheck="false" v-model="txt" ></textarea>
         </div>
       </div>
-      <div class="col-12 col-lg-8 pt-2">
-        <iframe :key="iframeUpdate" id="iframe" name="iframe" :src="page_id"  width="100%" style="height: 87vh;"></iframe>	
+      <div class="col-12 col-lg-8 _pt-2 bg-primary px-0 py-0">
+        <iframe :key="iframeUpdate" id="iframe" name="iframe" :src="page_id" class="w-100 h-100" ></iframe>	
       </div>
     </div>
+
+
+
+
+
+
     <div v-if="editViewMode==1" class="row text-center" >
       <div class="col-12 col-lg-12" style="_margin-left: -15px; height: 610px; _background-color: blueviolet;">
         <div v-if="txt" class="h-100">
@@ -146,127 +177,22 @@
 </template>
 
 <script setup lang="ts">
-  definePageMeta({
-    layout: ''
-  })
-  import { storeToRefs } from 'pinia';
-  import { useAuthStore } from '~/store/auth';
-  const router = useRouter();
+definePageMeta({
+  layout: ''
+})
+// # for local storage
+import { getData, setData } from 'nuxt-storage/local-storage';
+import { storeToRefs } from 'pinia';
+import { useAuthStore } from '~/store/auth';
+const router = useRouter();
 
-  const { logUserOut } = useAuthStore();
-  const { authenticated } = storeToRefs(useAuthStore()); // make authenticated state reactive
+const { logUserOut } = useAuthStore();
+const { authenticated } = storeToRefs(useAuthStore()); // make authenticated state reactive
 
-  const logout = () => {
-    logUserOut();
-    router.push('/login');
-  };
-
-  const route = useRoute()
-  const id = route.query.id||''
-  let page_id = ref("/")
-  let editViewMode = ref(0)
-  let iframeUpdate = ref(false)
-  let editPanel = ref(true)
-  let filename = ref(id)
-  let txt = ref()
-  let aleradySaved = ref(false)
-  let showModal = ref(true)
-  let fileType
-  function configMode() {
-    if (editViewMode.value == 2) {editViewMode.value = 1}
-    filename.value='public/config.json'; 
-    readFile(); 
-  }
-
-  async function cleanup() {
-    try {
-      const { data: ret } = await useFetch('/api/cleanup')
-    } catch (error) {
-      console.log("Error");
-    }
-  }
-
-  async function read(filename) {
-    try {
-      if (filename) {
-      const { data: ret } = await useFetch('/api/read?filename=' + filename)
-      txt.value = ret.value
-      }
-    } catch (error) {
-      console.log("Load file error");
-    }
-  }
-
-  async function fileContentUndo() {
-    try {
-      if(confirm("Descartar alterações em " + filename.value + "?")){
-        const { data: ret } = await useFetch('/api/restorefilecontent?file=' + filename.value)
-        alert(filename.value + " recuperdo com sucesso!")
-      }
-    } catch (error) {
-        console.log("Error");
-    }
-  }
-
-  async function gitreset() {
-    try {
-      if(confirm("Apagar últimas mudanças?")){
-        // const { data: ret1 } = await useFetch('/api/writeSlideFile')
-        const { data: ret2 } = await useFetch('/api/gitreset')
-        alert("Site recuperado com sucesso!")
-      }
-    } catch (error) {
-        console.log("Error");
-    }
-  }
-
-  async function systemUpdate() {
-    try {
-      if(confirm("Atualizar sistema?")){
-        // const { data: ret1 } = await useFetch('/api/writeSlideFile')
-        const { data: ret2 } = await useFetch('/api/systemUpdate')
-        alert("Sistema atualizado com sucesso!")
-      }
-    } catch (error) {
-        console.log("Copile error");
-    }
-  }
-
-  async function copile() {
-    try {
-      if(confirm("Confirma copilação do site?")){
-        // const { data: ret1 } = await useFetch('/api/writeSlideFile')
-        const { data: ret2 } = await useFetch('/api/copile')
-        console.log(ret1, ret2);
-        alert("Site copilado com sucesso!")
-      }
-    } catch (error) {
-        console.log("Copile error");
-    }
-  }
-
-  // function aa(){
-  //   if (filename.value=="home.md"){
-  //     page_id.value = "/"
-  //   }else{
-  //     if (filename.value.includes('meta.md')){
-  //       page_id.value = "getSession?id=" + filename.value.replace('/meta.md','')
-  //     }
-  //     if (!filename.value.includes('meta.md')){
-  //       page_id.value = "getItem?id=" + filename.value.replace('.md','')
-  //     }
-  //   }
-  // }
-
-  // function editPanelClose(){
-  //   aa()
-  //   editPanel.value=false
-  // }
-
-  // function editPanelOpen(){
-  //   aa()
-  //   editPanel.value=true
-  // }
+const logout = () => {
+  logUserOut();
+  router.push('/login');
+};
 
 function splitLastOccurrence(str, substring) {
   const lastIndex = str.lastIndexOf(substring);
@@ -275,12 +201,151 @@ function splitLastOccurrence(str, substring) {
   return [before, after];
 }
 
+
+
+const route = useRoute()
+const id = route.query.id||''
+let status = ref('')
+let page_id = ref("/")
+let editViewMode = ref(0)
+let iframeUpdate = ref(false)
+let editPanel = ref(true)
+let filename = ref(id)
+let txt = ref()
+let aleradySaved = ref(false)
+let showModal = ref(true)
+let fileType = ""
+let localdata = getData('content')||[]
+let flagCountToSave = 0
+
+
+function configMode() {
+  if (editViewMode.value == 2) {editViewMode.value = 1}
+  filename.value='public/config.json'; 
+  readFile(); 
+}
+
+async function cleanup() {
+  try {
+    const { data: ret } = await useFetch('/api/cleanup')
+  } catch (error) {
+    console.log("Error");
+  }
+}
+
+async function read() {
+  try {
+      const { data: ret } = await useFetch('/api/read?filename=' + filename.value)
+      txt.value = ret.value
+      let index = localdata.findIndex((item) => item.filename === filename.value);
+      if(index===-1){
+        console.log("salvo local!");
+        
+        localsave()
+      }
+  } catch (error) {
+    console.log("Load file error");
+  }
+}
+
+const localsave = () => {
+  let index = localdata.findIndex((item) => item.filename === filename.value);
+  // Check if the object with the specified property value exists in the array
+  if (index === -1) {
+    // If not found, push a new object with the desired properties
+    localdata.push({filename: filename.value, txt: txt.value});
+  } else {
+    // If found, log a message indicating that the object already exists
+    console.log("Object already exists");
+    localdata[index] = {filename: filename.value, txt: txt.value}
+  }
+  setData('content', localdata);
+  console.log("doc salvo local");
+}
+
+async function fileContentUndo() {
+  try {
+    if(confirm("Descartar alterações em " + filename.value + "?")){
+      // const { data: ret } = await useFetch('/api/restorefilecontent?file=' + filename.value)
+      // console.log('getData', getData('content').txt);
+      let index = localdata.findIndex((item) => item.filename === filename.value);
+      
+      if (index === -1) {
+        alert("doc ainda não salvo")
+      } else {
+        // If found, log a message indicating that the object already exists
+        txt.value = getData('content')[index].txt
+        alert(filename.value + " recuperdo com sucesso!")
+      }
+
+      
+    }
+  } catch (error) {
+      console.log("Error", error);
+  }
+}
+
+async function gitreset() {
+  try {
+    if(confirm("Apagar últimas mudanças?")){
+      // const { data: ret1 } = await useFetch('/api/writeSlideFile')
+      const { data: ret2 } = await useFetch('/api/gitreset')
+      alert("Site recuperado com sucesso!")
+    }
+  } catch (error) {
+      console.log("Error");
+  }
+}
+
+async function rename() {
+  try {
+    let aux1 = splitLastOccurrence(filename.value,'/')
+    let docNewFileName = window.prompt("Digite o novo nome", aux1[1].split('.')[0]);
+    let newname = aux1[0] + '/' + docNewFileName + '.md'
+    console.log(newname);
+    $fetch('api/rename?oldname=' + filename.value + '&newname=' + newname).then(ret=>{
+      console.log(ret);
+    })
+    filename.value = newname
+    // read()
+    document.getElementById('iframe').contentWindow.location = "/getContentFile?id=" + newname
+    // console.log('rename ret:', ret);
+  } catch (error) {
+      console.log("Copile error");
+  }
+}
+
+async function systemUpdate() {
+  try {
+    if(confirm("Atualizar sistema?")){
+      // const { data: ret1 } = await useFetch('/api/writeSlideFile')
+      const { data: ret2 } = await useFetch('/api/systemUpdate')
+      alert("Sistema atualizado com sucesso!")
+    }
+  } catch (error) {
+      console.log("Copile error");
+  }
+}
+
+async function copile() {
+  try {
+    if(confirm("Confirma copilação do site?")){
+      // const { data: ret1 } = await useFetch('/api/writeSlideFile')
+      const { data: ret2 } = await useFetch('/api/copile')
+      // console.log(ret1, ret2);
+      alert("Site copilado com sucesso!")
+    }
+  } catch (error) {
+      console.log("Copile error");
+  }
+}
+
 async function delDoc(){
   if (confirm("Confirma exclusão do arquivo " + filename.value + '?') == true) {
       const { data: count2 } = await useFetch('/api/deleteContent?id=' + filename.value)
       // filename.value = ""
       // filename.value = splitLastOccurrence(filename.value, "/")[0]
-      console.log('id--->', id);
+      // console.log('id--->', id);
       let _dir = splitLastOccurrence(filename.value, '/')[0]
       filename.value = _dir + '/_index.md'
      
@@ -291,25 +356,23 @@ async function delDoc(){
     }
 }
  
-
 async function novoDoc() {
   if (true){
     const newname = Date.now() + '.md'
-    txt.value = "---\n title: Novo doc\n textImg: ['img/generic.png']\n---\nTexto"
-    console.log({filename: splitLastOccurrence(filename.value, '/')[0] + '/' + newname, txt: txt.value});
+    let aux1 = "---\n title: Novo documento\n textImg: ['img/generic.png']\n---\nTexto"
+    // console.log({filename: splitLastOccurrence(filename.value, '/')[0] + '/' + newname, txt: aux1});
     try {
       const config = {
         method: 'POST',
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({filename: splitLastOccurrence(filename.value,'/')[0] + '/' + newname, txt: txt.value})
+        headers: {'Accept': 'application/json','Content-Type': 'application/json'},
+        body: JSON.stringify({
+          filename: splitLastOccurrence(filename.value,'/')[0] + '/' + newname, txt: aux1
+        })
       }
       const response = await fetch('/api/novoDoc', config)
       if (response.ok) {
-        console.log(response.body);
-        console.log("Retorna info");
+        // console.log(response.body);
+        // console.log("Retorna info");
         // document.getElementById('iframe').contentWindow.postMessage({"refresh": true, "filename": filename.value}, '/');
         // page_id.value = "/getContentDir?id=" + filename.value.replace('/_index.md','')
         // page_id.value = "/getContentFile?id=" + filename.value.replace('/_index.md','/' + newname)
@@ -327,7 +390,8 @@ async function novoDoc() {
 
 async function save() {
   // if (!aleradySaved.value){
-    try {
+      status.value = 'salvo'
+      try {
       const config = {
         method: 'POST',
         headers: {
@@ -338,9 +402,8 @@ async function save() {
       }
       const response = await fetch('/api/save', config)
       if (response.ok) {
-        console.log(response.body);
-        console.log("Retorna info");
-        document.getElementById('iframe').contentWindow.postMessage({"refresh": true, "filename": filename.value}, '/');
+        // console.log(response.body);
+        // console.log("Retorna info");
         aleradySaved.value = true
       } else {
         console.log("save file error");
@@ -349,56 +412,54 @@ async function save() {
     catch (error) {
       console.log("save api error");
     }
-  }
-  // }
-
-  const readFile = () => {
-    read(filename.value)
-    watch(txt, (count) => {
+}
+   
+const readFile = () => {
+  read()
+  watch(txt, (data) => {
+    flagCountToSave++
+    // console.log('flagCountToSave:', flagCountToSave);
+    document.getElementById('iframe').contentWindow.postMessage({"refresh": true, "filename": filename.value, "txt": txt.value}, '/');
+    if (true) {
+      flagCountToSave = 0
+      // console.log('data:', data);
       aleradySaved.value = false
       save()
-    })
-  }
-
-  const reloadIframe = () => {
-    document.getElementById('iframe').contentWindow.location.reload(true)
-  }
-  let flagA = false
-
-  const iframeEvent = (event) => {
-    console.log("edit.vue: recebendo a mensagem:", event.data);
-    fileType = event.data.type
-    if (event.data.type == 'dir') {
-      filename.value = event.data.id + '/_index.md'
     }else{
-      filename.value = event.data.id
+      status.value = ''
     }
     
-      // if (event.data.includes('.md')&&!event.data.includes('_index.md')){
-      //     filename.value =  event.data
-      //     document.getElementById('iframe').contentWindow.location = 'getContentFile?id=' + filename.value
-      // }else{
-      //   filename.value =  event.data + "/_index.md"
-      //   document.getElementById('iframe').contentWindow.location = 'getContentDir?id=' + filename.value
+  })
+}
 
-      // }
-      flagA = true
-      readFile()
-    //Verify App Domain
-    // if(event.origin !== 'http://localhost:3000') return;
-    // if (event.data.id){
-    //   filename.value =  event.data.id + "/_index.md"
-    // }else{
-    //   console.log('data received:  ' + event.data.pageid);
-    //   filename.value =  event.data.pageid 
-    // }
-    // readFile()
+const reloadIframe = () => {
+  document.getElementById('iframe').contentWindow.location.reload(true)
+}
+let flagA = false
+
+const iframeEvent = (event) => {
+  // console.log("edit.vue: recebendo a mensagem:", event.data);
+  fileType = event.data.type
+  if (event.data.type == 'dir') {
+    filename.value = event.data.id + '/_index.md'
+  }else{
+    filename.value = event.data.id
   }
+  flagA = true
+  readFile()
+}
 
-  if (process.client){
-      //Event Listener for Iframe
-      window.addEventListener("message", iframeEvent, false);
-  }	
+if (process.client){
+    //Event Listener for Iframe
+    document.onkeydown = function(e) {
+    if (e.ctrlKey && e.keyCode === 83) {
+      localsave()
+      save()
+        return false;
+    }
+};
+    window.addEventListener("message", iframeEvent, false);
+}	
 </script>
 
 <style scoped>
@@ -421,6 +482,11 @@ async function save() {
   textarea::-webkit-scrollbar-thumb {
     background-color: darkgrey;
     outline: 1px solid slategrey;
+  }
+
+  .dropdown-item {
+    font-size: 14px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   }
 
   button {
@@ -446,7 +512,10 @@ async function save() {
   }
   .txt {
     font-size: 18px;
-    padding: 6px;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    margin: 0px;
     color:aliceblue;
     background-color:rgb(63, 63, 63);
     outline: none;
