@@ -39,7 +39,7 @@
     "glob": "^10.3.10",
     "gray-matter": "^4.0.3",
     "h3-formidable": "^1.0.0",
-    "image-size": "^1.1.0",
+    "image-size": "^1.1.1",
     "jquery": "^3.7.1",
     "markdown": "^0.5.0",
     "markdown-it": "^14.0.0",
