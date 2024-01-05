@@ -60,6 +60,18 @@ const path=route.name||''
 			--main-bg-color: #F5CCA0;
 		}
 
+
+	::-webkit-scrollbar {
+		width: 0.5em;
+	}
+	::-webkit-scrollbar-track {
+		-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	}
+	::-webkit-scrollbar-thumb {
+		background-color: darkgrey;
+		outline: 1px solid slategrey;
+	}
+
 	h1, h2, h3, h4, h5, p, li {
 		font-family: Montserrat;
 		color: #fff;

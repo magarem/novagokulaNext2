@@ -1,8 +1,16 @@
 <template>
     <section class="pb-0">
-        <h5 class="bread text-left" > <span v-for="item in montaBradCrumbs(id)">
-            <a :href="'/getContentDir?id='+item[1]">{{ item[0] }}</a> /
-        </span></h5>
+        <h5 class="bread text-left" > 
+            
+            <router-link to="/">home</router-link> <span v-if="!id.split('/')[1].includes('.md')"> / <router-link :to="'/getContentDir?id=content/' + id.split('/')[1]">{{id.split('/')[1]}}</router-link></span>
+            / {{data.title}}
+            
+            <!-- <span v-for="item in montaBradCrumbs(id)">
+                <a :href="'/getContentDir?id='+item[1]">{{ item[0] }}</a> /
+            </span> -->
+    
+    
+    </h5>
        
         <img v-if="data.imgs" :src="data.imgs[0]" style="width: 100%;" class="img-fluid"/> 
         <div class="container">

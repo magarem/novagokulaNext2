@@ -10,6 +10,7 @@
                     class="input"
                     placeholder="Usuário"
                     name="uname"
+                    autocomplete="off"
                     required
                 />
                 <input
@@ -18,9 +19,11 @@
                     class="input"
                     placeholder="Senha"
                     name="psw"
+                    autocomplete="off"
                     required
                 />  
                 <button @click.prevent="login">Entrar</button>
+                <div class='msg mt-3'>{{  msg }}</div>
             </form>
         </div>
         </div>
@@ -36,7 +39,7 @@ import { useAuthStore } from '~/store/auth';
 const { authenticateUser } = useAuthStore(); // use auth store
 
 const { authenticated } = storeToRefs(useAuthStore()); // make authenticated state reactive
-
+let msg = ref('')
 const user = ref({
   username: '',
   password: '',
@@ -46,12 +49,22 @@ const router = useRouter();
 const login = async () => {
   await authenticateUser(user.value);
   // redirect to homepage if user is authenticated
-  if (authenticated) {
-    router.push('/edit');
+  console.log('authenticated:', authenticated.value);
+  
+  if (authenticated.value) {
+    router.push('/admin');
+  }else{
+    msg.value = "Erro: Usuário e/ou senha inválidos"
   }
+
 };
 </script>
 <style scoped>
+.msg {
+    font-size: 17px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(234, 255, 0);
+}
     .body {
         margin: 0;
         padding: 0;

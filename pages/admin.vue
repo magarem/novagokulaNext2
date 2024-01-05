@@ -118,14 +118,47 @@
 
     </div>
   </nav>
+  
   <div class="bg-dark container-fluid m-0 mt-3" style="height: calc(100% - 85px);">
     <div v-if="editViewMode==0" class="row gap-0 h-100" >
-      <div class="col-12 col-lg-4 bg-success px-0 " >
+      <div class="col-12 col-lg-4 px-0 " >
         <div v-if="txt" class="h-100 w-100" >
-          <textarea v-if="txt" class="txt" spellcheck="false" v-model="txt" ></textarea>
+         
+          <ul class="nav nav-tabs bg-dark  nav-fill " role="tablist">
+            <li class="nav-item">
+                <a class="nav-link " data-bs-toggle="tab" href="#txt_propiedades_">Propriedades</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link  active" data-bs-toggle="tab" href="#txt_texto_">Texto</a>
+              </li>
+            </ul>
+
+
+
+
+
+
+
+<!-- Tab panes -->
+<div class="tab-content">
+    <div id="txt_texto_" class="container tab-pane active" style="height:100vh; padding-left: 0px; padding-right: 0px">
+      <textarea v-if="txt" v-show="false" class="txt" spellcheck="false" v-model="txt" ></textarea>
+      
+      <textarea v-if="txt" class="txt" spellcheck="false" v-model="txt_texto" ></textarea>
+    </div>
+    <div id="txt_propiedades_" class="container tab-pane fade" style="height:100vh; padding-left: 0px; padding-right: 0px;">
+      <textarea v-if="txt" class="txt" spellcheck="false" v-model="txt_propiedades" ></textarea>
+    </div>
+    
+  </div>
+
+
+
+
+  
         </div>
       </div>
-      <div class="col-12 col-lg-8 _pt-2 bg-primary px-0 py-0">
+      <div class="col-12 col-lg-8 _pt-2 px-0 py-0">
         <iframe :key="iframeUpdate" id="iframe" name="iframe" :src="page_id" class="w-100 h-100" ></iframe>	
       </div>
     </div>
@@ -184,6 +217,8 @@ definePageMeta({
 import { getData, setData } from 'nuxt-storage/local-storage';
 import { storeToRefs } from 'pinia';
 import { useAuthStore } from '~/store/auth';
+
+
 const router = useRouter();
 
 const { logUserOut } = useAuthStore();
@@ -201,8 +236,6 @@ function splitLastOccurrence(str, substring) {
   return [before, after];
 }
 
-
-
 const route = useRoute()
 const id = route.query.id||''
 let status = ref('')
@@ -212,12 +245,13 @@ let iframeUpdate = ref(false)
 let editPanel = ref(true)
 let filename = ref(id)
 let txt = ref()
+let txt_propiedades = ref()
+let txt_texto = ref()
 let aleradySaved = ref(false)
 let showModal = ref(true)
 let fileType = ""
 let localdata = getData('content')||[]
 let flagCountToSave = 0
-
 
 function configMode() {
   if (editViewMode.value == 2) {editViewMode.value = 1}
@@ -243,6 +277,13 @@ async function read() {
         
         localsave()
       }
+
+      txt_propiedades.value = txt.value.trim().split('---')[1].trim()
+      console.log(txt_propiedades.value);
+      txt_texto.value = txt.value.trim().split('---')[2].trim()
+      console.log(txt_texto.value);
+
+
   } catch (error) {
     console.log("Load file error");
   }
@@ -275,7 +316,7 @@ async function fileContentUndo() {
       } else {
         // If found, log a message indicating that the object already exists
         txt.value = getData('content')[index].txt
-        alert(filename.value + " recuperdo com sucesso!")
+        document.getElementById('iframe').contentWindow.location.reload(true)
       }
 
       
@@ -331,6 +372,7 @@ async function copile() {
   try {
     if(confirm("Confirma copilação do site?")){
       // const { data: ret1 } = await useFetch('/api/writeSlideFile')
+      setData('content',[])
       const { data: ret2 } = await useFetch('/api/copile')
       // console.log(ret1, ret2);
       alert("Site copilado com sucesso!")
@@ -414,6 +456,21 @@ async function save() {
     }
 }
    
+// watch(txt, (data) => {
+ 
+// })
+
+watch(txt_propiedades, (data) => {
+  console.log(data);
+  txt.value = '---\n' + txt_propiedades.value + '\n---\n' + txt_texto.value
+})
+
+watch(txt_texto, (data) => {
+  console.log(data);
+  txt.value = '---\n' + txt_propiedades.value + '\n---\n' + txt_texto.value
+})
+
+
 const readFile = () => {
   read()
   watch(txt, (data) => {
@@ -463,16 +520,28 @@ if (process.client){
 </script>
 
 <style scoped>
-  iframe::-webkit-scrollbar {
-    width: 0.5em;
+.nav-tabs {
+  
+  background-color: rgb(112, 105, 105) !important;
+}
+
+
+  .nav-item {
+    /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+    /* font-size: 15px; */
+    /* color: aliceblue; */
+    /* height: 20px; */
+    /* padding-bottom: 30px; */
   }
-  iframe::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+ 
+  .nav-link {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 15px;
+    color: aliceblue;
+    /* height: 30px; */
+    /* padding-bottom: 30px; */
   }
-  iframe::-webkit-scrollbar-thumb {
-    background-color: darkgrey;
-    outline: 1px solid slategrey;
-  }
+ 
   textarea::-webkit-scrollbar {
     width: 0.5em;
   }

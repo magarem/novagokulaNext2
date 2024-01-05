@@ -1,9 +1,9 @@
 ---
-title: 'Quiosque Da Eka'
+title: Quiosque Da Eka
 description: ''
 textImg: ['/img/alimentacao/quiosquedaeka.jpeg']
 ---
-Bem-vindo ao Quiosque da Eka: O Sabor Vegetariano na Comunidade Hare Krishna
+Bem-vindo ao Quiosque da Eka: O Sabor Vegetariano na Comunidade Hare Krishna!
 
 Namaste e saudações repletas de amor! Dê as boas-vindas aos seus sentidos no Quiosque da Eka, uma lanchonete vegetariana situada no coração acolhedor da Comunidade Hare Krishna. Aqui, mergulhe em uma experiência gastronômica única, onde a deliciosa culinária vegetariana encontra a espiritualidade.
 

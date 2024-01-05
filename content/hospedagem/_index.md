@@ -1,4 +1,4 @@
 ---
- title: Hospedagem
- textImg: generic.png
+title: Hospedagem
+textImg: generic.png
 ---

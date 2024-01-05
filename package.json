@@ -31,6 +31,7 @@
     "bootstrap": "^5.3.2",
     "child_process": "^1.0.2",
     "cookie-universal": "^2.2.2",
+    "easymde": "^2.18.0",
     "exec-sh": "^0.4.0",
     "formidable": "^3.5.1",
     "front-matter": "^4.0.2",
@@ -54,6 +55,7 @@
     "vue-core-image-upload": "^2.4.14",
     "vue-final-modal": "^4.5.3",
     "vue-image-upload-resize": "^2.3.0",
+    "vue3-easymde": "^1.0.1",
     "yaml": "^2.3.4"
   }
 }

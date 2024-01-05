@@ -1,4 +1,4 @@
 ---
- title: Templos
- textImg: generic.png
+title: Templos
+textImg: generic.png
 ---

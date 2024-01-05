@@ -1,5 +1,5 @@
 ---
-title: 'FAZENDA NOVA GOKULA'
+title: FAZENDA NOVA GOKULA
 description: ''
 imgs: ['/upload/1703715649998.8743.jpg']
 ---

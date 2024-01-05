@@ -1,7 +1,9 @@
 <template>
-    <h5 class="bread text-left" > <span v-for="item in montaBradCrumbs(id)">
-            <a :href="'/getContentDir?id='+item[1]">{{ item[0] }}</a> /
-        </span></h5>
+    <h5 class="bread text-left" > 
+            
+        <router-link to="/">home</router-link> / {{ meta.title }} 
+    
+    </h5>
         <div v-if="meta" class="pt-4 pb-4">
         <div class="pt-1" style="padding-left: 50px; padding-right: 50px;">
             <div class="row shadow-sm_ "  >
