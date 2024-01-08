@@ -114,61 +114,46 @@
           </div>
         </div>
       </div>
-
-
     </div>
   </nav>
   
   <div class="bg-dark container-fluid m-0 mt-3" style="height: calc(100% - 85px);">
-    <div v-if="editViewMode==0" class="row gap-0 h-100" >
-      <div class="col-12 col-lg-4 px-0 " >
+    <div  class="row gap-0 h-100" >
+      <div :class="(editViewMode==0)? 'col-12 col-lg-4 px-0' :  'col-12 col-lg-12'" >
         <div v-if="txt" class="h-100 w-100" >
-         
           <ul class="nav nav-tabs bg-dark  nav-fill " role="tablist">
+            <li  class="nav-item">
+              <a id="x1" class="nav-link active" data-bs-toggle="tab" href="#txt_arquivos_">Arquivos</a>
+            </li>
             <li class="nav-item">
-                <a class="nav-link " data-bs-toggle="tab" href="#txt_propiedades_">Propriedades</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link  active" data-bs-toggle="tab" href="#txt_texto_">Texto</a>
-              </li>
-            </ul>
-
-
-
-
-
-
-
-<!-- Tab panes -->
-<div class="tab-content">
-    <div id="txt_texto_" class="container tab-pane active" style="height:100vh; padding-left: 0px; padding-right: 0px">
-      <textarea v-if="txt" v-show="false" class="txt" spellcheck="false" v-model="txt" ></textarea>
-      
-      <textarea v-if="txt" class="txt" spellcheck="false" v-model="txt_texto" ></textarea>
-    </div>
-    <div id="txt_propiedades_" class="container tab-pane fade" style="height:100vh; padding-left: 0px; padding-right: 0px;">
-      <textarea v-if="txt" class="txt" spellcheck="false" v-model="txt_propiedades" ></textarea>
-    </div>
-    
-  </div>
-
-
-
-
-  
+              <a id="x2" class="nav-link " data-bs-toggle="tab" href="#txt_propiedades_">Propriedades</a>
+            </li>
+            <li class="nav-item">
+              <a id="x3" class="nav-link  " data-bs-toggle="tab" href="#txt_texto_">Texto</a>
+            </li>
+          </ul>
+          <!-- Tab panes -->
+          <div class="tab-content" style="height: calc(100% - 28px);">
+            <div id="txt_arquivos_" class="container_ h-100 tab-pane active my-0 mx-0" >
+                <div class="list-group p-4" style="width: 100%;">
+                  <button type="button" class="p-4 list-group-item list-group-item-action bg-dark text-light" @click="filename=x;readFile(); activeTab()" v-for="x in fileList">{{ x }}</button>
+                </div>
+            </div>
+            <div id="txt_propiedades_" class="container tab-pane fade" style="height:100%; padding-left: 0px; padding-right: 0px;">
+              <textarea v-if="txt" class="txt" spellcheck="false" v-model="txt_propiedades" ></textarea>
+            </div>
+            <div id="txt_texto_" class="container tab-pane" style="height:100%; padding-left: 0px; padding-right: 0px">
+              <textarea v-if="txt" v-show="false" class="txt" spellcheck="false" v-model="txt" ></textarea>
+              <textarea v-if="txt" class="txt" spellcheck="false" v-model="txt_texto" ></textarea>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="col-12 col-lg-8 _pt-2 px-0 py-0">
+      <div v-show="editViewMode==0" class="col-12 col-lg-8 _pt-2 px-0 py-0">
         <iframe :key="iframeUpdate" id="iframe" name="iframe" :src="page_id" class="w-100 h-100" ></iframe>	
       </div>
     </div>
-
-
-
-
-
-
-    <div v-if="editViewMode==1" class="row text-center" >
+    <div v-if="editViewMode==1111" class="row text-center" >
       <div class="col-12 col-lg-12" style="_margin-left: -15px; height: 610px; _background-color: blueviolet;">
         <div v-if="txt" class="h-100">
           <textarea v-if="txt" class="txt mt-2" spellcheck="false" v-model="txt" style="width: 100%; height: 90%;"></textarea>
@@ -217,7 +202,7 @@ definePageMeta({
 import { getData, setData } from 'nuxt-storage/local-storage';
 import { storeToRefs } from 'pinia';
 import { useAuthStore } from '~/store/auth';
-
+import yaml from "js-yaml";
 
 const router = useRouter();
 
@@ -252,10 +237,25 @@ let showModal = ref(true)
 let fileType = ""
 let localdata = getData('content')||[]
 let flagCountToSave = 0
+let fileList = ref([])
+let txt_parans = {}
+const ref_session = ref(null);
+
+function activeTab(){ 
+  document.getElementById('txt_arquivos_').classList.remove('active'); 
+  document.getElementById('txt_propiedades_').classList.remove('active'); 
+  document.getElementById('txt_texto_').classList.add('active'); 
+
+  document.getElementById('x1').classList.remove('active'); 
+  document.getElementById('x2').classList.remove('active'); 
+  document.getElementById('x3').classList.add('active'); 
+}
 
 function configMode() {
   if (editViewMode.value == 2) {editViewMode.value = 1}
   filename.value='public/config.json'; 
+  txt_propiedades = ''
+  fileList = []
   readFile(); 
 }
 
@@ -269,8 +269,14 @@ async function cleanup() {
 
 async function read() {
   try {
+      filename.value = filename.value.replaceAll(':', '/')
+      if (!filename.value.includes('.md')&&!filename.value.includes('.json')) filename.value = filename.value + '/_index.md'
+      
       const { data: ret } = await useFetch('/api/read?filename=' + filename.value)
       txt.value = ret.value
+      // if (filename.value.includes('.json')) txt_texto = ret.value
+
+      // txt_texto = ret.value
       let index = localdata.findIndex((item) => item.filename === filename.value);
       if(index===-1){
         console.log("salvo local!");
@@ -413,11 +419,6 @@ async function novoDoc() {
       }
       const response = await fetch('/api/novoDoc', config)
       if (response.ok) {
-        // console.log(response.body);
-        // console.log("Retorna info");
-        // document.getElementById('iframe').contentWindow.postMessage({"refresh": true, "filename": filename.value}, '/');
-        // page_id.value = "/getContentDir?id=" + filename.value.replace('/_index.md','')
-        // page_id.value = "/getContentFile?id=" + filename.value.replace('/_index.md','/' + newname)
         reloadIframe()
         aleradySaved.value = true
       } else {
@@ -455,14 +456,12 @@ async function save() {
       console.log("save api error");
     }
 }
-   
-// watch(txt, (data) => {
- 
-// })
 
 watch(txt_propiedades, (data) => {
   console.log(data);
   txt.value = '---\n' + txt_propiedades.value + '\n---\n' + txt_texto.value
+  txt_parans = yaml.load(data);
+  console.log('obj.session:', txt_parans.session||'');
 })
 
 watch(txt_texto, (data) => {
@@ -470,13 +469,18 @@ watch(txt_texto, (data) => {
   txt.value = '---\n' + txt_propiedades.value + '\n---\n' + txt_texto.value
 })
 
-
 const readFile = () => {
   read()
+  activeTab()
   watch(txt, (data) => {
     flagCountToSave++
-    // console.log('flagCountToSave:', flagCountToSave);
-    document.getElementById('iframe').contentWindow.postMessage({"refresh": true, "filename": filename.value, "txt": txt.value}, '/');
+    let obj = JSON.parse(JSON.stringify(fileList));
+    document.getElementById('iframe').contentWindow.postMessage(
+      {refresh: true, 
+      filename: filename.value, 
+      txt: txt.value, 
+      txt_parans: txt_parans,
+      fileList: obj}, '/');
     if (true) {
       flagCountToSave = 0
       // console.log('data:', data);
@@ -497,10 +501,11 @@ let flagA = false
 const iframeEvent = (event) => {
   // console.log("edit.vue: recebendo a mensagem:", event.data);
   fileType = event.data.type
-  if (event.data.type == 'dir') {
+  if (fileType == 'dir') {
     filename.value = event.data.id + '/_index.md'
   }else{
-    filename.value = event.data.id
+    fileList.value = event.data.fileList
+    filename.value = event.data.id||event.data.fileList[0]
   }
   flagA = true
   readFile()

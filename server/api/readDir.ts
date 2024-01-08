@@ -5,11 +5,15 @@ export default defineEventHandler(async (event) => {
     const query = getQuery(event)
     let id = query.id as string
     id = id.replace('content/','')
+    console.log('id---->>', id);
+    
     const docs = await serverQueryContent(event).find();
+    // console.log(docs);
+    
     const baseUrl = "";
-    let ret = docs.filter(doc => doc._path?.includes(id)&&!doc._path?.includes(id+'/_index')).map((doc)=>{
+    let ret = docs.filter(doc => doc._path?.includes(id.replace('.md',''))&&!doc._path?.includes(id + '/_index')).map((doc)=>{
         return {
-            id: doc._path + '.md',
+            id: doc._path + '.md ',
             path: `${baseUrl}${doc._path}`,
             title: doc.title,
             description: doc.description,
@@ -20,6 +24,8 @@ export default defineEventHandler(async (event) => {
             image_title: doc.image_title,
         }
     })
+    console.log(ret);
+    
     return ret
 });
 

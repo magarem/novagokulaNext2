@@ -1,5 +1,6 @@
 ---
 title: 'Bem vindo!'
+session: bemvindo
 video: https://www.youtube.com/embed/Ir6E7wEcJfE?si=PV-68z2bSndZXJna
 ---
 Bem vindo!

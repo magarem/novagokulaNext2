@@ -12,6 +12,7 @@ export default defineNuxtConfig({
   },
   css: ['~/assets/css/bootstrap.scss', 'vue-final-modal/style.css'],
   modules: [[
+    
     '@pinia/nuxt',
     {
       autoImports: [
@@ -19,13 +20,18 @@ export default defineNuxtConfig({
         'defineStore',
       ],
     },
-  ],"@vueuse/nuxt", "formidable", "@nuxt/image", "@nuxtjs/google-fonts", '@nuxt/content', '@vueuse/nuxt'],
+  ], "@formkit/nuxt", "@vueuse/nuxt", "formidable", "@nuxt/image", "@nuxtjs/google-fonts", '@nuxt/content', '@vueuse/nuxt'],
   plugins: [
     { src: '~/plugins/bootstrap.js', mode: 'client'},
     { src: '~/plugins/vue-final-modal.ts', ssr: false }
   ],
   server: {
     host: '0' // default: localhost
+  }
+  ,
+  formkit: {
+    // Experimental support for auto loading (see note):
+    autoImport: true
   },
   buildModules: [
     '@nuxtjs/ngrok','@nuxtjs/vuetify',

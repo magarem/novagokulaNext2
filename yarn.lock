@@ -344,6 +344,113 @@
   resolved "https://registry.npmjs.org/@fastify/busboy/-/busboy-2.1.0.tgz"
   integrity sha512-+KpH+QxZU7O4675t3mnkQKcZZg56u+K/Ct2K+N2AZYNVK8kyeo/bI18tI8aPm3tvNNRyTWfj6s5tnGNlcbQRsA==
 
+"@formkit/core@1.4.0":
+  version "1.4.0"
+  resolved "https://registry.npmjs.org/@formkit/core/-/core-1.4.0.tgz"
+  integrity sha512-LQYICzYWTC+ZXPyfizHDRJTBx6WLM3eRk9T4tzU8YPV58AYWPq3E4dbN5CKl7mPApAcJX6NxQOCYuNrdNKZvQA==
+  dependencies:
+    "@formkit/utils" "1.4.0"
+
+"@formkit/dev@1.4.0":
+  version "1.4.0"
+  resolved "https://registry.npmjs.org/@formkit/dev/-/dev-1.4.0.tgz"
+  integrity sha512-y71zSZGAWdqjuj5p7IvptJXgDXYFTZrJSjZ9HeQjNYJ1n3Nwc7latTzJSEQyOHuboSzRWafATYNeB3pqiTvBYg==
+  dependencies:
+    "@formkit/core" "1.4.0"
+    "@formkit/utils" "1.4.0"
+
+"@formkit/i18n@1.4.0":
+  version "1.4.0"
+  resolved "https://registry.npmjs.org/@formkit/i18n/-/i18n-1.4.0.tgz"
+  integrity sha512-NRqw3ummnboUVkxN68jdy/T/mvgnf0/8v76160V3dTdt4OK9Q1Eq0a7pgonm0gBqisezX/0pELRWD0NPgUZSPw==
+  dependencies:
+    "@formkit/core" "1.4.0"
+    "@formkit/utils" "1.4.0"
+    "@formkit/validation" "1.4.0"
+
+"@formkit/inputs@1.4.0":
+  version "1.4.0"
+  resolved "https://registry.npmjs.org/@formkit/inputs/-/inputs-1.4.0.tgz"
+  integrity sha512-6IvgjOZnvtYq2oSEXkarDCaabxl4o29FhFmD64d0lC8WTaVLcRPKgo9BsLaVvLYfJgVKDzFyPIMGLFNhTsiJ/Q==
+  dependencies:
+    "@formkit/core" "1.4.0"
+    "@formkit/utils" "1.4.0"
+
+"@formkit/nuxt@^1.4.0":
+  version "1.4.0"
+  resolved "https://registry.npmjs.org/@formkit/nuxt/-/nuxt-1.4.0.tgz"
+  integrity sha512-UmcKiecauf6oBtxA1IfOEZcIcCYD843qL+UUNA8nzACivEkv6WWFqkDTOpUG2Ov7NrInPBlLopVLrzddC6Yw2g==
+  dependencies:
+    "@formkit/core" "1.4.0"
+    "@formkit/i18n" "1.4.0"
+    "@formkit/vue" "1.4.0"
+    "@nuxt/kit" "^3.7.4"
+    chokidar "^3.5.3"
+    nuxi "^3.9.0"
+    pathe "^1.1.1"
+    unplugin-formkit "^0.2.7"
+
+"@formkit/observer@1.4.0":
+  version "1.4.0"
+  resolved "https://registry.npmjs.org/@formkit/observer/-/observer-1.4.0.tgz"
+  integrity sha512-sNjLqi+deN2TCnuRDWdOJ1OjTyxavFKg9pVK1E1KRrbQr0pvPDaS4qYIjrIIWg0YMsQiea487r03elLVesMWWw==
+  dependencies:
+    "@formkit/core" "1.4.0"
+    "@formkit/utils" "1.4.0"
+
+"@formkit/rules@1.4.0":
+  version "1.4.0"
+  resolved "https://registry.npmjs.org/@formkit/rules/-/rules-1.4.0.tgz"
+  integrity sha512-NEVDjN89Zwx26Ze0gwqd/Bml3d4QIzp3SDps3uND9IE1Ssd3yvvSSjF5jVeHLE7ZMDLUDfOepf5xyqhPE1UbqA==
+  dependencies:
+    "@formkit/core" "1.4.0"
+    "@formkit/utils" "1.4.0"
+    "@formkit/validation" "1.4.0"
+
+"@formkit/themes@1.4.0":
+  version "1.4.0"
+  resolved "https://registry.npmjs.org/@formkit/themes/-/themes-1.4.0.tgz"
+  integrity sha512-isyHZALh6S3BM+0G5NeRQkI12gydDRXEkI6oGt5uTn3Ju2olLt8RwOXNYgJ9lWSb8HrfuHh7/89SozdIRNVuCA==
+  dependencies:
+    "@formkit/core" "1.4.0"
+
+"@formkit/utils@1.4.0":
+  version "1.4.0"
+  resolved "https://registry.npmjs.org/@formkit/utils/-/utils-1.4.0.tgz"
+  integrity sha512-HAkULL7/0PnRZmMJyFHZ3wxxTYl+tuJrSk13/LQyxB77luwlq8sCvlGaF5cz+0JX70HSVVc0ZJjJT4o0uTVeYQ==
+
+"@formkit/validation@1.4.0":
+  version "1.4.0"
+  resolved "https://registry.npmjs.org/@formkit/validation/-/validation-1.4.0.tgz"
+  integrity sha512-KF25aU5ouwg+dFryyDGPTEFgik2TzbiT824PkIQJn7Fgepplo3Dj/UvjHmM2u0hBvIE2CS6XtgE0XVhn1kRG+A==
+  dependencies:
+    "@formkit/core" "1.4.0"
+    "@formkit/observer" "1.4.0"
+    "@formkit/utils" "1.4.0"
+
+"@formkit/vue@1.4.0":
+  version "1.4.0"
+  resolved "https://registry.npmjs.org/@formkit/vue/-/vue-1.4.0.tgz"
+  integrity sha512-qxLJLG/rc0Mv75h9aaBu1SIFo8AZq1mMCa+u4aWQdXf0k/e8Mfuyhkch25c9pfbzSjEpFzs7G7L5U1gMuTcmtQ==
+  dependencies:
+    "@formkit/core" "1.4.0"
+    "@formkit/dev" "1.4.0"
+    "@formkit/i18n" "1.4.0"
+    "@formkit/inputs" "1.4.0"
+    "@formkit/observer" "1.4.0"
+    "@formkit/rules" "1.4.0"
+    "@formkit/themes" "1.4.0"
+    "@formkit/utils" "1.4.0"
+    "@formkit/validation" "1.4.0"
+    vue "^3.3.4"
+
+"@grapoza/vue-tree@^5.2.2":
+  version "5.2.2"
+  resolved "https://registry.npmjs.org/@grapoza/vue-tree/-/vue-tree-5.2.2.tgz"
+  integrity sha512-a70wXmM7nOVafwDQvFaeyoifpeiOM4eNrjxdvygeb3HS1eISHa3eWelv6epKQZcgsLknK2eN6qyLBm+g1Kh3vQ==
+  dependencies:
+    vue "^3.2.38"
+
 "@img/sharp-libvips-linux-x64@1.0.0":
   version "1.0.0"
   resolved "https://registry.npmjs.org/@img/sharp-libvips-linux-x64/-/sharp-libvips-linux-x64-1.0.0.tgz"
@@ -3151,6 +3258,34 @@ es-module-lexer@^1.2.1:
   resolved "https://registry.npmjs.org/es-module-lexer/-/es-module-lexer-1.4.1.tgz"
   integrity sha512-cXLGjP0c4T3flZJKQSuziYoq7MlT+rnvfZjfp7h+I7K9BNX54kP9nyWvdbwjQ4u1iWbOL4u96fgeZLToQlZC7w==
 
+esbuild@*, esbuild@^0.19.6, esbuild@^0.19.8:
+  version "0.19.8"
+  resolved "https://registry.npmjs.org/esbuild/-/esbuild-0.19.8.tgz"
+  integrity sha512-l7iffQpT2OrZfH2rXIp7/FkmaeZM0vxbxN9KfiCwGYuZqzMg/JdvX26R31Zxn/Pxvsrg3Y9N6XTcnknqDyyv4w==
+  optionalDependencies:
+    "@esbuild/android-arm" "0.19.8"
+    "@esbuild/android-arm64" "0.19.8"
+    "@esbuild/android-x64" "0.19.8"
+    "@esbuild/darwin-arm64" "0.19.8"
+    "@esbuild/darwin-x64" "0.19.8"
+    "@esbuild/freebsd-arm64" "0.19.8"
+    "@esbuild/freebsd-x64" "0.19.8"
+    "@esbuild/linux-arm" "0.19.8"
+    "@esbuild/linux-arm64" "0.19.8"
+    "@esbuild/linux-ia32" "0.19.8"
+    "@esbuild/linux-loong64" "0.19.8"
+    "@esbuild/linux-mips64el" "0.19.8"
+    "@esbuild/linux-ppc64" "0.19.8"
+    "@esbuild/linux-riscv64" "0.19.8"
+    "@esbuild/linux-s390x" "0.19.8"
+    "@esbuild/linux-x64" "0.19.8"
+    "@esbuild/netbsd-x64" "0.19.8"
+    "@esbuild/openbsd-x64" "0.19.8"
+    "@esbuild/sunos-x64" "0.19.8"
+    "@esbuild/win32-arm64" "0.19.8"
+    "@esbuild/win32-ia32" "0.19.8"
+    "@esbuild/win32-x64" "0.19.8"
+
 esbuild@^0.18.10:
   version "0.18.20"
   resolved "https://registry.npmjs.org/esbuild/-/esbuild-0.18.20.tgz"
@@ -3178,34 +3313,6 @@ esbuild@^0.18.10:
     "@esbuild/win32-arm64" "0.18.20"
     "@esbuild/win32-ia32" "0.18.20"
     "@esbuild/win32-x64" "0.18.20"
-
-esbuild@^0.19.6, esbuild@^0.19.8:
-  version "0.19.8"
-  resolved "https://registry.npmjs.org/esbuild/-/esbuild-0.19.8.tgz"
-  integrity sha512-l7iffQpT2OrZfH2rXIp7/FkmaeZM0vxbxN9KfiCwGYuZqzMg/JdvX26R31Zxn/Pxvsrg3Y9N6XTcnknqDyyv4w==
-  optionalDependencies:
-    "@esbuild/android-arm" "0.19.8"
-    "@esbuild/android-arm64" "0.19.8"
-    "@esbuild/android-x64" "0.19.8"
-    "@esbuild/darwin-arm64" "0.19.8"
-    "@esbuild/darwin-x64" "0.19.8"
-    "@esbuild/freebsd-arm64" "0.19.8"
-    "@esbuild/freebsd-x64" "0.19.8"
-    "@esbuild/linux-arm" "0.19.8"
-    "@esbuild/linux-arm64" "0.19.8"
-    "@esbuild/linux-ia32" "0.19.8"
-    "@esbuild/linux-loong64" "0.19.8"
-    "@esbuild/linux-mips64el" "0.19.8"
-    "@esbuild/linux-ppc64" "0.19.8"
-    "@esbuild/linux-riscv64" "0.19.8"
-    "@esbuild/linux-s390x" "0.19.8"
-    "@esbuild/linux-x64" "0.19.8"
-    "@esbuild/netbsd-x64" "0.19.8"
-    "@esbuild/openbsd-x64" "0.19.8"
-    "@esbuild/sunos-x64" "0.19.8"
-    "@esbuild/win32-arm64" "0.19.8"
-    "@esbuild/win32-ia32" "0.19.8"
-    "@esbuild/win32-x64" "0.19.8"
 
 escalade@^3.1.1:
   version "3.1.1"
@@ -6279,7 +6386,7 @@ nth-check@^2.0.1:
   dependencies:
     boolbase "^1.0.0"
 
-nuxi@^3.10.0:
+nuxi@^3.10.0, nuxi@^3.9.0:
   version "3.10.0"
   resolved "https://registry.npmjs.org/nuxi/-/nuxi-3.10.0.tgz"
   integrity sha512-veZXw2NuaQ1PrpvHrnQ1dPgkAjv0WqPlvFReg5Iubum0QVGWdJJvGuNsltDQyPcZ7X7mhMXq9SLIpokK4kpvKA==
@@ -7376,6 +7483,13 @@ rollup@^1.20.0||^2.0.0||^3.0.0||^4.0.0, rollup@^2.0.0||^3.0.0||^4.0.0, rollup@^2
     "@rollup/rollup-win32-x64-msvc" "4.6.1"
     fsevents "~2.3.2"
 
+rollup@^3:
+  version "3.29.4"
+  resolved "https://registry.npmjs.org/rollup/-/rollup-3.29.4.tgz"
+  integrity sha512-oWzmBZwvYrU0iJHtDmhsm662rC15FRXmcjCk1xD771dFDx5jJ02ufAQQTn0etB2emNk4J9EZg/yWKpsn9BWGRw==
+  optionalDependencies:
+    fsevents "~2.3.2"
+
 rollup@^3.27.1:
   version "3.29.3"
   resolved "https://registry.npmjs.org/rollup/-/rollup-3.29.3.tgz"
@@ -8075,7 +8189,7 @@ tabbable@^6.2.0:
   resolved "https://registry.npmjs.org/tabbable/-/tabbable-6.2.0.tgz"
   integrity sha512-Cat63mxsVJlzYvN51JmVXIgNoUokrIaT2zLclCXjRd8boZ0004U4KCs/sToJ75C6sdlByWxpYnb5Boif1VSFew==
 
-"tailwindcss@>=3.0.0 || insiders":
+tailwindcss@^3.2.0, "tailwindcss@>=3.0.0 || insiders":
   version "3.4.0"
   resolved "https://registry.npmjs.org/tailwindcss/-/tailwindcss-3.4.0.tgz"
   integrity sha512-VigzymniH77knD1dryXbyxR+ePHihHociZbXnLZHUyzf2MMs2ZVqlUrZ3FvpXP8pno9JzmILt1sZPD19M3IxtA==
@@ -8546,6 +8660,14 @@ universalify@^2.0.0:
   resolved "https://registry.npmjs.org/universalify/-/universalify-2.0.0.tgz"
   integrity sha512-hAZsKq7Yy11Zu1DE0OzWjw7nnLZmJZYTDZZyEFHZdUhV8FkH5MCfoU1XMaxXovpyW5nq5scPqq0ZDP9Zyl04oQ==
 
+unplugin-formkit@^0.2.7:
+  version "0.2.12"
+  resolved "https://registry.npmjs.org/unplugin-formkit/-/unplugin-formkit-0.2.12.tgz"
+  integrity sha512-l1XqnFCC2jsdTXEWdgO7oIt4Nv/ayKPPuRT8IVmKWxfnf/sR7hjwNKBgVqxErlL7gU84O6S7rCUL9apjIQPQYg==
+  dependencies:
+    pathe "^1.1.1"
+    unplugin "^1.4.0"
+
 unplugin-vue-router@^0.7.0:
   version "0.7.0"
   resolved "https://registry.npmjs.org/unplugin-vue-router/-/unplugin-vue-router-0.7.0.tgz"
@@ -8565,7 +8687,7 @@ unplugin-vue-router@^0.7.0:
     unplugin "^1.5.0"
     yaml "^2.3.2"
 
-unplugin@^1.3.1, unplugin@^1.5.0, unplugin@^1.5.1:
+unplugin@^1.3.1, unplugin@^1.4.0, unplugin@^1.5.0, unplugin@^1.5.1:
   version "1.5.1"
   resolved "https://registry.npmjs.org/unplugin/-/unplugin-1.5.1.tgz"
   integrity sha512-0QkvG13z6RD+1L1FoibQqnvTwVBXvS4XSPwAyinVgoOCl2jAgwzdUKmEj05o4Lt8xwQI85Hb6mSyYkcAGwZPew==
@@ -8803,7 +8925,7 @@ vite-plugin-vue-inspector@^4.0.0:
     kolorist "^1.8.0"
     magic-string "^0.30.4"
 
-vite@*, "vite@^3.0.0 || ^4.0.0", "vite@^3.0.0-0 || ^4.0.0-0", "vite@^3.1.0 || ^4.0.0 || ^5.0.0-0", "vite@^4.0.0 || ^5.0.0", vite@^4.5.0, vite@>=2.0.0:
+vite@*, "vite@^3.0.0 || ^4.0.0", "vite@^3.0.0-0 || ^4.0.0-0", "vite@^3.1.0 || ^4.0.0 || ^5.0.0-0", "vite@^4.0.0 || ^5.0.0", vite@^4.5.0, vite@>=2.0.0, vite@>=3:
   version "4.5.1"
   resolved "https://registry.npmjs.org/vite/-/vite-4.5.1.tgz"
   integrity sha512-AXXFaAJ8yebyqzoNB9fu2pHoo/nWX+xZlaRwoeYUxEqBO+Zj4msE5G+BhGBll9lYEKv9Hfks52PAF2X7qDYXQA==
@@ -8928,7 +9050,7 @@ vue@^2.5.17:
     "@vue/compiler-sfc" "2.7.16"
     csstype "^3.1.0"
 
-"vue@^2.6.14 || ^3.3.0", "vue@^2.7.0 || ^3.2.25", vue@^3.0.0, "vue@^3.0.0-0 || ^2.6.0", vue@^3.2.0, vue@^3.2.25, vue@^3.3.4, vue@^3.3.8, "vue@>=2.7 || >=3", vue@>=3.2.0, vue@3.4.3:
+"vue@^2.6.14 || ^3.3.0", "vue@^2.7.0 || ^3.2.25", vue@^3.0.0, "vue@^3.0.0-0 || ^2.6.0", vue@^3.2.0, vue@^3.2.25, vue@^3.2.38, vue@^3.3.4, vue@^3.3.8, "vue@>=2.7 || >=3", vue@>=3.2.0, vue@3.4.3:
   version "3.4.3"
   resolved "https://registry.npmjs.org/vue/-/vue-3.4.3.tgz"
   integrity sha512-GjN+culMAGv/mUbkIv8zMKItno8npcj5gWlXkSxf1SPTQf8eJ4A+YfHIvQFyL1IfuJcMl3soA7SmN1fRxbf/wA==
@@ -8996,7 +9118,7 @@ webpack-virtual-modules@^0.6.0:
   resolved "https://registry.npmjs.org/webpack-virtual-modules/-/webpack-virtual-modules-0.6.1.tgz"
   integrity sha512-poXpCylU7ExuvZK8z+On3kX+S8o/2dQ/SVYueKA0D4WEMXROXgY8Ez50/bQEUmvoSMMrWcrJqCHuhAbsiwg7Dg==
 
-"webpack@^4.0.0 || ^5.0.0", "webpack@^4.36.0 || ^5.0.0", webpack@^5.1.0:
+"webpack@^4 || ^5", "webpack@^4.0.0 || ^5.0.0", "webpack@^4.36.0 || ^5.0.0", webpack@^5.1.0:
   version "5.89.0"
   resolved "https://registry.npmjs.org/webpack/-/webpack-5.89.0.tgz"
   integrity sha512-qyfIC10pOr70V+jkmud8tMfajraGCZMBWJtrmuBymQKCrLTRejBI8STDp1MCyZu/QTdZSeacCQYpYNQVOzX5kw==

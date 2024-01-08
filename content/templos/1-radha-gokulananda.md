@@ -15,7 +15,8 @@ A relação de Radha e Krishna é considerada a personificação do amor divino,
 Gokula é identificada com a Vrindavana, um lugar onde Krishna passou sua infância realizando atividades pastoris divinas.
 Portanto, esse conceito é profundamente enraizado na tradição devocional do Gaudiya Vaishnava, onde a adoração a Radha e Krishna é central para a prática espiritual. Os devotos veem essa relação como um modelo supremo de amor divino e devoção, buscando se inspirar e se conectar com essa dimensão espiritual através de práticas como a recitação de mantras, cânticos e leituras devocionais.
 
-Saiba mais: https://www.sankirtana.com.br/br/produto/2939/krishna-book-volume-1/krishna/
+Saiba mais: 
+[Clique aqui](https://www.sankirtana.com.br/br/produto/2939/krishna-book-volume-1/krishna/)
 
 "Sita-Rama Lakshman Hanuman" refere-se a quatro personagens significativos da epopeia épica chamada "Ramayana". Cada um desempenha um papel crucial na história e é venerado pelos devotos por suas façanhas incomuns. 
 
@@ -28,7 +29,8 @@ Por último, Hanuman é um devoto ardente de Rama e é um dos personagens mais q
 
 Esses quatro personagens são frequentemente mencionados juntos, destacando a importância de sua conexão e interações na narrativa do Ramayana. A história de Sita-Rama Lakshman Hanuman é rica em valores éticos, princípios morais e ensinamentos espirituais, sendo uma fonte de inspiração para os devotos.
 
-Saiba mais: https://www.sankirtana.com.br/br/produto/2953/ramayana/ramayana/
+Saiba mais: 
+[Clique aqui](https://www.sankirtana.com.br/br/produto/2953/ramayana/ramayana/)
 
 "Gaura Nitai" refere-se a uma combinação de dois nomes divinos. Esses nomes estão associados a dois importantes avataras (encarnações) de Krishna adorados em nossa tradição Gaudiya Vaishnava.
 Gaura, ou Caitanya Mahaprabhu, é uma encarnação de Krishna que apareceu no século 16, na Bengala Oeste, Índia. Seu nome "Gaura" refere-se à sua tez dourada. Ele é conhecido por disseminar o Sankirtan (canto congregacional dos santos nomes) e sua propagação através do Maha-mantra Hare Krishna, mantra ao qual todos os devotos se dedicam diariamente. [Veja mais sobre o Maha-mantra na outra seção.](generic2?id=mahamantra)
@@ -36,7 +38,8 @@ Nitai, ou Nityananda Prabhu, é considerado o principal associado e amigo de Cha
 A combinação "Gaura Nitai" é adorada nos templos Gaudiya Vaishnavas em todo o mundo, sendo uma parte significativa das práticas devocionais.
 
 
-Saiba mais: https://www.sankirtana.com.br/br/produto/2765/ensinamentos-do-sr-caitanya-nova-edicao/caitanya/
+Saiba mais: 
+[Clique aqui](https://www.sankirtana.com.br/br/produto/2765/ensinamentos-do-sr-caitanya-nova-edicao/caitanya/)
 
 PROGRAMAÇÃO DO TEMPLO
 

@@ -11,13 +11,13 @@
 				<ul class="navbar-nav me-auto mb-2 mb-md-0" style="padding-left: 10px; text-transform: uppercase;">
 					<template v-for="item in navbar.menu">
 						<li class="nav-item" v-if="!item.sub">
-							<a class="nav-Link" :href="item.link">{{ item.name }}</a>
+							<NuxtLink class="nav-Link" :to="{ path: item.link, query: { id: item.query } } " >{{ item.name }}</NuxtLink>
 						</li>
 						<li v-else class="nav-item dropdown">
 							<a class="nav-Link dropdown-toggle" _href="atrativos"  href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ item.name }}</a>
 							<ul class="dropdown-menu dropdown-menu-dark">
 								<li v-for="subItem in item.sub" style="font-size: 13px;">
-									<a class="dropdown-item" :href="subItem.link">{{ subItem.name }}</a>
+									<NuxtLink class="dropdown-item" :to="{ path: subItem.link, query: { id: subItem.query } } ">{{ subItem.name }}</NuxtLink>
 								</li>
 							</ul>
 						</li>
@@ -94,5 +94,13 @@
 
 <script setup>
 	import data from "~/public/config.json"
+	const { query } = useRoute()
+	
 	const navbar = data.topbar
+	const pathWithQuery = (path) => {
+		return {
+			path,
+			query
+		}
+		}
 </script>

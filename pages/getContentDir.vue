@@ -44,7 +44,7 @@
     const route = useRoute()
     let id = route.query.id
     console.log('id da session:', id);
-    
+    id = id.replace('_','/')
     id = id.replace('/_index.md', '')
     const _dir = id
     const _index = _dir + '/_index.md'

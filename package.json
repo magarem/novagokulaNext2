@@ -21,6 +21,8 @@
     "sass": "^1.69.4"
   },
   "dependencies": {
+    "@formkit/nuxt": "^1.4.0",
+    "@grapoza/vue-tree": "^5.2.2",
     "@mdit-vue/plugin-frontmatter": "^2.0.0",
     "@nuxt/image": "^1.1.0",
     "@nuxtjs/ngrok": "^2.0.0",
@@ -42,6 +44,7 @@
     "h3-formidable": "^1.0.0",
     "image-size": "^1.1.1",
     "jquery": "^3.7.1",
+    "js-yaml": "^4.1.0",
     "markdown": "^0.5.0",
     "markdown-it": "^14.0.0",
     "marked": "^11.1.0",
