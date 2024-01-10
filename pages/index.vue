@@ -3,7 +3,7 @@
 		<Slide2/>
 	</header>
 
-	<section id="bemvindo" class="page-section _bg-primary" style=" background-color: #919748;" >
+	<section class="page-section _bg-primary" style=" background-color: #919748;" >
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6 col-sm-12">
@@ -15,7 +15,7 @@
 				</div>
 				<div class="col-lg-6 col-sm-12">
 					<div class="container">
-						<ContentRenderer @click="boxEditFileGo('content/home/bemvindo.md')" class="text-white" :value="bemvindo_data" />
+						<ContentRenderer id="bemvindo" @click="boxEditFileGo('content/home/bemvindo.md')" class="text-white" :value="bemvindo_data" />
 						<!-- <h2 class="text-white mt-0">Bem vindo!</h2>
 						<p class="text-white-75 mb-4">
 							Localizada aos pés da Serra da Mantiqueira, em Pindamonhangaba, a Fazenda Nova Gokula cultiva, há 45 anos, valores de vida simples e uma cultura espiritual baseada nos antigos ensinamentos dos Vedas. A maior comunidade Hare Krishna da América Latina pertence à Sociedade Internacional para a Consciência de Krishna (ISKCON), conhecida como a maior escola de filosofia védica criada no ocidente. Foi fundada em 1966 em Nova Iorque por Swami Prabhupada, que trouxe esta ciência conhecida antes apenas por yogis e santos do oriente. </p>  -->
@@ -74,91 +74,91 @@
 				<div class="col-12">
 					<div class="row text-center">
 						<div class="col-md-4 mb-5 mb-md-0">
-						<div class="d-flex justify-content-center mb-4">
-							<img :src="reviewBox1_data.img"
-							class="rounded-circle shadow-1-strong" />
-						</div>
-						<h5 class="mb-3">{{reviewBox1_data.title}}</h5>
-						<h6 class="text-primary mb-3">Visitante</h6>
-						<p class="px-xl-3">
-							<!-- <i class="fas fa-quote-left pe-2"></i> -->
-							<ContentRenderer @click="boxEditFileGo('content/home/reviewbox1.md')"  class="text-white" :value="reviewBox1_data" />
-						</p>
-						<ul class="list-unstyled d-flex justify-content-center mb-0">
-							<li>
-							<i class="fas fa-star fa-sm text-warning"></i>
-							</li>
-							<li>
-							<i class="fas fa-star fa-sm text-warning"></i>
-							</li>
-							<li>
-							<i class="fas fa-star fa-sm text-warning"></i>
-							</li>
-							<li>
-							<i class="fas fa-star fa-sm text-warning"></i>
-							</li>
-							<li>
-							<i class="fas fa-star fa-sm text-warning"></i>
-							</li>
-						</ul>
+							<div class="d-flex justify-content-center mb-4">
+								<img :src="reviewBox1_data.img"
+								class="rounded-circle shadow-1-strong" />
+							</div>
+							<h5 class="mb-3">{{reviewBox1_data.title}}</h5>
+							<h6 class="text-primary mb-3">Visitante</h6>
+							<p class="px-xl-3">
+								<!-- <i class="fas fa-quote-left pe-2"></i> -->
+								<ContentRenderer id="reviewbox1" @click="boxEditFileGo('content/home/reviewbox1.md')"  class="text-white" :value="reviewBox1_data" />
+							</p>
+							<ul class="list-unstyled d-flex justify-content-center mb-0">
+								<li>
+								<i class="fas fa-star fa-sm text-warning"></i>
+								</li>
+								<li>
+								<i class="fas fa-star fa-sm text-warning"></i>
+								</li>
+								<li>
+								<i class="fas fa-star fa-sm text-warning"></i>
+								</li>
+								<li>
+								<i class="fas fa-star fa-sm text-warning"></i>
+								</li>
+								<li>
+								<i class="fas fa-star fa-sm text-warning"></i>
+								</li>
+							</ul>
 						</div>
 						<div class="col-md-4 mb-5 mb-md-0">
-						<div class="d-flex justify-content-center mb-4">
-							<img src="https://lh3.googleusercontent.com/a-/ALV-UjXO9v9WEu2ckBelZS90yCpmF-9JiSNJQ02eBtZWOUODpodq=w66-h66-p-rp-mo-ba6-br100"
-							class="rounded-circle shadow-1-strong"   />
-						</div>
-						<h5 class="mb-3">Alex Prosa</h5>
-						<h6 class="text-primary mb-3">Visitante</h6>
-						<p class="px-xl-3">
-							<!-- <i class="fas fa-quote-left pe-2"></i> -->
-							Lugar maravilhoso de contemplação, reflexão, bem-estar, paz. Hare krishna, Hare Hare. Templos para meditação, trilhas, cachoeira, hospedagem, camping, lojinhas de conveniência, lanchonete, espaço para almoço, massagens ayurvédica, natureza exuberante, muitos pássaros de todas as espécies, cânticos, devoção e, acima de tudo, pessoas especiais que dão todo suporte aos visitantes. Entrada, R$ 10,00 por pessoa adultos. Crianças não sei se pagam.
-						</p>
-						<ul class="list-unstyled d-flex justify-content-center mb-0">
-							<li>
-							<i class="fas fa-star fa-sm text-warning"></i>
-							</li>
-							<li>
-							<i class="fas fa-star fa-sm text-warning"></i>
-							</li>
-							<li>
-							<i class="fas fa-star fa-sm text-warning"></i>
-							</li>
-							<li>
-							<i class="fas fa-star fa-sm text-warning"></i>
-							</li>
-							<li>
-							<i class="fas fa-star fa-sm text-warning"></i>
-							</li>
-						</ul>
+							<div class="d-flex justify-content-center mb-4">
+								<img :src="reviewBox2_data.img"
+								class="rounded-circle shadow-1-strong" />
+							</div>
+							<h5 class="mb-3">{{reviewBox2_data.title}}</h5>
+							<h6 class="text-primary mb-3">Visitante</h6>
+							<p class="px-xl-3">
+								<!-- <i class="fas fa-quote-left pe-2"></i> -->
+								<ContentRenderer id="reviewbox2" @click="boxEditFileGo('content/home/reviewbox2.md')"  class="text-white" :value="reviewBox2_data" />
+							</p>
+							<ul class="list-unstyled d-flex justify-content-center mb-0">
+								<li>
+								<i class="fas fa-star fa-sm text-warning"></i>
+								</li>
+								<li>
+								<i class="fas fa-star fa-sm text-warning"></i>
+								</li>
+								<li>
+								<i class="fas fa-star fa-sm text-warning"></i>
+								</li>
+								<li>
+								<i class="fas fa-star fa-sm text-warning"></i>
+								</li>
+								<li>
+								<i class="fas fa-star fa-sm text-warning"></i>
+								</li>
+							</ul>
 						</div>
 						<div class="col-md-4 mb-0">
-						<div class="d-flex justify-content-center mb-4">
-							<img src="https://lh3.googleusercontent.com/a-/ALV-UjUFaj0g7PMSqac5m3rLKwvKRSJKPDcVeAFu2TnXP1G4H52Z=w66-h66-p-rp-mo-ba2-br100"
-							class="rounded-circle shadow-1-strong" />
-						</div>
-						<h5 class="mb-3">Susana Uribarri</h5>
-						<h6 class="text-primary mb-3">Visitante</h6>
-						<p class="px-xl-3">
-							<!-- <i class="fas fa-quote-left pe-2"></i> -->
-							Lugar encantador. Fizemos um retiro de Yoga e mantras. Experiência maravilhosa, pessoas gentis, atenção primorosa. Recomendo o kiosque da Eka, e o restaurante Confraria vegana do Jaya Devi.
-						</p>
-						<ul class="list-unstyled d-flex justify-content-center mb-0">
-							<li>
-							<i class="fas fa-star fa-sm text-warning"></i>
-							</li>
-							<li>
-							<i class="fas fa-star fa-sm text-warning"></i>
-							</li>
-							<li>
-							<i class="fas fa-star fa-sm text-warning"></i>
-							</li>
-							<li>
-							<i class="fas fa-star fa-sm text-warning"></i>
-							</li>
-							<li>
-							<i class="fas fa-star fa-sm text-warning"></i>
-							</li>
-						</ul>
+							<div class="d-flex justify-content-center mb-4">
+								<img :src="reviewBox3_data.img"
+								class="rounded-circle shadow-1-strong" />
+							</div>
+							<h5 class="mb-3">{{reviewBox3_data.title}}</h5>
+							<h6 class="text-primary mb-3">Visitante</h6>
+							<p class="px-xl-3">
+								<!-- <i class="fas fa-quote-left pe-2"></i> -->
+								<ContentRenderer id="reviewbox3" @click="boxEditFileGo('content/home/reviewbox3.md')"  class="text-white" :value="reviewBox3_data" />
+							</p>
+							<ul class="list-unstyled d-flex justify-content-center mb-0">
+								<li>
+								<i class="fas fa-star fa-sm text-warning"></i>
+								</li>
+								<li>
+								<i class="fas fa-star fa-sm text-warning"></i>
+								</li>
+								<li>
+								<i class="fas fa-star fa-sm text-warning"></i>
+								</li>
+								<li>
+								<i class="fas fa-star fa-sm text-warning"></i>
+								</li>
+								<li>
+								<i class="fas fa-star fa-sm text-warning"></i>
+								</li>
+							</ul>
 						</div>
 					</div>
 				</div>
@@ -172,7 +172,11 @@
 			/* margin-top: 145px; */
 		}
 	}
-	.dashed {border: dashed red;}
+	.dashed {
+		border: dashed rgb(170, 113, 189);
+		border-radius: 15px;
+		padding: 5px;
+	}
 </style>
 <script setup lang="ts">
     definePageMeta({
@@ -256,8 +260,21 @@
         // scrollToElement(event.data.txt_parans.session)
     }
 
+	function tiraClass(){
+		var lista = document.getElementsByClassName("dashed");
+		for(var i = lista.length - 1; i >= 0; i--)
+		{
+			lista[i].classList.remove('dashed')
+		}
+			
+	}
+
 	function boxEditFileGo(file){
+	
+		tiraClass()
 		window.parent.postMessage({type: 'file', id: file, fileList}, '/');
+		var element = document.getElementById(file.split('/').slice(-1)[0].replace('.md', ''));
+		element.classList.add("dashed");
 
 	}
 

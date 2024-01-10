@@ -24,7 +24,7 @@ export default defineEventHandler(async (event) => {
             image_title: doc.image_title,
         }
     })
-    console.log(ret);
+    // console.log(ret);
     
     return ret
 });

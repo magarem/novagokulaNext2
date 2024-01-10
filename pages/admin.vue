@@ -69,13 +69,13 @@
                 <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466"/>
               </svg>
             </button>
-            <button type="button" class="btn btn-outline-secondary px-3 btn-sm"  data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <button type="button" @click="loadConfigFile" class="btn btn-outline-secondary px-3 btn-sm"  data-bs-toggle="modal" data-bs-target="#exampleModal">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-card-image" viewBox="0 0 16 16">
                 <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/>
                 <path d="M1.5 2A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2zm13 1a.5.5 0 0 1 .5.5v6l-3.775-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12v.54A.505.505 0 0 1 1 12.5v-9a.5.5 0 0 1 .5-.5z"/>
               </svg>
             </button>
-            <button type="button" @click="configMode" class="btn btn-outline-secondary px-3 btn-sm" >
+            <button type="button" class="btn btn-outline-secondary px-3 btn-sm"  data-bs-toggle="modal" data-bs-target="#modal_config">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear-fill" viewBox="0 0 16 16">
                 <path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z"/>
               </svg>
@@ -136,7 +136,7 @@
           <div class="tab-content" style="height: calc(100% - 28px);">
             <div id="txt_arquivos_" class="container_ h-100 tab-pane active my-0 mx-0" >
                 <div class="list-group p-4" style="width: 100%;">
-                  <button type="button" class="p-4 list-group-item list-group-item-action bg-dark text-light" @click="filename=x;readFile(); activeTab()" v-for="x in fileList">{{ x }}</button>
+                  <button type="button" class="p-4 list-group-item list-group-item-action bg-dark text-light" @click="filename=x;openNewFile(x);readFile();  activeTab()" v-for="x in fileList">{{ x }}</button>
                 </div>
             </div>
             <div id="txt_propiedades_" class="container tab-pane fade" style="height:100%; padding-left: 0px; padding-right: 0px;">
@@ -188,6 +188,25 @@
       </div>
     </div>
   </div>
+
+  <div class="modal fade modal-xl" id="modal_config" tabindex="-1" aria-labelledby="modal_config" aria-hidden="true">
+    <div class="modal-dialog border-3 border-dark bg-dark">
+      <div class="modal-content bg-dark">
+        <div class="modal-header bg-dark">
+          <h5 class="modal-title text-light" id="exampleModalLabel">Configurações do sistema</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body bg-dark" style="height: 70vh;">
+          <textarea id="config_textarea" v-model="configtextarea" class="bg-dark text-light p-2" style="width: 100%; height:100%;"></textarea>
+        </div>
+        <div class="modal-footer bg-dark">
+          <button type="button" class="btn btn-secondary" @click="loadConfigFile">load</button>
+          <button type="button" class="btn btn-secondary" @click="saveConfigFile()">Save</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
   <!------------>
   <!-- /Modal -->
   <!------------>
@@ -234,12 +253,13 @@ let txt_propiedades = ref()
 let txt_texto = ref()
 let aleradySaved = ref(false)
 let showModal = ref(true)
-let fileType = ""
+let fileType = ref("dir")
 let localdata = getData('content')||[]
 let flagCountToSave = 0
 let fileList = ref([])
 let txt_parans = {}
 const ref_session = ref(null);
+let configtextarea = ref("")
 
 function activeTab(){ 
   document.getElementById('txt_arquivos_').classList.remove('active'); 
@@ -268,6 +288,7 @@ async function cleanup() {
 }
 
 async function read() {
+  // loadConfigFile()
   try {
       filename.value = filename.value.replaceAll(':', '/')
       if (!filename.value.includes('.md')&&!filename.value.includes('.json')) filename.value = filename.value + '/_index.md'
@@ -398,8 +419,10 @@ async function delDoc(){
       filename.value = _dir + '/_index.md'
      
       readFile()
-      page_id.value = "/getContentDir?id=" + _dir
-      document.getElementById('iframe').contentWindow.location = "/getContentDir?id=" + _dir
+      console.log(_dir.replaceAll('/', ':'));
+      
+      // page_id.value = _dir.replaceAll('/', ':')
+      document.getElementById('iframe').contentWindow.location = '/'+_dir.replaceAll('/', ':')
       // reloadIframe()
     }
 }
@@ -407,7 +430,7 @@ async function delDoc(){
 async function novoDoc() {
   if (true){
     const newname = Date.now() + '.md'
-    let aux1 = "---\n title: Novo documento\n textImg: ['img/generic.png']\n---\nTexto"
+    let aux1 = "---\ntitle: Novo documento\ntextImg: ['img/generic.png']\n---\nTexto"
     // console.log({filename: splitLastOccurrence(filename.value, '/')[0] + '/' + newname, txt: aux1});
     try {
       const config = {
@@ -441,7 +464,7 @@ async function save() {
           'Accept': 'application/json',
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({filename: filename.value, txt: txt.value})
+        body: JSON.stringify({filename: filename.value.trim(), txt: txt.value})
       }
       const response = await fetch('/api/save', config)
       if (response.ok) {
@@ -467,7 +490,15 @@ watch(txt_propiedades, (data) => {
 watch(txt_texto, (data) => {
   console.log(data);
   txt.value = '---\n' + txt_propiedades.value + '\n---\n' + txt_texto.value
+  // document.getElementById('iframe').contentWindow.postMessage({refresh: true})
 })
+
+const openNewFile = (x) => {
+  document.getElementById('iframe').contentWindow.postMessage(
+      {op: 'redirect', 
+      filename: x }
+  )
+}
 
 const readFile = () => {
   read()
@@ -493,6 +524,34 @@ const readFile = () => {
   })
 }
 
+const loadConfigFile = async () => { 
+  const { data: ret } = await useFetch('/api/read?filename=public/config.json')
+  console.log(ret.value);
+  configtextarea.value = ret.value
+}
+
+const saveConfigFile = async () => {
+  try {
+      const config = {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({filename: 'public/config.json', txt: configtextarea.value})
+    }
+    const response = await fetch('/api/save', config)
+    if (response.ok) {
+      aleradySaved.value = true
+    } else {
+      console.log("save file error");
+    }
+  } 
+  catch (error) {
+    console.log("save api error");
+  }
+}
+
 const reloadIframe = () => {
   document.getElementById('iframe').contentWindow.location.reload(true)
 }
@@ -500,8 +559,10 @@ let flagA = false
 
 const iframeEvent = (event) => {
   // console.log("edit.vue: recebendo a mensagem:", event.data);
-  fileType = event.data.type
-  if (fileType == 'dir') {
+  fileType.value = event.data.type
+  console.log('fileType:', fileType.value);
+  fileList.value = event.data.fileList
+  if (fileType.value == 'dir') {
     filename.value = event.data.id + '/_index.md'
   }else{
     fileList.value = event.data.fileList
