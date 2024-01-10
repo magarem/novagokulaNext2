@@ -53,6 +53,12 @@
     .bg {
         background-color: #E7B884;
     }
+    img {
+		/* height: 280px;  */
+        max-width: 300px;
+		object-fit: cover;
+		border-radius: 2%;
+	}
 </style>
 <script setup lang="ts">
 const getBrad = (str) => {

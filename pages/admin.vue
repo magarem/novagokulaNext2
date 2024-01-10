@@ -375,9 +375,7 @@ async function rename() {
       console.log(ret);
     })
     filename.value = newname
-    // read()
-    document.getElementById('iframe').contentWindow.location = "/getContentFile?id=" + newname
-    // console.log('rename ret:', ret);
+    document.getElementById('iframe').contentWindow.location = "/" + newname.replaceAll('/', ':')
   } catch (error) {
       console.log("Copile error");
   }

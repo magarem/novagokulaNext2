@@ -36,7 +36,7 @@
             "body": "Sua Divina Graça A.C. Bhaktivedanta Swami Prabhupada Mestre Fundador da Sociedade Internacional para a Consciência de Krishna",
             "link": {
                 "label": "Saiba mais",
-                "target": "/prabhupada"
+                "target": "/content:prabhupada.md"
             }
         },
         "box2": {
@@ -55,7 +55,7 @@
             "body": "Estrada Jesus Antonio de Miranda!<br/>Bairro:<br/>Riberão Grande Pindamonhangaba<br/>São Paulo<br/>Brasil",
             "link": {
                 "label": "Como chegar",
-                "target": "comochegar"
+                "target": "/content:comochegar.md"
             }
         },
         "box4": {
@@ -64,7 +64,7 @@
             "body": "Entre em contato conosco para esclarecer dúvidas, enviar sugestões ou compartilhar seus comentários.",
             "link": {
                 "label": "Entre em contato",
-                "target": "contact"
+                "target": "/content:contact.md"
             }
         },
         "copyright": {

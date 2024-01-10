@@ -46,7 +46,17 @@
 					<div class="row text-center" v-if="eventos_data" >
 						<h5 class="text-center mb-3 pt-4" v-if="id">Outros</h5>
 						<div class="col mb-3" v-for="item in eventos_data">
-							<Cardgrid target="eventos" :item="item" type="eventos"/>
+							<div v-if="item" class="card border-3 shadow-none rounded-3" style="width: 100%; border-radius: 20%;">
+								<NuxtLink :to="{ path: ('content'+item._path).replaceAll('/',':')+'.md' } " >
+								<img v-if="item.imgs" class="card-img card-img-top text-center" :src="item.imgs[0]" alt="Card image cap"/>
+								<img v-if="item.textImg" class="card-img card-img-top " :src="item.textImg[0]" alt="Card image cap"/>
+								</NuxtLink>
+								<div class="card-body">
+									<h5 class="card-title text-center">{{item.title}}</h5>
+									<p class="card-text">{{item.desc}}</p>
+									<p class="card-text"><small class="text-muted"></small></p>
+								</div>
+							</div>
 						</div>
 					</div>
 					<!-- </div> -->
@@ -177,6 +187,28 @@
 		border-radius: 15px;
 		padding: 5px;
 	}
+
+
+	.card-img {
+		/* height: 280px;  */
+    max-width: 300px;
+		object-fit: cover;
+		border-radius: 2%;
+	}
+
+  .card {
+		background-color: transparent ;
+    border: none;
+	}
+	.card-title {
+		font-size: 17px;
+		padding-bottom: 8px;
+    color: black;
+	}
+
+	.card-body {
+		background-color: transparent;
+	}
 </style>
 <script setup lang="ts">
     definePageMeta({
@@ -186,6 +218,7 @@
     const route = useRoute()
     const id = route.query.id
 	const opinioes = ref<HTMLElement | null>(null)
+	const ref_session = ref("")
 
 	// Using scrollIntoView() function to achieve the scrolling
 	function scrollTo(view: Ref<HTMLElement | null>) { 
@@ -199,8 +232,7 @@
 		'content/home/reviewbox2.md',
 		'content/home/reviewbox3.md'
 	]
-    const ref_session = ref("")
-
+    
 	const { data: bemvindo_data, refresh: bemvindo_refresh } = await useAsyncData(
 		'bemvindo', () => queryContent('/home/bemvindo').findOne()
 	)
@@ -224,9 +256,6 @@
 		'reviewbox3', () => queryContent('/home/reviewbox3').findOne()
 	)
 
-	// Promise.all([bemvindo_data, eventos_data, doacao_data, reviewBox1_data]).then((valores) => {
-	// 	console.log(valores); // [3, 1337, "foo"]
-	// });
 	function scrollMeTo(refName) {
 		['ref_'+refName].value.$el.scrollIntoView({behavior: "smooth"});
 		

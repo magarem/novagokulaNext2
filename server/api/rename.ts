@@ -6,8 +6,8 @@ export default defineEventHandler( (event) => {
     
     // const body = await readBody(event)
     // console.log('>>>', body.filename);
-    const oldName = '' + query.oldname
-    const newName = '' + query.newname
+    const oldName = '' + query.oldname.trim()
+    const newName = '' + query.newname.trim()
    
     console.log('rename:', oldName, newName);
     
