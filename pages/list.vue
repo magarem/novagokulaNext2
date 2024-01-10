@@ -73,7 +73,7 @@
                                     <br/>{{ item[0] }}
                                 </a>    
                             </div>
-                            <img v-else @click="gotop(); imgZoom=['/upload/' + dir + '/' + item[0], item[2]]" :src="'/upload/' + dir + '/' + item[0]"  class="card-img-top" style="border-radius: 5px;"/>
+                            <img v-else @click="gotop(); imgZoom=['/upload' + dir + '/' + item[0], item[2]]" :src="'/upload/' + dir + '/' + item[0]"  class="card-img-top" style="border-radius: 5px;"/>
                             <div v-if="imageCardPanelFlag" class="card-body">
                                 <div v-if="!item[1]" class="row">
                                     <div class="col-7">
