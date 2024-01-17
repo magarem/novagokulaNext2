@@ -44,10 +44,7 @@
               <button v-if="fileType=='dir'" type="button" @click="ajustaPonteiro({operation: 'reset', operationId: ''})" class="dropdown-item" >
                 Refazer lista
               </button>
-            </li>
-            
-            
-            
+            </li>  
           </ul>
         </div>
       </div>
@@ -116,7 +113,7 @@
               sair
             </button>
             <!-- <span class="text-success mt-1 " style="margin-left: 10px;">
-              {{status}}
+              [ {{ authenticated }} ]
             </span> -->
           </div>
         </div>
@@ -235,6 +232,9 @@ const router = useRouter();
 const { logUserOut } = useAuthStore();
 const { authenticated } = storeToRefs(useAuthStore()); // make authenticated state reactive
 
+if (!authenticated.value) {
+  router.push('/login');
+}
 const logout = () => {
   logUserOut();
   router.push('/login');

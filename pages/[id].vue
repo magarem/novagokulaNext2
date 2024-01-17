@@ -1,7 +1,19 @@
 <template>
     <section class="pb-0" style="padding-top: 0px;">
         <h5 class="bread text-left" > 
-            <router-link :to="item[0]" v-for="item in getBrad(id)">{{item[1]}} / </router-link>
+            <!-- <router-link :to="item[0]" v-for="item in getBrad(id)">{{item[1]}} / </router-link> -->
+            <router-link to="/" >
+            Home
+            </router-link>
+            
+            <router-link v-if="!id.split(':')[1].includes('.md')" :to="dirName.link" >
+            / {{ capitalizeFirstLetter(dirName.label) }}
+            </router-link>
+            
+            <router-link v-if="!id.includes(':_index.md')" :to="'/' + id.replaceAll(':', '/')" >
+             / {{ capitalizeFirstLetter(getTitle(id).title) }}
+            </router-link>
+           
         </h5>
         <div v-for="item in data" >
             <img v-if="item.imgs" :src="item.imgs[0]" style="width: 100%;" class="img-fluid"/> 
@@ -16,8 +28,8 @@
                                 </div>
                                 <div class="col-12" :class="item.textImg&&'col-md-8'">
                                     <div v-if="item.files">
-                                            <draggable v-model="ff" class="grid-container" item-key="id" >
-                                                    <template  #item="{ element }">
+                                            <draggable :disabled="!authenticated" v-model="ff" class="grid-container" item-key="id" >
+                                                     <template  #item="{ element }">
                                                            <div class="grid-item"><Cardgrid :item="element"/></div>
                                                     </template>
                                             </draggable>
@@ -64,23 +76,27 @@
 }
 </style>
 <script setup lang="ts">
+// const getTitle2 = (x) => {
+//     return '[['+x+']]'
+// }
 
-const getBrad = (str) => {
-    let aux = str.replaceAll(':','/').replace('content/','').replace('.md','')
-    let arrayAux = aux.split('/')
-    let ret = []
-    if ( arrayAux.length ) ret.push(['/', 'home'])
-    if ( arrayAux.length > 0 ) ret.push(['content' + ':' + arrayAux[0] + ':_index.md', arrayAux[0].replace('_index', '')])
-    if ( arrayAux.length > 1 ) ret.push(['content' + ':' + arrayAux[0] + ':' + arrayAux[1] + ':_index.md', arrayAux[1].replace('_index', '')])
-    return ret
-}
+
 import draggable from "vuedraggable";
 import yaml from "js-yaml";
+import { useAuthStore } from '~/store/auth';
+
 const route = useRoute()
+const { authenticated } = storeToRefs(useAuthStore()); // make authenticated state reactive
+
+// if (!authenticated) {
+//   router.push('/login');
+// }
+
 let id = ref(route.params.id)
 let type = ref('dir')
 let fileList = ref([])
 let ff = ref([])
+let dirName = ref({})
 if (!id.value.includes('_index.md')) type.value = 'file'
 
 console.log('id:', id.value);
@@ -89,8 +105,36 @@ console.log('type', type.value);
 const { data: datax, refresh } = await useFetch('/api/readDir')
 console.log('datax:', datax.value);
 
-watch(ff, (newValue) => {
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+const getTitle = (id) => {
+    console.log(datax.value?.find((x) => {
+        console.log(x._id);
+        console.log(id);
+        
+        if (x._id == id) return true
+    }));
     
+    return datax.value?.find((x) => x._id == id)
+}
+
+const getTitleOfDir = (dir) => {
+    return datax.value?.find((x) => x._dir == dir)
+}
+// console.log(getTitle('content:templos:santuariodetulasi.md'));
+
+const getBrad = (str) => {
+    let aux = str.replaceAll(':','/').replace('content/','').replace('.md','')
+    let arrayAux = aux.split('/')
+    let ret = []
+    if ( arrayAux.length ) ret.push(['/', 'home'])
+    if ( arrayAux.length > 0 ) ret.push(['content' + ':' + arrayAux[0] + ':_index.md', getTitle('content' + ':' + arrayAux[0] + ':_index.md')])
+    if ( arrayAux.length > 1 ) ret.push(['content' + ':' + arrayAux[0] + ':' + arrayAux[1] + ':_index.md', getTitle(arrayAux[1].replace('_index', ''))   ])
+    return ret
+}
+
+watch(ff, (newValue) => {
    
        useFetch('/api/read?filename=' + id.value.replaceAll(':', '/')).then((dataRaw)=>{
             
@@ -104,26 +148,7 @@ watch(ff, (newValue) => {
             console.log(aux2Content);
            
             window.parent.postMessage({type: type.value, id: id.value, content: aux2Content, fileList: ''}, '/');
-           
-            // try {
-            //     const config = {
-            //     method: 'POST',
-            //     headers: {
-            //         'Accept': 'application/json',
-            //         'Content-Type': 'application/json',
-            //     },
-            //     body: JSON.stringify({fileName: id.value.replaceAll(':', '/'), data: aux2Content})
-            //     }
-            //     const response = fetch('/api/saveFileContent', config)
-            //     if (response.ok) {
-            //     //
-            //     } else {
-            //         console.log("save file error");
-            //     }
-            // } 
-            // catch (error) {
-            //     console.log("save api error");
-            // }
+          
        }) 
 })
 
@@ -143,13 +168,12 @@ const getContentIndex = (files) => {
     const { data: data, refresh: refreshMain } = await useFetch('/api/readDir?id=' + id.value)
     console.log('data:', data.value);
     console.log('type.value:', type.value);
-   
+    dirName.value.label = id.value.split(':')[1]
+    dirName.value.link = 'content:' + id.value.split(':')[1] + ':_index.md'
     if (type.value=='dir') ff.value = getContentIndex(data.value[0].files)
 
 
-const getTitle = (id) => {
-    return datax.value?.filter((x) => x._id == id)[0]
-}
+
 
 
 
