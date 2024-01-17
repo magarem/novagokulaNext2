@@ -7,7 +7,6 @@ export default defineEventHandler( (event) => {
     const query = getQuery(event)
     const id = query.id
     console.log('delete file:', id);
-    
     // const filePath = path.join(process.cwd(), 'public', 'test.txt')
     // unlinkSync('public' + dirname);
     fs2.removeSync(id); 

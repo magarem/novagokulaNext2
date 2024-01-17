@@ -1,6 +1,7 @@
 ---
 title: 'O Tao do yoga'
 description: ''
+position: 3
 textImg: ['/img/eventos/otaodayoga.jpeg']
 ---
 Uma conexão entre a tradição Védica, o Taoismo e a Psicologia!

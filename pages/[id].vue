@@ -1,123 +1,188 @@
 <template>
-    <section v-if="type=='dir'">
-        <h5 class="bread text-left" > 
-            <router-link to="/">home</router-link> / {{ id.replace('content:','') }}
-        </h5>
-            <div v-if="true" class="pt-4 pb-4">
-                <div class="pt-1" style="padding-left: 50px; padding-right: 50px;">
-                    <div class="row shadow-sm_ "  >
-                        <div  _class="pt-1" style="padding-left: 50px; padding-right: 50px;">
-                            <div class="row shadow-sm_" v-if="data" >
-                                <h4 class="_text-center mb-3 _pt-4">{{ index.title }}</h4>
-                                <p> {{ index.description }} </p>
-                                <div class="col-md-3 mb-3" v-for="item1 in data">
-                                    <Cardgrid target="templos" :item="item1" :type="id"/>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    </section>
-    <section v-else class="pb-0">
+    <section class="pb-0" style="padding-top: 0px;">
         <h5 class="bread text-left" > 
             <router-link :to="item[0]" v-for="item in getBrad(id)">{{item[1]}} / </router-link>
         </h5>
-        <img v-if="data2.imgs" :src="data2.imgs[0]" style="width: 100%;" class="img-fluid"/> 
-        <div class="container">
-            <div class="pt-1">
-                <section>
-                    <h4 class="pb-3 mt-3">{{data2.title}}</h4>
-                    <div class="container ">
-                        <div v-if="data2.textImg" class="row ">
-                            <div class="col-12 col-md-4 text-end">
-                                <img :src="data2.textImg[0]" style="_float: left; max-width:100%;" _style="width: 100%; " class="mb-3 img-fluid"/>
-                            </div>
-                            <div class="col-12 col-md-8">
-                                <ContentRenderer :value="data2" />
+        <div v-for="item in data" >
+            <img v-if="item.imgs" :src="item.imgs[0]" style="width: 100%;" class="img-fluid"/> 
+            <div class="container">
+                <div class="pt-1">
+                    <section>
+                        <h4 class="pb-3 mt-3">{{item.title}}</h4>
+                        <div class="container ">
+                            <div class="row">
+                                <div v-if="item.textImg" class="col-12 col-md-4 text-end">
+                                    <img :src="item.textImg[0]" style="_float: left; max-width:100%;" _style="width: 100%; " class="mb-3 img-fluid"/>
+                                </div>
+                                <div class="col-12" :class="item.textImg&&'col-md-8'">
+                                    <div v-if="item.files">
+                                            <draggable v-model="ff" class="grid-container" item-key="id" >
+                                                    <template  #item="{ element }">
+                                                           <div class="grid-item"><Cardgrid :item="element"/></div>
+                                                    </template>
+                                            </draggable>
+                                            <!-- <div class="col" v-for="i in getContentIndex(item.files)"> -->
+                                                  <!-- <Cardgrid :item="i"/> -->
+                                            <!-- <img :src="i.img[0]" style="width: 100px;"/>
+                                            <NuxtLink :to="'/' + i._id ">{{ i._path }}</NuxtLink> -->
+                                            <!-- </div> -->
+                                           
+                                    </div>
+                                    <ContentRenderer v-if="item.body.children.length>0" :value="item" />
+                                </div>
                             </div>
                         </div>
-                        <div v-else class="row">
-                            <div class="col-12" >
-                                <ContentRenderer :value="data2" />
-                            </div>
-                        </div>
-                    </div>
-                </section>   
-                <!-- <button @click="refresh">refresh</button> -->
+                    </section>   
+                </div>
             </div>
         </div>
     </section>
 </template>
+<!-- <Cardgrid :item="element"/> -->
+
 <style scoped>
-    .bg {
-        background-color: #E7B884;
-    }
-    img {
-		/* height: 280px;  */
-        max-width: 300px;
-		object-fit: cover;
-		border-radius: 2%;
-	}
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  /* background-color: #2196F3; */
+  padding: 10px;
+}
+.grid-item {
+  /* background-color: rgba(255, 255, 255, 0.8); */
+  /* border: 1px solid rgba(0, 0, 0, 0.8); */
+  /* margin: 5px; */
+  max-width: 250px;
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+.imgSided {
+    /* height: 280px;  */
+    max-width: 300px;
+    object-fit: cover;
+    border-radius: 2%;
+}
 </style>
 <script setup lang="ts">
+
 const getBrad = (str) => {
     let aux = str.replaceAll(':','/').replace('content/','').replace('.md','')
     let arrayAux = aux.split('/')
     let ret = []
     if ( arrayAux.length ) ret.push(['/', 'home'])
-    if ( arrayAux.length > 0 ) ret.push(['content' + ':' + arrayAux[0], arrayAux[0]])
-    if ( arrayAux.length > 1 ) ret.push(['content' + ':' + arrayAux[0] + ':' + arrayAux[1], arrayAux[1]])
+    if ( arrayAux.length > 0 ) ret.push(['content' + ':' + arrayAux[0] + ':_index.md', arrayAux[0].replace('_index', '')])
+    if ( arrayAux.length > 1 ) ret.push(['content' + ':' + arrayAux[0] + ':' + arrayAux[1] + ':_index.md', arrayAux[1].replace('_index', '')])
     return ret
 }
-
+import draggable from "vuedraggable";
+import yaml from "js-yaml";
 const route = useRoute()
-let id = route.params.id
+let id = ref(route.params.id)
 let type = ref('dir')
-const _file = id.replaceAll(':', '/').replace('content','')
-const _index = _file + '/_index'
-// Create a reactive state and set default value
-let tela = useState('tela2', () => null)
-let data2_ref = ref({})
-let meta_ref = ref({})
-if (id.includes('.md')) type.value = 'file'
+let fileList = ref([])
+let ff = ref([])
+if (!id.value.includes('_index.md')) type.value = 'file'
 
-
-console.log('_file:', _file);
-console.log('_index:', _index);
+console.log('id:', id.value);
 console.log('type', type.value);
 
-// Get the list dir files
-const { data: data, refresh } = await useFetch('/api/readDir?id=' + _file)
-console.log('data:', data.value);
+const { data: datax, refresh } = await useFetch('/api/readDir')
+console.log('datax:', datax.value);
 
-const { data: index, refresh: refreshIndex } = await useAsyncData("file2", () => queryContent(_index).findOne())
-console.log('index:', index.value);
+watch(ff, (newValue) => {
+    
+   
+       useFetch('/api/read?filename=' + id.value.replaceAll(':', '/')).then((dataRaw)=>{
+            
+            const auxProps = dataRaw.data.value.trim().split('---')[1].trim()
+            const auxPropsYml = yaml.load(auxProps);
+            const auxTxt = dataRaw.data.value.trim().split('---')[2].trim()
+            
+            auxPropsYml.files = newValue.map(i=>i.id)
 
-// Get the file content
-let _file_cleanup = _file.replace('.md','');
+            const aux2Content = "---\n"+JSON.stringify(auxPropsYml, null, 2)+"\n---\n" + auxTxt
+            console.log(aux2Content);
+           
+            window.parent.postMessage({type: type.value, id: id.value, content: aux2Content, fileList: ''}, '/');
+           
+            // try {
+            //     const config = {
+            //     method: 'POST',
+            //     headers: {
+            //         'Accept': 'application/json',
+            //         'Content-Type': 'application/json',
+            //     },
+            //     body: JSON.stringify({fileName: id.value.replaceAll(':', '/'), data: aux2Content})
+            //     }
+            //     const response = fetch('/api/saveFileContent', config)
+            //     if (response.ok) {
+            //     //
+            //     } else {
+            //         console.log("save file error");
+            //     }
+            // } 
+            // catch (error) {
+            //     console.log("save api error");
+            // }
+       }) 
+})
 
-console.log('cleanup:', id.replaceAll(':', '/').replace('content','').replace('.md',''));
+const getContentIndex = (files) => {
+    console.log('files:', files);
+    var rs = []
+    let a 
+    files.map(x=>{
+        a = datax.value.filter(function (el) {
+            return el._id == x
+        })
+        if (a.length>0) rs.push(a) 
+        
+    })
+    return rs.map(c=>({id: c[0]._id, img: c[0].textImg, title: c[0].title, _path: c[0]._path }))
+}
+    const { data: data, refresh: refreshMain } = await useFetch('/api/readDir?id=' + id.value)
+    console.log('data:', data.value);
+    console.log('type.value:', type.value);
+   
+    if (type.value=='dir') ff.value = getContentIndex(data.value[0].files)
 
-const { data: data2, refresh: refresh2 } = await useAsyncData("file", () => queryContent(data.value[0].path).findOne())
-console.log('data2:', data2.value);
 
+const getTitle = (id) => {
+    return datax.value?.filter((x) => x._id == id)[0]
+}
+
+
+
+const getFilesYmlContent = async (fileArray: any) => {
+    fileArray = Object.values(fileArray)
+    let ret = []
+    console.log('fileArray:', fileArray);
+    fileArray.map(async (v: any)  =>  {
+        console.log('v', v);
+        
+        const { data: data2, refresh: refresh2 } = await useAsyncData("file2_"+v, () => queryContent('/').where({_path: { $contains: v }}).find())
+        console.log('data2:', data2.value);
+        ret.push(data2.value)
+    })
+    console.log(ret);
+    xtela.value = ret
+}
 
 async function refreshDo(event) {
-    // document.getElementById('iframe').contentWindow.location = "/getContentFile?id=" + newname
-    // alert(JSON.stringify(event.data,null,2))
-    // alert(event.data.filename.replaceAll('/', ':'))
-    if (event.data.op=='redirect') navigateTo('/'+event.data.filename.replaceAll('/', ':'))
-    refreshIndex()
-    refresh()
-    refresh2()
+    if (!event.data.id.includes(':home:')){
+        if (event.data.op == 'redirect'){
+            await navigateTo('/' + event.data.id)
+        }
+        refreshMain()
+    }
 }
 
 if (process.client) {
     if (window.parent){
-        window.parent.postMessage({type: type.value , id: id, fileList: data.value.map((x: { id: any; })=>'content'+x.id)}, '/');
+        window.parent.postMessage({type: type.value, id: id.value, fileList: ''}, '/');
     }
     window.addEventListener("message", refreshDo, false);
 }
+
 
 </script>

@@ -12,23 +12,9 @@ export default defineEventHandler(async (event) => {
             if (err) throw err;
             console.log('The file has been saved!');
         }); 
-        return ""
+        return "ok"
     }
 
-
-    const terminalRun = (command: string) => {
-        exec(command, (err, stdout, stderr) => {
-        if (err) {
-            //some err occurred
-            console.error(err)
-        } else {
-        // the *entire* stdout and stderr (buffered)
-        console.log(`stdout: ${stdout}`);
-        //    console.log(`stderr: ${stderr}`);
-        }
-        })
-    }
-    
-    save(body)
+    return save(body)
     // terminalRun('git add ' + body.filename)
 })

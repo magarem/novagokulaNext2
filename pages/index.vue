@@ -15,7 +15,8 @@
 				</div>
 				<div class="col-lg-6 col-sm-12">
 					<div class="container">
-						<ContentRenderer id="bemvindo" @click="boxEditFileGo('content/home/bemvindo.md')" class="text-white" :value="bemvindo_data" />
+						
+						<ContentRenderer :class="blocoAtivo=='bemvindo'&&'dashed'" @click="boxEditFileGo({idElement: 'bemvindo', idContent:'content:home:bemvindo.md'})" class="text-white" :value="bemvindo_data" />
 						<!-- <h2 class="text-white mt-0">Bem vindo!</h2>
 						<p class="text-white-75 mb-4">
 							Localizada aos pés da Serra da Mantiqueira, em Pindamonhangaba, a Fazenda Nova Gokula cultiva, há 45 anos, valores de vida simples e uma cultura espiritual baseada nos antigos ensinamentos dos Vedas. A maior comunidade Hare Krishna da América Latina pertence à Sociedade Internacional para a Consciência de Krishna (ISKCON), conhecida como a maior escola de filosofia védica criada no ocidente. Foi fundada em 1966 em Nova Iorque por Swami Prabhupada, que trouxe esta ciência conhecida antes apenas por yogis e santos do oriente. </p>  -->
@@ -48,8 +49,8 @@
 						<div class="col mb-3" v-for="item in eventos_data">
 							<div v-if="item" class="card border-3 shadow-none rounded-3" style="width: 100%; border-radius: 20%;">
 								<NuxtLink :to="{ path: ('content'+item._path).replaceAll('/',':')+'.md' } " >
-								<img v-if="item.imgs" class="card-img card-img-top text-center" :src="item.imgs[0]" alt="Card image cap"/>
-								<img v-if="item.textImg" class="card-img card-img-top " :src="item.textImg[0]" alt="Card image cap"/>
+									<img v-if="item.imgs" class="card-img card-img-top text-center" :src="item.imgs[0]" alt="Card image cap"/>
+									<img v-if="item.textImg" class="card-img card-img-top " :src="item.textImg[0]" alt="Card image cap"/>
 								</NuxtLink>
 								<div class="card-body">
 									<h5 class="card-title text-center">{{item.title}}</h5>
@@ -61,7 +62,7 @@
 					</div>
 					<!-- </div> -->
 				</div>
-	   </div>
+			</div>
 		</div>
 	</div>
 	<!-- Call to action-->
@@ -92,7 +93,7 @@
 							<h6 class="text-primary mb-3">Visitante</h6>
 							<p class="px-xl-3">
 								<!-- <i class="fas fa-quote-left pe-2"></i> -->
-								<ContentRenderer id="reviewbox1" @click="boxEditFileGo('content/home/reviewbox1.md')"  class="text-white" :value="reviewBox1_data" />
+								<ContentRenderer :class="blocoAtivo=='reviewbox1'&&'dashed'" @click="boxEditFileGo({idElement: 'reviewbox1', idContent:'content:home:reviewbox1.md'})"  class="text-white" :value="reviewBox1_data" />
 							</p>
 							<ul class="list-unstyled d-flex justify-content-center mb-0">
 								<li>
@@ -121,7 +122,7 @@
 							<h6 class="text-primary mb-3">Visitante</h6>
 							<p class="px-xl-3">
 								<!-- <i class="fas fa-quote-left pe-2"></i> -->
-								<ContentRenderer id="reviewbox2" @click="boxEditFileGo('content/home/reviewbox2.md')"  class="text-white" :value="reviewBox2_data" />
+								<ContentRenderer :class="blocoAtivo=='reviewbox2'&&'dashed'" @click="boxEditFileGo({idElement: 'reviewbox2', idContent:'content:home:reviewbox2.md'})"  class="text-white" :value="reviewBox2_data" />
 							</p>
 							<ul class="list-unstyled d-flex justify-content-center mb-0">
 								<li>
@@ -150,7 +151,7 @@
 							<h6 class="text-primary mb-3">Visitante</h6>
 							<p class="px-xl-3">
 								<!-- <i class="fas fa-quote-left pe-2"></i> -->
-								<ContentRenderer id="reviewbox3" @click="boxEditFileGo('content/home/reviewbox3.md')"  class="text-white" :value="reviewBox3_data" />
+								<ContentRenderer :class="blocoAtivo=='reviewbox3'&&'dashed'" @click="boxEditFileGo({idElement: 'reviewbox3', idContent:'content:home:reviewbox3.md'})"  class="text-white" :value="reviewBox3_data" />
 							</p>
 							<ul class="list-unstyled d-flex justify-content-center mb-0">
 								<li>
@@ -214,23 +215,29 @@
     definePageMeta({
         layout: 'default'
     })
+	import { storeToRefs } from 'pinia';
+	import { useAuthStore } from '~/store/auth';
+	
+	const { authenticated } = storeToRefs(useAuthStore()); // make authenticated state reactive
 
     const route = useRoute()
     const id = route.query.id
 	const opinioes = ref<HTMLElement | null>(null)
 	const ref_session = ref("")
+	let blocoAtivo = ref("")
 
+	
 	// Using scrollIntoView() function to achieve the scrolling
 	function scrollTo(view: Ref<HTMLElement | null>) { 
 		view.value?.scrollIntoView({ behavior: 'smooth' }) 
 	}
 
 	const fileList = [
-		'content/home/bemvindo.md',
-		'content/home/doacao.md',
-		'content/home/reviewbox1.md',
-		'content/home/reviewbox2.md',
-		'content/home/reviewbox3.md'
+		'content:home:bemvindo.md',
+		'content:home:doacao.md',
+		'content:home:reviewbox1.md',
+		'content:home:reviewbox2.md',
+		'content:home:reviewbox3.md'
 	]
     
 	const { data: bemvindo_data, refresh: bemvindo_refresh } = await useAsyncData(
@@ -275,18 +282,15 @@
 		
 	}
 
-    async function refreshDo(event) {
-		
-		// ref_opinioes.value.$el.scrollIntoView({behavior: "smooth"});
-		
-		eventos_refresh()
-		bemvindo_refresh()
-		doacao_refresh()
-		reviewBox1_refresh()
-
-		console.log(1212, event.data.txt_parans.session);
-		// scrollTo(opinioes)
-        // scrollToElement(event.data.txt_parans.session)
+    async function refreshDo(event: { data: { id: string | string[]; }; }) {
+		if (event.data.id.includes(':home:')){
+			eventos_refresh()
+			bemvindo_refresh()
+			doacao_refresh()
+			reviewBox1_refresh()
+			reviewBox2_refresh()
+			reviewBox3_refresh()
+		}
     }
 
 	function tiraClass(){
@@ -298,18 +302,22 @@
 			
 	}
 
-	function boxEditFileGo(file){
-	
-		tiraClass()
-		window.parent.postMessage({type: 'file', id: file, fileList}, '/');
-		var element = document.getElementById(file.split('/').slice(-1)[0].replace('.md', ''));
-		element.classList.add("dashed");
-
+	function boxEditFileGo(obj){
+		console.log('obj:', obj);
+		
+		if (authenticated.value) {
+			// tiraClass()
+			blocoAtivo.value = obj.idElement
+			window.parent.postMessage({type: 'file', id: obj.idContent, fileList}, '/');
+			// var element = document.getElementById(obj.idElement);
+			// console.log('element', element);
+			// element.classList.add("dashed");
+		}
 	}
 
     if (process.client) {
         if (window.parent){
-            window.parent.postMessage({type: 'file', fileList}, '/');
+            window.parent.postMessage({type: 'file', id:'content:home:bemvindo.md', fileList}, '/');
         }
         window.addEventListener("message", refreshDo, false);
     }

@@ -11,9 +11,9 @@ export default defineEventHandler(async (event) => {
             if (err) throw err;
             console.log('The file has been saved!');
         });
-        return ""
+        return "ok"
     }
     
-    save(body)
+    return save(body)
 
 })

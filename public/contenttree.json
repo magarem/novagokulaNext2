@@ -1,0 +1,798 @@
+[
+  {
+    "_path": "/about",
+    "_dir": "",
+    "_draft": false,
+    "_partial": false,
+    "_locale": "",
+    "title": "FAZENDA NOVA GOKULA",
+    "description": "",
+    "imgs": [
+      "/upload/1703715649998.8743.jpg"
+    ],
+    "_type": "markdown",
+    "_id": "content:about.md",
+    "_source": "content",
+    "_file": "about.md",
+    "_extension": "md"
+  },
+  {
+    "_path": "/about2",
+    "_dir": "",
+    "_draft": false,
+    "_partial": false,
+    "_locale": "",
+    "title": "FAZENDA NOVA GOKULA",
+    "description": "",
+    "imgs": [
+      "/img/templo2b.jpeg"
+    ],
+    "_type": "markdown",
+    "_id": "content:about2.md",
+    "_source": "content",
+    "_file": "about2.md",
+    "_extension": "md"
+  },
+  {
+    "_path": "/acharyadeva",
+    "_dir": "",
+    "_draft": false,
+    "_partial": false,
+    "_locale": "",
+    "title": "Srila Hridayananda Das Goswami (Acharyadeva) ",
+    "description": "",
+    "textImg": [
+      "/img/acharyadeva.jpg"
+    ],
+    "_type": "markdown",
+    "_id": "content:acharyadeva.md",
+    "_source": "content",
+    "_file": "acharyadeva.md",
+    "_extension": "md"
+  },
+  {
+    "_path": "/alimentacao/_index",
+    "_dir": "alimentacao",
+    "_draft": false,
+    "_partial": true,
+    "_locale": "",
+    "title": "Alimentação",
+    "description": "",
+    "_type": "markdown",
+    "_id": "content:alimentacao:_index.md",
+    "_source": "content",
+    "_file": "alimentacao/_index.md",
+    "_extension": "md"
+  },
+  {
+    "_path": "/alimentacao/bistro",
+    "_dir": "alimentacao",
+    "_draft": false,
+    "_partial": false,
+    "_locale": "",
+    "title": "Bistro Nova Gokula",
+    "description": "",
+    "textImg": [
+      "/img/alimentacao/bistro.jpeg"
+    ],
+    "_type": "markdown",
+    "_id": "content:alimentacao:bistro.md",
+    "_source": "content",
+    "_file": "alimentacao/bistro.md",
+    "_extension": "md"
+  },
+  {
+    "_path": "/alimentacao/confrariavegana",
+    "_dir": "alimentacao",
+    "_draft": false,
+    "_partial": false,
+    "_locale": "",
+    "title": "Confraria vegana",
+    "description": "",
+    "textImg": [
+      "/img/alimentacao/confrariavegana.jpeg"
+    ],
+    "_type": "markdown",
+    "_id": "content:alimentacao:confrariavegana.md",
+    "_source": "content",
+    "_file": "alimentacao/confrariavegana.md",
+    "_extension": "md"
+  },
+  {
+    "_path": "/alimentacao/eka",
+    "_dir": "alimentacao",
+    "_draft": false,
+    "_partial": false,
+    "_locale": "",
+    "title": "Quiosque Da Eka",
+    "description": "",
+    "textImg": [
+      "/img/alimentacao/quiosquedaeka.jpeg"
+    ],
+    "_type": "markdown",
+    "_id": "content:alimentacao:eka.md",
+    "_source": "content",
+    "_file": "alimentacao/eka.md",
+    "_extension": "md"
+  },
+  {
+    "_path": "/alimentacao/lanchonetejaganata",
+    "_dir": "alimentacao",
+    "_draft": false,
+    "_partial": false,
+    "_locale": "",
+    "title": "Lanchonete Jagannatha",
+    "description": "",
+    "textImg": [
+      "/img/alimentacao/lanchonetejagannatha.jpeg"
+    ],
+    "_type": "markdown",
+    "_id": "content:alimentacao:lanchonetejaganata.md",
+    "_source": "content",
+    "_file": "alimentacao/lanchonetejaganata.md",
+    "_extension": "md"
+  },
+  {
+    "_path": "/comochegar",
+    "_dir": "",
+    "_draft": false,
+    "_partial": false,
+    "_locale": "",
+    "title": "Como chegar",
+    "description": "",
+    "_type": "markdown",
+    "_id": "content:comochegar.md",
+    "_source": "content",
+    "_file": "comochegar.md",
+    "_extension": "md"
+  },
+  {
+    "_path": "/contact",
+    "_dir": "",
+    "_draft": false,
+    "_partial": false,
+    "_locale": "",
+    "title": "Contato",
+    "description": "",
+    "_type": "markdown",
+    "_id": "content:contact.md",
+    "_source": "content",
+    "_file": "contact.md",
+    "_extension": "md"
+  },
+  {
+    "_path": "/eventos/_index",
+    "_dir": "eventos",
+    "_draft": false,
+    "_partial": true,
+    "_locale": "",
+    "title": "Eventos2",
+    "description": "",
+    "mode": "edition",
+    "files": [
+      "eventos/festivaldedomingo",
+      "eventos/otaodayoga",
+      "eventos/1704917651756"
+    ],
+    "_type": "markdown",
+    "_id": "content:eventos:_index.md",
+    "_source": "content",
+    "_file": "eventos/_index.md",
+    "_extension": "md"
+  },
+  {
+    "_path": "/eventos/1704917651756",
+    "_dir": "eventos",
+    "_draft": false,
+    "_partial": false,
+    "_locale": "",
+    "title": "Trilha ecológia + yoga + alimentação consciente",
+    "description": "Todos os sábados e domingos a partir das 9h Mediante reserva Bom para grupos!",
+    "position": 1,
+    "textImg": [
+      "/upload/1704917757810.4482.jpg"
+    ],
+    "_type": "markdown",
+    "_id": "content:eventos:1704917651756.md",
+    "_source": "content",
+    "_file": "eventos/1704917651756.md",
+    "_extension": "md"
+  },
+  {
+    "_path": "/eventos/festivaldedomingo",
+    "_dir": "eventos",
+    "_draft": false,
+    "_partial": false,
+    "_locale": "",
+    "title": "Festival de domingo na fazenda nova gokula",
+    "description": "",
+    "position": 0,
+    "textImg": [
+      "/img/eventos/festivaldedomingo.jpeg"
+    ],
+    "_type": "markdown",
+    "_id": "content:eventos:festivaldedomingo.md",
+    "_source": "content",
+    "_file": "eventos/festivaldedomingo.md",
+    "_extension": "md"
+  },
+  {
+    "_path": "/eventos/otaodayoga",
+    "_dir": "eventos",
+    "_draft": false,
+    "_partial": false,
+    "_locale": "",
+    "title": "O Tao do yoga",
+    "description": "",
+    "position": 3,
+    "textImg": [
+      "/img/eventos/otaodayoga.jpeg"
+    ],
+    "_type": "markdown",
+    "_id": "content:eventos:otaodayoga.md",
+    "_source": "content",
+    "_file": "eventos/otaodayoga.md",
+    "_extension": "md"
+  },
+  {
+    "_path": "/filosofia",
+    "_dir": "",
+    "_draft": false,
+    "_partial": false,
+    "_locale": "",
+    "title": "Filosofia",
+    "description": "",
+    "imgs": [
+      "/img/rashkrsna.webp"
+    ],
+    "_type": "markdown",
+    "_id": "content:filosofia.md",
+    "_source": "content",
+    "_file": "filosofia.md",
+    "_extension": "md"
+  },
+  {
+    "_path": "/filosofiares",
+    "_dir": "",
+    "_draft": false,
+    "_partial": false,
+    "_locale": "",
+    "title": "Filosofia",
+    "description": "",
+    "imgs": [
+      "/img/rashkrsna.webp"
+    ],
+    "_type": "markdown",
+    "_id": "content:filosofiaRes.md",
+    "_source": "content",
+    "_file": "filosofiaRes.md",
+    "_extension": "md"
+  },
+  {
+    "_path": "/galeria/1-oinicio",
+    "_dir": "galeria",
+    "_draft": false,
+    "_partial": false,
+    "_locale": "",
+    "title": "O início",
+    "description": "",
+    "imgs": [
+      "/img/homeslideshow/slide23.jpg",
+      "/img/homeslideshow/slide22.jpg",
+      "/img/prabhupada.jpg"
+    ],
+    "_type": "markdown",
+    "_id": "content:galeria:1-oinicio.md",
+    "_source": "content",
+    "_file": "galeria/1-oinicio.md",
+    "_extension": "md"
+  },
+  {
+    "_path": "/galeria/2-altar",
+    "_dir": "galeria",
+    "_draft": false,
+    "_partial": false,
+    "_locale": "",
+    "title": "Altar",
+    "description": "",
+    "imgs": [
+      "/img/homeslideshow/slide12.jpg"
+    ],
+    "_type": "markdown",
+    "_id": "content:galeria:2-altar.md",
+    "_source": "content",
+    "_file": "galeria/2-altar.md",
+    "_extension": "md"
+  },
+  {
+    "_path": "/galeria/3-natureza",
+    "_dir": "galeria",
+    "_draft": false,
+    "_partial": false,
+    "_locale": "",
+    "title": "A natureza",
+    "description": "",
+    "imgs": [
+      "/img/homeslideshow/slide11.jpg",
+      "/img/homeslideshow/slide13.jpg",
+      "/img/homeslideshow/slide16.jpg",
+      "/img/homeslideshow/slide14.jpg"
+    ],
+    "_type": "markdown",
+    "_id": "content:galeria:3-natureza.md",
+    "_source": "content",
+    "_file": "galeria/3-natureza.md",
+    "_extension": "md"
+  },
+  {
+    "_path": "/galeria/meta",
+    "_dir": "galeria",
+    "_draft": false,
+    "_partial": false,
+    "_locale": "",
+    "title": "Galeria",
+    "description": "",
+    "_type": "markdown",
+    "_id": "content:galeria:meta.md",
+    "_source": "content",
+    "_file": "galeria/meta.md",
+    "_extension": "md"
+  },
+  {
+    "_path": "/galeria/varios",
+    "_dir": "galeria",
+    "_draft": false,
+    "_partial": false,
+    "_locale": "",
+    "title": "Vários",
+    "description": "",
+    "imgs": [
+      "/img/homeslideshow/slide21.jpg"
+    ],
+    "_type": "markdown",
+    "_id": "content:galeria:varios.md",
+    "_source": "content",
+    "_file": "galeria/varios.md",
+    "_extension": "md"
+  },
+  {
+    "_path": "/historia",
+    "_dir": "",
+    "_draft": false,
+    "_partial": false,
+    "_locale": "",
+    "title": "Nossa história",
+    "description": "A comunidade Hare Krishna, oficialmente conhecida como Movimento Internacional para a Consciência de Krishna (ISKCON), foi fundada por A.C. .Bhaktivedanta Swami Prabhupada em 1966, nos Estados Unidos. Seus seguidores seguem os ensinamentos do Bhagavad-gita e adoram Krishna como a Suprema Personalidade de Deus. O movimento é conhecido por sua abordagem devocional intensa, incluindo a prática do canto do mantra Hare Krishna, meditação e distribuição de literatura espiritual.",
+    "_type": "markdown",
+    "_id": "content:historia.md",
+    "_source": "content",
+    "_file": "historia.md",
+    "_extension": "md"
+  },
+  {
+    "_path": "/historia2",
+    "_dir": "",
+    "_draft": false,
+    "_partial": false,
+    "_locale": "",
+    "title": "Maga ninja22!!",
+    "description": "",
+    "imgs": [
+      ""
+    ],
+    "_type": "markdown",
+    "_id": "content:historia2.md",
+    "_source": "content",
+    "_file": "historia2.md",
+    "_extension": "md"
+  },
+  {
+    "_path": "/home/bemvindo",
+    "_dir": "home",
+    "_draft": false,
+    "_partial": false,
+    "_locale": "",
+    "title": "Bem vindo!",
+    "description": "Bem vindo!",
+    "session": "bemvindo",
+    "video": "https://www.youtube.com/embed/Ir6E7wEcJfE?si=PV-68z2bSndZXJna",
+    "_type": "markdown",
+    "_id": "content:home:bemvindo.md",
+    "_source": "content",
+    "_file": "home/bemvindo.md",
+    "_extension": "md"
+  },
+  {
+    "_path": "/home/doacao",
+    "_dir": "home",
+    "_draft": false,
+    "_partial": false,
+    "_locale": "",
+    "title": "Faça sua doação!",
+    "description": "Doe vc também!",
+    "_type": "markdown",
+    "_id": "content:home:doacao.md",
+    "_source": "content",
+    "_file": "home/doacao.md",
+    "_extension": "md"
+  },
+  {
+    "_path": "/home/reviewbox1",
+    "_dir": "home",
+    "_draft": false,
+    "_partial": false,
+    "_locale": "",
+    "title": "Tania santos",
+    "description": "Que lugar maravilhoso. Uma tranquilidade longe do que vivo, fomos de bike, pude apreciar Is alimentos vegano, sorvete, coxinha de jaca, pudemos nos refrescar nas águas límpidas que dava pra vê o fundo ....e os templos nunca había visto un desperto, pessoas das lojinhas bem atenciosas",
+    "session": "opinioes",
+    "img": "https://lh3.googleusercontent.com/a-/ALV-UjXDh-03wSS5541vK62G0js5NuZ0Iv_NF6huB-MjhcEgUFcw=w66-h66-p-rp-mo-ba5-br100",
+    "_type": "markdown",
+    "_id": "content:home:reviewbox1.md",
+    "_source": "content",
+    "_file": "home/reviewbox1.md",
+    "_extension": "md"
+  },
+  {
+    "_path": "/home/reviewbox2",
+    "_dir": "home",
+    "_draft": false,
+    "_partial": false,
+    "_locale": "",
+    "title": "Alex Prosa",
+    "description": "Lugar maravilhoso de contemplação, reflexão, bem-estar, paz. Hare krishna, Hare Hare. Templos para meditação, trilhas, cachoeira, hospedagem, camping, lojinhas de conveniência, lanchonete, espaço para almoço, massagens ayurvédica, natureza exuberante, muitos pássaros de todas as espécies, cânticos, devoção e, acima de tudo, pessoas especiais que dão todo suporte aos visitantes. Entrada, R$ 10,00 por pessoa adultos. Crianças não sei se pagam.",
+    "session": "opinioes",
+    "img": "https://lh3.googleusercontent.com/a-/ALV-UjXO9v9WEu2ckBelZS90yCpmF-9JiSNJQ02eBtZWOUODpodq=w66-h66-p-rp-mo-ba6-br100",
+    "_type": "markdown",
+    "_id": "content:home:reviewbox2.md",
+    "_source": "content",
+    "_file": "home/reviewbox2.md",
+    "_extension": "md"
+  },
+  {
+    "_path": "/home/reviewbox3",
+    "_dir": "home",
+    "_draft": false,
+    "_partial": false,
+    "_locale": "",
+    "title": "Susana Uribarri",
+    "description": "Lugar encantador. Fizemos um retiro de Yoga e mantras. Experiência maravilhosa, pessoas gentis, atenção primorosa. Recomendo o kiosque da Eka, e o restaurante Confraria vegana do Jaya Devi.",
+    "session": "opinioes",
+    "img": "https://lh3.googleusercontent.com/a-/ALV-UjUFaj0g7PMSqac5m3rLKwvKRSJKPDcVeAFu2TnXP1G4H52Z=w66-h66-p-rp-mo-ba2-br100",
+    "_type": "markdown",
+    "_id": "content:home:reviewbox3.md",
+    "_source": "content",
+    "_file": "home/reviewbox3.md",
+    "_extension": "md"
+  },
+  {
+    "_path": "/hospedagem/_index",
+    "_dir": "hospedagem",
+    "_draft": false,
+    "_partial": true,
+    "_locale": "",
+    "title": "Hospedagem",
+    "description": "",
+    "textImg": "generic.png",
+    "_type": "markdown",
+    "_id": "content:hospedagem:_index.md",
+    "_source": "content",
+    "_file": "hospedagem/_index.md",
+    "_extension": "md"
+  },
+  {
+    "_path": "/hospedagem/campingnovagokula",
+    "_dir": "hospedagem",
+    "_draft": false,
+    "_partial": false,
+    "_locale": "",
+    "title": "Camping Nova Gokula",
+    "description": "",
+    "textImg": [
+      "img/hospedagem/campingnovagokula/camping.jpg"
+    ],
+    "_type": "markdown",
+    "_id": "content:hospedagem:campingnovagokula.md",
+    "_source": "content",
+    "_file": "hospedagem/campingnovagokula.md",
+    "_extension": "md"
+  },
+  {
+    "_path": "/hospedagem/casadosgurus",
+    "_dir": "hospedagem",
+    "_draft": false,
+    "_partial": false,
+    "_locale": "",
+    "title": "Casa dos gurus",
+    "description": "",
+    "textImg": [
+      "img/hospedagem/casadosgurus/casa_gurus.jpg"
+    ],
+    "_type": "markdown",
+    "_id": "content:hospedagem:casadosgurus.md",
+    "_source": "content",
+    "_file": "hospedagem/casadosgurus.md",
+    "_extension": "md"
+  },
+  {
+    "_path": "/hospedagem/espacohimalaya",
+    "_dir": "hospedagem",
+    "_draft": false,
+    "_partial": false,
+    "_locale": "",
+    "title": "Espaço Himalaya",
+    "description": "",
+    "textImg": [
+      "img/hospedagem/espacohimalaya/himalaya.jpg"
+    ],
+    "_type": "markdown",
+    "_id": "content:hospedagem:espacohimalaya.md",
+    "_source": "content",
+    "_file": "hospedagem/espacohimalaya.md",
+    "_extension": "md"
+  },
+  {
+    "_path": "/hospedagem/hospedarialotus",
+    "_dir": "hospedagem",
+    "_draft": false,
+    "_partial": false,
+    "_locale": "",
+    "title": "Hospedaria Lótus",
+    "description": "",
+    "textImg": [
+      "img/hospedagem/hospedarialotus/hospedarialotus.jpg"
+    ],
+    "_type": "markdown",
+    "_id": "content:hospedagem:hospedarialotus.md",
+    "_source": "content",
+    "_file": "hospedagem/hospedarialotus.md",
+    "_extension": "md"
+  },
+  {
+    "_path": "/hospedagem/pousadanovagokula",
+    "_dir": "hospedagem",
+    "_draft": false,
+    "_partial": false,
+    "_locale": "",
+    "title": "Pousada Nova Gokula",
+    "description": "",
+    "textImg": [
+      "img/hospedagem/pousadanovagokula/pousada_novagokula.jpg"
+    ],
+    "_type": "markdown",
+    "_id": "content:hospedagem:pousadanovagokula.md",
+    "_source": "content",
+    "_file": "hospedagem/pousadanovagokula.md",
+    "_extension": "md"
+  },
+  {
+    "_path": "/hospedagem/suiteharihome",
+    "_dir": "hospedagem",
+    "_draft": false,
+    "_partial": false,
+    "_locale": "",
+    "title": "Suite Hari Home",
+    "description": "",
+    "textImg": [
+      "img/hospedagem/suiteharihome/suite_harihome.jpg"
+    ],
+    "_type": "markdown",
+    "_id": "content:hospedagem:suiteharihome.md",
+    "_source": "content",
+    "_file": "hospedagem/suiteharihome.md",
+    "_extension": "md"
+  },
+  {
+    "_path": "/instituicao",
+    "_dir": "",
+    "_draft": false,
+    "_partial": false,
+    "_locale": "",
+    "title": "ISKCON",
+    "description": "",
+    "textImg": [
+      "/img/iskcon_logo.jpg"
+    ],
+    "_type": "markdown",
+    "_id": "content:instituicao.md",
+    "_source": "content",
+    "_file": "instituicao.md",
+    "_extension": "md"
+  },
+  {
+    "_path": "/mahamantra",
+    "_dir": "",
+    "_draft": false,
+    "_partial": false,
+    "_locale": "",
+    "title": "O Maha-Mantra",
+    "description": "",
+    "textImg": [
+      "/upload/1703812723262.9277.jpg"
+    ],
+    "_type": "markdown",
+    "_id": "content:mahamantra.md",
+    "_source": "content",
+    "_file": "mahamantra.md",
+    "_extension": "md"
+  },
+  {
+    "_path": "/message",
+    "_dir": "",
+    "_draft": false,
+    "_partial": false,
+    "_locale": "",
+    "title": "Quem é A.C Bhaktivedanta Swami Prabhupada?",
+    "description": "",
+    "imgs": [
+      ""
+    ],
+    "textImg": [
+      "/img/prabhupada.jpg"
+    ],
+    "_type": "markdown",
+    "_id": "content:message.md",
+    "_source": "content",
+    "_file": "message.md",
+    "_extension": "md"
+  },
+  {
+    "_path": "/novo",
+    "_dir": "",
+    "_draft": false,
+    "_partial": false,
+    "_locale": "",
+    "title": "Bem vindo!",
+    "description": "Bem vindo!",
+    "video": "https://www.youtube.com/embed/Ir6E7wEcJfE?si=PV-68z2bSndZXJna",
+    "_type": "markdown",
+    "_id": "content:novo.md",
+    "_source": "content",
+    "_file": "novo.md",
+    "_extension": "md"
+  },
+  {
+    "_path": "/prabhupada",
+    "_dir": "",
+    "_draft": false,
+    "_partial": false,
+    "_locale": "",
+    "title": "Quem é A.C Bhaktivedanta Swami Prabhupada?",
+    "description": "",
+    "textImg": [
+      "/img/prabhupada.jpg"
+    ],
+    "_type": "markdown",
+    "_id": "content:prabhupada.md",
+    "_source": "content",
+    "_file": "prabhupada.md",
+    "_extension": "md"
+  },
+  {
+    "_path": "/querodoar",
+    "_dir": "",
+    "_draft": false,
+    "_partial": false,
+    "_locale": "",
+    "title": "Doação para Nossos Projetos",
+    "description": "É com grande alegria e gratidão que recebemos seu interesse em apoiar os projetos significativos da nossa comunidade. Na tradição da Bhakti-yoga, a caridade é considerada uma virtude fundamental, e é através da contribuição amorosa de pessoas que se importam, como você, que podemos expandir nossos esforços para disseminar a paz, compaixão e sabedoria espiritual.",
+    "_type": "markdown",
+    "_id": "content:querodoar.md",
+    "_source": "content",
+    "_file": "querodoar.md",
+    "_extension": "md"
+  },
+  {
+    "_path": "/sobre",
+    "_dir": "",
+    "_draft": false,
+    "_partial": false,
+    "_locale": "",
+    "title": "Sobre",
+    "description": "",
+    "_type": "markdown",
+    "_id": "content:sobre.md",
+    "_source": "content",
+    "_file": "sobre.md",
+    "_extension": "md"
+  },
+  {
+    "_path": "/templos/_index",
+    "_dir": "templos",
+    "_draft": false,
+    "_partial": true,
+    "_locale": "",
+    "title": "Templos",
+    "description": "",
+    "textImg": "generic.png",
+    "_type": "markdown",
+    "_id": "content:templos:_index.md",
+    "_source": "content",
+    "_file": "templos/_index.md",
+    "_extension": "md"
+  },
+  {
+    "_path": "/templos/1-1704914737449",
+    "_dir": "templos",
+    "_draft": false,
+    "_partial": false,
+    "_locale": "",
+    "title": "Novo documento",
+    "description": "Texto",
+    "textImg": [
+      "img/generic.png"
+    ],
+    "_type": "markdown",
+    "_id": "content:templos:1-1704914737449.md",
+    "_source": "content",
+    "_file": "templos/1-1704914737449.md",
+    "_extension": "md"
+  },
+  {
+    "_path": "/templos/1-radha-gokulananda",
+    "_dir": "templos",
+    "_draft": false,
+    "_partial": false,
+    "_locale": "",
+    "title": "Templo de Radha-gokulananda",
+    "description": "",
+    "textImg": [
+      "/img/templo1.png"
+    ],
+    "_type": "markdown",
+    "_id": "content:templos:1-radha-gokulananda.md",
+    "_source": "content",
+    "_file": "templos/1-radha-gokulananda.md",
+    "_extension": "md"
+  },
+  {
+    "_path": "/templos/narasinha",
+    "_dir": "templos",
+    "_draft": false,
+    "_partial": false,
+    "_locale": "",
+    "title": "Templo de Narasinha",
+    "description": "",
+    "textImg": [
+      "/img/templos/narashinratemplo.png"
+    ],
+    "_type": "markdown",
+    "_id": "content:templos:narasinha.md",
+    "_source": "content",
+    "_file": "templos/narasinha.md",
+    "_extension": "md"
+  },
+  {
+    "_path": "/templos/samadi",
+    "_dir": "templos",
+    "_draft": false,
+    "_partial": false,
+    "_locale": "",
+    "title": "Samadhi de Prabhupada",
+    "description": "",
+    "textImg": [
+      "/img/templos/samadi_prabhupada.jpg"
+    ],
+    "_type": "markdown",
+    "_id": "content:templos:samadi.md",
+    "_source": "content",
+    "_file": "templos/samadi.md",
+    "_extension": "md"
+  },
+  {
+    "_path": "/templos/santuariodetulasi",
+    "_dir": "templos",
+    "_draft": false,
+    "_partial": false,
+    "_locale": "",
+    "title": "Casa de Tulasi",
+    "description": "",
+    "textImg": [
+      "/img/templos/tulasitemplo.jpeg"
+    ],
+    "_type": "markdown",
+    "_id": "content:templos:santuariodetulasi.md",
+    "_source": "content",
+    "_file": "templos/santuariodetulasi.md",
+    "_extension": "md"
+  }
+]

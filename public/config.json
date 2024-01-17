@@ -19,12 +19,12 @@
             },
             {"name": "Atrativos", "link": "", "sub": 
                 [
-                    {"name": "Templos","link": "content:templos", "sub": null},
-                    {"name": "Hospedagem","link": "content:hospedagem", "sub": null},
-                    {"name": "Alimentação","link": "content:alimentacao", "sub": null}
+                    {"name": "Templos","link": "content:templos:_index.md", "sub": null},
+                    {"name": "Hospedagem","link": "content:hospedagem:_index.md", "sub": null},
+                    {"name": "Alimentação","link": "content:alimentacao:_index.md", "sub": null}
                 ]
             }, 
-            {"name": "Eventos", "link": "content:eventos","sub":null},
+            {"name": "Eventos", "link": "content:eventos:_index.md","sub":null},
             {"name": "Como chegar", "link": "content:comochegar.md","sub": null},       
             {"name": "Contato", "link": "content:contact.md","sub": null}
         ]

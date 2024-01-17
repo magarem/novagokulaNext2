@@ -17,7 +17,7 @@
       
       <div style="width: 50vw; margin-right: 20px;" class=" input-group input-group-sm mb-0">
         <div class="input-group">
-          <input v-model="filename" @keyup.enter="readFile" type="text" class="form-control bg-dark text-light form-control-sm" placeholder="Recipient's username" aria-label="Recipient's username with two button addons">
+          <input v-model="id" @keyup.enter="readFile" type="text" class="form-control bg-dark text-light form-control-sm" >
           <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
           </button>
           <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end" aria-labelledby="dropdownMenuButton2">
@@ -32,14 +32,21 @@
 
             </li> 
             <li>
-              <button v-if="fileType=='file'&&!filename.includes('_index')&&!filename.includes('home.md')" @click="delDoc" class="dropdown-item" type="button">Excluir</button>
+              <button v-if="fileType=='file'&&!id.includes('_index')&&!id.includes('home.md')" @click="delDoc" class="dropdown-item" type="button">Excluir</button>
 
             </li>
             <li>
-              <button v-if="fileType=='file'&&!filename.includes('_index')&&!filename.includes('home.md')" type="button" @click="rename" class="dropdown-item" >
+              <button v-if="fileType=='file'&&!id.includes('_index')&&!id.includes('home.md')" type="button" @click="rename" class="dropdown-item" >
                 Renomear
               </button>
             </li>
+            <li>
+              <button v-if="fileType=='dir'" type="button" @click="ajustaPonteiro({operation: 'reset', operationId: ''})" class="dropdown-item" >
+                Refazer lista
+              </button>
+            </li>
+            
+            
             
           </ul>
         </div>
@@ -126,17 +133,17 @@
               <a id="x1" class="nav-link active" data-bs-toggle="tab" href="#txt_arquivos_">Arquivos</a>
             </li>
             <li class="nav-item">
-              <a id="x2" class="nav-link " data-bs-toggle="tab" href="#txt_propiedades_">Propriedades</a>
+              <a id="x2" class="nav-link" data-bs-toggle="tab" href="#txt_propiedades_">Propriedades</a>
             </li>
             <li class="nav-item">
-              <a id="x3" class="nav-link  " data-bs-toggle="tab" href="#txt_texto_">Texto</a>
+              <a id="x3" class="nav-link" data-bs-toggle="tab" href="#txt_texto_">Texto</a>
             </li>
           </ul>
           <!-- Tab panes -->
           <div class="tab-content" style="height: calc(100% - 28px);">
             <div id="txt_arquivos_" class="container_ h-100 tab-pane active my-0 mx-0" >
                 <div class="list-group p-4" style="width: 100%;">
-                  <button type="button" class="p-4 list-group-item list-group-item-action bg-dark text-light" @click="filename=x;openNewFile(x);readFile();  activeTab()" v-for="x in fileList">{{ x }}</button>
+                  <button type="button" class="p-4 list-group-item list-group-item-action bg-dark text-light" @click="id=x; openNewFile(x);readFile();  activeTab()" v-for="x in fileList">{{ x }}</button>
                 </div>
             </div>
             <div id="txt_propiedades_" class="container tab-pane fade" style="height:100%; padding-left: 0px; padding-right: 0px;">
@@ -241,13 +248,12 @@ function splitLastOccurrence(str, substring) {
 }
 
 const route = useRoute()
-const id = route.query.id||''
 let status = ref('')
 let page_id = ref("/")
 let editViewMode = ref(0)
 let iframeUpdate = ref(false)
 let editPanel = ref(true)
-let filename = ref(id)
+let id = ref(route.query.id)
 let txt = ref()
 let txt_propiedades = ref()
 let txt_texto = ref()
@@ -255,11 +261,18 @@ let aleradySaved = ref(false)
 let showModal = ref(true)
 let fileType = ref("dir")
 let localdata = getData('content')||[]
-let flagCountToSave = 0
 let fileList = ref([])
 let txt_parans = {}
 const ref_session = ref(null);
 let configtextarea = ref("")
+let id_target = ref("")
+let dir
+let dataBkp
+
+
+
+import Swal from 'sweetalert2'
+import '@sweetalert2/theme-dark/dark.scss'
 
 function activeTab(){ 
   document.getElementById('txt_arquivos_').classList.remove('active'); 
@@ -271,14 +284,6 @@ function activeTab(){
   document.getElementById('x3').classList.add('active'); 
 }
 
-function configMode() {
-  if (editViewMode.value == 2) {editViewMode.value = 1}
-  filename.value='public/config.json'; 
-  txt_propiedades = ''
-  fileList = []
-  readFile(); 
-}
-
 async function cleanup() {
   try {
     const { data: ret } = await useFetch('/api/cleanup')
@@ -287,45 +292,16 @@ async function cleanup() {
   }
 }
 
-async function read() {
-  // loadConfigFile()
-  try {
-      filename.value = filename.value.replaceAll(':', '/')
-      if (!filename.value.includes('.md')&&!filename.value.includes('.json')) filename.value = filename.value + '/_index.md'
-      
-      const { data: ret } = await useFetch('/api/read?filename=' + filename.value)
-      txt.value = ret.value
-      // if (filename.value.includes('.json')) txt_texto = ret.value
-
-      // txt_texto = ret.value
-      let index = localdata.findIndex((item) => item.filename === filename.value);
-      if(index===-1){
-        console.log("salvo local!");
-        
-        localsave()
-      }
-
-      txt_propiedades.value = txt.value.trim().split('---')[1].trim()
-      console.log(txt_propiedades.value);
-      txt_texto.value = txt.value.trim().split('---')[2].trim()
-      console.log(txt_texto.value);
-
-
-  } catch (error) {
-    console.log("Load file error");
-  }
-}
-
 const localsave = () => {
-  let index = localdata.findIndex((item) => item.filename === filename.value);
+  let index = localdata.findIndex((item) => item.id === id.value);
   // Check if the object with the specified property value exists in the array
   if (index === -1) {
     // If not found, push a new object with the desired properties
-    localdata.push({filename: filename.value, txt: txt.value});
+    localdata.push({id: id.value, txt: txt.value});
   } else {
     // If found, log a message indicating that the object already exists
     console.log("Object already exists");
-    localdata[index] = {filename: filename.value, txt: txt.value}
+    localdata[index] = {id: id.value, txt: txt.value}
   }
   setData('content', localdata);
   console.log("doc salvo local");
@@ -333,10 +309,8 @@ const localsave = () => {
 
 async function fileContentUndo() {
   try {
-    if(confirm("Descartar alterações em " + filename.value + "?")){
-      // const { data: ret } = await useFetch('/api/restorefilecontent?file=' + filename.value)
-      // console.log('getData', getData('content').txt);
-      let index = localdata.findIndex((item) => item.filename === filename.value);
+    if(confirm("Descartar alterações em " + id.value + "?")){
+      let index = localdata.findIndex((item) => item.id === id.value);
       
       if (index === -1) {
         alert("doc ainda não salvo")
@@ -345,8 +319,6 @@ async function fileContentUndo() {
         txt.value = getData('content')[index].txt
         document.getElementById('iframe').contentWindow.location.reload(true)
       }
-
-      
     }
   } catch (error) {
       console.log("Error", error);
@@ -365,22 +337,6 @@ async function gitreset() {
   }
 }
 
-async function rename() {
-  try {
-    let aux1 = splitLastOccurrence(filename.value,'/')
-    let docNewFileName = window.prompt("Digite o novo nome", aux1[1].split('.')[0]);
-    let newname = aux1[0] + '/' + docNewFileName + '.md'
-    console.log(newname);
-    $fetch('api/rename?oldname=' + filename.value + '&newname=' + newname).then(ret=>{
-      console.log(ret);
-    })
-    filename.value = newname
-    document.getElementById('iframe').contentWindow.location = "/" + newname.replaceAll('/', ':')
-  } catch (error) {
-      console.log("Copile error");
-  }
-}
-
 async function systemUpdate() {
   try {
     if(confirm("Atualizar sistema?")){
@@ -396,10 +352,8 @@ async function systemUpdate() {
 async function copile() {
   try {
     if(confirm("Confirma copilação do site?")){
-      // const { data: ret1 } = await useFetch('/api/writeSlideFile')
       setData('content',[])
       const { data: ret2 } = await useFetch('/api/copile')
-      // console.log(ret1, ret2);
       alert("Site copilado com sucesso!")
     }
   } catch (error) {
@@ -407,124 +361,223 @@ async function copile() {
   }
 }
 
-async function delDoc(){
-  if (confirm("Confirma exclusão do arquivo " + filename.value + '?') == true) {
-      const { data: count2 } = await useFetch('/api/deleteContent?id=' + filename.value)
-      // filename.value = ""
-      // filename.value = splitLastOccurrence(filename.value, "/")[0]
-      // console.log('id--->', id);
-      let _dir = splitLastOccurrence(filename.value, '/')[0]
-      filename.value = _dir + '/_index.md'
-     
-      readFile()
-      console.log(_dir.replaceAll('/', ':'));
-      
-      // page_id.value = _dir.replaceAll('/', ':')
-      document.getElementById('iframe').contentWindow.location = '/'+_dir.replaceAll('/', ':')
-      // reloadIframe()
-    }
-}
- 
-async function novoDoc() {
-  if (true){
-    const newname = Date.now() + '.md'
-    let aux1 = "---\ntitle: Novo documento\ntextImg: ['img/generic.png']\n---\nTexto"
-    // console.log({filename: splitLastOccurrence(filename.value, '/')[0] + '/' + newname, txt: aux1});
-    try {
-      const config = {
-        method: 'POST',
-        headers: {'Accept': 'application/json','Content-Type': 'application/json'},
-        body: JSON.stringify({
-          filename: splitLastOccurrence(filename.value,'/')[0] + '/' + newname, txt: aux1
-        })
-      }
-      const response = await fetch('/api/novoDoc', config)
-      if (response.ok) {
-        reloadIframe()
-        aleradySaved.value = true
-      } else {
-        console.log("save file error");
-      }
-    } 
-    catch (error) {
-      console.log("save api error");
-    }
+async function rename() {
+  try {
+    let aux1 = splitLastOccurrence(id.value, '/')
+    let docNewFileName = window.prompt("Digite o novo nome", aux1[1].split('.')[0]);
+    let newname = aux1[0] + '/' + docNewFileName + '.md'
+    console.log(newname);
+    $fetch('api/rename?oldname=' + id.value + '&newname=' + newname).then(ret=>{
+      // console.log(ret);
+    })
+    id.value = newname
+    document.getElementById('iframe').contentWindow.location = "/" + newname.replaceAll('/', ':')
+  } catch (error) {
+      console.log("Copile error");
   }
 }
 
-async function save() {
-  // if (!aleradySaved.value){
-      status.value = 'salvo'
-      try {
-      const config = {
-        method: 'POST',
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({filename: filename.value.trim(), txt: txt.value})
-      }
-      const response = await fetch('/api/save', config)
-      if (response.ok) {
-        // console.log(response.body);
-        // console.log("Retorna info");
-        aleradySaved.value = true
-      } else {
-        console.log("save file error");
-      }
+async function delDoc(){
+  Swal.fire({
+    title: "Confirma exclusão?",
+    // showDenyButton: true,
+    showCancelButton: true,
+    confirmButtonText: "Sim",
+    denyButtonText: `Cancelar`
+  }).then(async (result) => {
+    /* Read more about isConfirmed, isDenied below */
+    if (result.isConfirmed) {
+      // if (confirm("Confirma exclusão do arquivo " + filename.value + '?') == true) {
+        const { data: ret } = await useFetch('/api/deleteContent?id=' + id.value.replaceAll(':', '/'))
+        id.value = 'content:' + dir + ':_index.md'
+        readFile()
+        document.getElementById('iframe').contentWindow.location = '/content:' + dir + ':_index.md'
+        ajustaPonteiro({operation: 'reduce', operationId: id.value})
     } 
-    catch (error) {
-      console.log("save api error");
+    // else if (result.isDenied) {
+    //   Swal.fire("Changes are not saved", "", "info");
+    // }
+  });
+
+
+  
+}
+
+async function novoDoc() {
+  const newname = Date.now() + '.md'
+  let aux1 = "---\ntitle: Novo documento\ntextImg: ['img/generic.png']\n---\nTexto"
+  let newfilename = 'content:' + dir + ':' + newname
+  try {
+    const config = {
+      method: 'POST',
+      headers: {'Accept': 'application/json','Content-Type': 'application/json'},
+      body: JSON.stringify({
+        filename: newfilename.replaceAll(':', '/'), txt: aux1
+      })
     }
+    const response = await fetch('/api/novoDoc', config)
+    if (response.ok) {
+      console.log(newfilename);
+      id.value = newfilename
+      readFile()
+      console.log('dir', dir);
+      ajustaPonteiro({operation: 'add', operationId: newfilename})
+    }
+  }catch{
+    console.log('erro!');
+  }
+}
+
+const ajustaPonteiro = (obj) => {
+  useFetch('/api/read?filename=' + 'content/' + dir + '/_index.md').then(ret1=>{
+    let auxy = []
+    const auxProps = ret1.data.value.trim().split('---')[1].trim()
+    const auxPropsYml = yaml.load(auxProps);
+
+    useFetch('/api/readDir?dir=' + dir).then(ret=>{
+      if (obj.operation == 'reset') {
+        alert('reset!')
+        auxPropsYml.files = ret.data.value.map(x=>x._id)
+      }
+
+      if (obj.operation == 'add') {
+        auxPropsYml.files.push(obj.operationId)
+      }
+
+      if (obj.operation == 'reduce') {
+        auxPropsYml.files = auxPropsYml.files.filter((x: any)=>(x!=obj.operationId))
+      }
+
+      auxPropsYml.files = auxPropsYml.files.filter(x=>(x!='content:'+dir+':_index.md'))
+      
+      let aux2Content = "---\n"+JSON.stringify(auxPropsYml, null, 2)+"\n---\n" + txt_texto.value
+      // txt.value = aux2Content
+      try {
+        const config = {
+          method: 'POST',
+          headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({fileName: ('content:' + dir + ':_index.md').replaceAll(':', '/'), data: aux2Content})
+        }
+        const response = fetch('/api/saveFileContent', config)
+        if (response.ok) {
+          //
+        } else {
+            console.log("save file error");
+        }
+      } 
+      catch (error) {
+        console.log("save api error");
+      }
+    })
+    aleradySaved.value = true
+  })
 }
 
 watch(txt_propiedades, (data) => {
-  console.log(data);
   txt.value = '---\n' + txt_propiedades.value + '\n---\n' + txt_texto.value
   txt_parans = yaml.load(data);
-  console.log('obj.session:', txt_parans.session||'');
+  aa()
 })
 
 watch(txt_texto, (data) => {
-  console.log(data);
+  console.log("watch txt_texto called");
   txt.value = '---\n' + txt_propiedades.value + '\n---\n' + txt_texto.value
-  // document.getElementById('iframe').contentWindow.postMessage({refresh: true})
+  aa()
 })
 
 const openNewFile = (x) => {
   document.getElementById('iframe').contentWindow.postMessage(
       {op: 'redirect', 
-      filename: x }
+      id: x }
   )
 }
+
+async function read(content='') {
+ 
+
+    if (!content){
+      
+      try {
+        
+        const { data: ret } = await useFetch('/api/read?filename=' + id.value.replaceAll(':', '/'))
+        txt.value = ret.value
+      
+      
+      } catch (error) {
+        console.log("Load file error");
+      }
+    
+    }else{
+      txt.value = content
+    }
+   
+   
+   
+    let index = localdata.findIndex((item) => item.id === id.value);
+    if(index===-1){
+      console.log("salvo local!");
+      localsave()
+    }
+    txt_propiedades.value = txt.value.trim().split('---')[1].trim()
+    txt_parans = yaml.load(txt_propiedades.value);
+    txt_texto.value = txt.value.trim().split('---')[2].trim()
+  
+}
+
+function aa() {
+    dataBkp = txt.value
+    save()
+    const aux = (document?.getElementById('iframe') as HTMLIFrameElement);
+    aux.contentWindow?.postMessage(
+      {
+        refresh: true, 
+        op: 'redirect',
+        id: id.value
+        // fileList: JSON.parse(JSON.stringify(fileList))
+      }, '/');
+    aleradySaved.value = false
+    
+  }
 
 const readFile = () => {
   read()
   activeTab()
-  watch(txt, (data) => {
-    flagCountToSave++
-    let obj = JSON.parse(JSON.stringify(fileList));
-    document.getElementById('iframe').contentWindow.postMessage(
-      {refresh: true, 
-      filename: filename.value, 
-      txt: txt.value, 
-      txt_parans: txt_parans,
-      fileList: obj}, '/');
-    if (true) {
-      flagCountToSave = 0
-      // console.log('data:', data);
-      aleradySaved.value = false
-      save()
-    }else{
-      status.value = ''
+  
+  // aa()
+  // watch(txt, (data) => {
+  //   console.log('watch txt called');
+  //   aa()
+  // })
+}
+
+async function save() {
+  status.value = 'salvo'
+  try {
+    const config = {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({filename: id.value.replaceAll(':', '/').trim(), txt: txt.value})
     }
-    
-  })
+    const response = await fetch('/api/save', config)
+    if (response.ok) {
+      aleradySaved.value = true
+    } else {
+      console.log("save file error");
+    }
+  } 
+  catch (error) {
+    console.log("save api error");
+  }
 }
 
 const loadConfigFile = async () => { 
   const { data: ret } = await useFetch('/api/read?filename=public/config.json')
-  console.log(ret.value);
   configtextarea.value = ret.value
 }
 
@@ -556,30 +609,39 @@ const reloadIframe = () => {
 let flagA = false
 
 const iframeEvent = (event) => {
-  // console.log("edit.vue: recebendo a mensagem:", event.data);
   fileType.value = event.data.type
   console.log('fileType:', fileType.value);
   fileList.value = event.data.fileList
   if (fileType.value == 'dir') {
-    filename.value = event.data.id + '/_index.md'
+    id.value = event.data.id
+    if (event.data.content){
+      console.log(event.data.content);
+      read(event.data.content)
+    }
   }else{
     fileList.value = event.data.fileList
-    filename.value = event.data.id||event.data.fileList[0]
+    id.value = event.data.id
+    id_target.value = event.data.id.split('|')[1]
   }
+  console.log('id.value:', id.value);
+  
+  dir = splitLastOccurrence(id.value, ':')[0].replace('content:','')
+  // console.log('dir:', dir);
   flagA = true
   readFile()
 }
 
 if (process.client){
-    //Event Listener for Iframe
-    document.onkeydown = function(e) {
+
+  document.onkeydown = async function(e) {
     if (e.ctrlKey && e.keyCode === 83) {
+      e.preventDefault();
       localsave()
       save()
-        return false;
+      return false;
     }
-};
-    window.addEventListener("message", iframeEvent, false);
+  };
+  window.addEventListener("message", iframeEvent, false);
 }	
 </script>
 

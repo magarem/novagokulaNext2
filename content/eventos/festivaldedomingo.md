@@ -1,14 +1,15 @@
 ---
 title: 'Festival de domingo na fazenda nova gokula'
 description: ''
+position: 0
 textImg: ['/img/eventos/festivaldedomingo.jpeg']
 ---
-Passe o dia com os devotos de Krishna!
+Passe o dia com os devotos de Krishna!ssddddsd
 Todos as domingos das 6h30 às 18h.
 
-Gostaria de participar de um domingo recheado de filosofia, alimentação consciente e programas espirituais na associação dos devotos Krishna?
+Gostaria de participar de um domingo recheado de filosofia, alimentação consciente e programas espirituais na associação dos devotos Krishna?ddw
 
-Programação Especial:
+Programação Especial?
 
 6h30 - Vivência com “Meditação Mântrica - Japa Yoga”;
 7h00 - Bhajan (cânticos devocionais introspectivos);

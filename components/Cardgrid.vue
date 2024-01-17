@@ -1,7 +1,7 @@
 <template>
   <div v-if="item" class="card border-3 shadow-none rounded-3" style="width: 100%; border-radius: 20%;">
-    <NuxtLink :to="{ path: ('content'+item.id).replaceAll('/',':') } " >
-      <img v-if="item.imgs" class="card-img card-img-top text-center" :src="item.imgs[0]" alt="Card image cap"/>
+    <NuxtLink :to="'/' + item.id" >
+      <img v-if="item.img" style="width: 200px;" class="card-img card-img-top text-center" :src="item.img" alt="Card image cap"/>
       <img v-if="item.textImg" class="card-img card-img-top " :src="item.textImg[0]" alt="Card image cap"/>
     </NuxtLink>
     <div class="card-body">
@@ -12,8 +12,8 @@
   </div>
 </template>
 <script setup>
-  const props = defineProps(['target', 'item', 'type'])
-  console.log('item:', props.item.id);
+  const props = defineProps(['item'])
+  console.log('item:', props.item);
 </script>
 <style scoped>
   .card-img {

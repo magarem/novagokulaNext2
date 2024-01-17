@@ -1,5 +1,11 @@
 ---
-title: 'Alimentação'
-description: ''
-# imgs: ['/img/templo1.png']
+{
+  "title": "Alimentação",
+  "files": [
+    "content:alimentacao:confrariavegana.md",
+    "content:alimentacao:eka.md",
+    "content:alimentacao:lanchonetejaganata.md",
+    "content:alimentacao:bistro.md"
+  ]
+}
 ---
