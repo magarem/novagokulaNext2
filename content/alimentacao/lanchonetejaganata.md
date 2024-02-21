@@ -1,8 +1,36 @@
 ---
-title: 'Lanchonete Jagannatha'
-description: ''
-textImg: ['/img/alimentacao/lanchonetejagannatha.jpeg']
+components:
+  showContent:
+    mode: simple
+params_schema:
+  title:
+    label: Título
+    type: string
+  description:
+    label: Descrição
+    type: string
+  topimage:
+    label: Imagem superior
+    type: text+button
+    buttonLink:
+      label: Selecionar
+      link: openImageManagerModal
+  sideimage:
+    label: Imagem lateral
+    type: text+button
+    buttonLink:
+      label: Selecionar
+      link: openImageManagerModal
+params_data:
+  title: Lanchonete Jagannatha
+  description: ''
+  topimage: null
+  img: ''
+  descricao: rrrr
+  sideimage: /img/alimentacao/lanchonetejagannatha.jpeg
+
 ---
+
 Bem-vindo à Lanchonete Jagannatha: O Sabor Divino aos Pés do Templo
 
 Namaste e saudações espirituais! Adentre a atmosfera deliciosa da Lanchonete Jagannatha, um oásis gastronômico localizado estrategicamente atrás do Templo Principal em nossa amada comunidade. Aqui, a culinária se torna uma expressão de devoção, e cada prato é preparado com amor e reverência aos princípios da tradição Hare Krishna.

@@ -11,5 +11,7 @@ export default defineEventHandler( (event) => {
         const data =  fs.readFileSync( filename, 'utf-8')
         return data
     }
+    console.log('read_file:', read(filename));
+    
     return read(filename);
 })

@@ -1,9 +1,8 @@
-// formkit.config.ts
+import { fr } from '@formkit/i18n'
 import { defineFormKitConfig } from '@formkit/vue'
-import { rootClasses } from './formkit.theme.ts'
- 
+import '@formkit/themes/genesis'
+
 export default defineFormKitConfig({
-  config: {
-    rootClasses
-  }
+  locales: { fr },
+  locale: 'fr',
 })

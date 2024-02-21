@@ -1,8 +1,34 @@
 ---
-title: 'Casa dos gurus'
-description: ''
-textImg: ['img/hospedagem/casadosgurus/casa_gurus.jpg']
+components:
+  showContent:
+    mode: simple
+params_schema:
+  title:
+    label: Título
+    type: string
+  description:
+    label: Descrição
+    type: string
+  topimage:
+    label: Imagem superior
+    type: text+button
+    buttonLink:
+      label: selecione
+      link: openImageManagerModal
+  sideimage:
+    label: Imagem lateral
+    type: text+button
+    buttonLink:
+      label: selecione
+      link: openImageManagerModal
+params_data:
+  title: Casa dos gurus
+  description: ''
+  topimage: ''
+  sideimage: /img/hospedagem/casadosgurus/casa_gurus.jpg
+
 ---
+
 - Casa ampla com salão panorâmico.
 - Wifi
 - Ar condicionado

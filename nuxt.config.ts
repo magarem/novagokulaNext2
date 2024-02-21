@@ -10,8 +10,8 @@ export default defineNuxtConfig({
   content: {
     watch: false,
   },
-  css: ['~/assets/css/bootstrap.scss', 'vue-final-modal/style.css'],
-  modules: [[
+  css: ['~/assets/styles/main.scss', '~/assets/css/bootstrap.scss', 'vue-final-modal/style.css'],
+  modules: ['nuxt-bootstrap-icons','@formkit/nuxt',[
     '@pinia/nuxt',
     {
       autoImports: [
@@ -21,9 +21,12 @@ export default defineNuxtConfig({
     },
   ],  "@vueuse/nuxt", "formidable", "@nuxt/image", "@nuxtjs/google-fonts", '@nuxt/content'],
   plugins: [
-    { src: '~/plugins/bootstrap.js', mode: 'client'},
+    { src: '~/plugins/useBootstrap.client.ts', mode: 'client'},
     { src: '~/plugins/vue-final-modal.ts', ssr: false }
-  ],
+  ],formkit: {
+    // Experimental support for auto loading (see note):
+    autoImport: true
+  },
   server: {
     host: '0' // default: localhost
   },

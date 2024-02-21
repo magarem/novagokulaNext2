@@ -1,8 +1,36 @@
 ---
-title: 'Bistro Nova Gokula'
-description: ''
-textImg: ['/img/alimentacao/bistro.jpeg']
+components:
+  showContent:
+    mode: simple
+params_schema:
+  title:
+    label: Título
+    type: string
+  description:
+    label: Descrição
+    type: string
+  topimage:
+    label: Imagem superior
+    type: text+button
+    buttonLink:
+      label: Selecionar
+      link: openImageManagerModal
+  sideimage:
+    label: Imagem lateral
+    type: text+button
+    buttonLink:
+      label: Selecionar
+      link: openImageManagerModal
+params_data:
+  title: Bistro Nova Gokula
+  description: ''
+  topimage: null
+  img: ''
+  descricao: rrrr
+  sideimage: /upload/1706057826997.7883.jpg
+
 ---
+
 Bem-vindo ao Bistro Nova Gokula: O Sabor Vegetariano que Nutre Corpo e Alma, Diante do Templo Principal
 
 Namaste e saudações inspiradoras! Adentre o mundo encantador do Bistro Nova Gokula, um espaço harmonioso situado em frente ao Templo Principal. Aqui, a culinária vegetariana se entrelaça com a espiritualidade, enquanto o aroma tentador das refeições se mistura com a atmosfera sagrada da nossa amada comunidade Hare Krishna.

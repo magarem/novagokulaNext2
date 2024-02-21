@@ -1,8 +1,34 @@
 ---
-title: 'Pousada Nova Gokula'
-description: ''
-textImg: ['img/hospedagem/pousadanovagokula/pousada_novagokula.jpg']
+components:
+  showContent:
+    mode: simple
+params_schema:
+  title:
+    label: Título
+    type: string
+  description:
+    label: Descrição
+    type: string
+  topimage:
+    label: Imagem superior
+    type: text+button
+    buttonLink:
+      label: selecione
+      link: openImageManagerModal
+  sideimage:
+    label: Imagem lateral
+    type: text+button
+    buttonLink:
+      label: selecione
+      link: openImageManagerModal
+params_data:
+  title: Casa dos gurus
+  description: ''
+  topimage: ''
+  sideimage: /img/hospedagem/pousadanovagokula/pousada_novagokula.jpg
+
 ---
+
 - Ladeada por rio cristalino, muito verde e jardins.
 - Um ambiente confortável e acolhedor.
 - A 300m do templo.

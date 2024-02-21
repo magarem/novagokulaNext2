@@ -1,8 +1,36 @@
 ---
-title: 'Confraria vegana'
-description: ''
-textImg: ['/img/alimentacao/confrariavegana.jpeg']
+components:
+  showContent:
+    mode: simple
+params_schema:
+  title:
+    label: Título
+    type: string
+  description:
+    label: Descrição
+    type: string
+  topimage:
+    label: Imagem superior
+    type: text+button
+    buttonLink:
+      label: Selecionar
+      link: openImageManagerModal
+  sideimage:
+    label: Imagem lateral
+    type: text+button
+    buttonLink:
+      label: Selecionar
+      link: openImageManagerModal
+params_data:
+  title: Confraria vegana
+  description: ''
+  topimage: null
+  img: ''
+  descricao: rrrr
+  sideimage: /img/alimentacao/confrariavegana.jpeg
+
 ---
+
 Espaço Cultural e Restaurante Confraria Vegana
 
 “Ecologia da boca pra dentro”

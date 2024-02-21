@@ -1,8 +1,34 @@
 ---
-title: 'Templo de Radha-gokulananda'
-description: ''
-textImg: ['/img/templo1.png']
+components:
+  showContent:
+    mode: simple
+params_schema:
+  title:
+    label: Título
+    type: string
+  description:
+    label: Descrição
+    type: string
+  topimage:
+    label: Imagem superior
+    type: text+button
+    buttonLink:
+      label: Selecionar
+      link: openImageManagerModal
+  sideimage:
+    label: Imagem lateral
+    type: text+button
+    buttonLink:
+      label: Selecionar
+      link: openImageManagerModal
+params_data:
+  title: Templo de Radha-gokulananda
+  description: ''
+  topimage: ''
+  sideimage: /img/templo1.png
+
 ---
+
 Este templo representa o coração de nossa comunidade. É a razão da existência de Nova Gokula - “casa das vacas”, referindo-se ao humor pastoril de Krishna e sua consorte Radha, consistindo em uma vida rural de simplicidade e cultivo, para os devotos, do pensamento elevado em Deus. Sendo assim, local de prática da Bhakti-yoga (a yoga da devoção).
 
 O altar, além do casal divino Radha-Krishna (Radha-gokulananda), possui as Deidades de Sita-Rama Lakshman Hanuman e Gaura-Nitai, que são todas formas de Krishna em seus respectivos passatempos como avataras (encarnações divinas). A saber:

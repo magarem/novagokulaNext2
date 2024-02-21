@@ -74,7 +74,12 @@ const path=route.name||''
 
 	h1, h2, h3, h4, h5, p, li {
 		font-family: Montserrat;
-		color: #fff;
+		// color: #fff;
+		color: #5a1b1b;
+	}
+
+	h1 {
+		font-size: 32px;
 	}
 	
 	p, li {
@@ -96,7 +101,7 @@ const path=route.name||''
 
 	.bg {
 		background-color: #DBAE58;
-		padding-bottom: 50px;
+		_padding-bottom: 50px;
 		// background-color: #EBAA83;
 	}
 		

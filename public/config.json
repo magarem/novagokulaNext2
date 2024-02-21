@@ -2,31 +2,31 @@
     "topbar": {
         "logo": {
             "img": "/img/logo2.png",
-            "link": "/"
+            "link": "/home"
         },
         "menu": [
-            {"name": "Home", "link": "/", "sub": null},
+            {"name": "Home", "link": "/home", "sub": null},
             {"name": "Sobre", "link": "", "sub": 
                 [
-                    {"name": "Quem somos", "link": "content:about.md", "sub": null},
-                    {"name": "História","link": "content:historia.md", "sub": null},
-                    {"name": "O fundador","link": "content:acharyadeva.md", "sub": null},
-                    {"name": "Srila Prabhupada","link": "content:prabhupada.md", "sub": null},
-                    {"name": "ISKCON","link": "content:instituicao.md", "sub": null},
-                    {"name": "O Mantra","link": "content:mahamantra.md", "sub": null},
-                    {"name": "Filosofia","link": "content:filosofia.md", "sub": null}
+                    {"name": "Quem somos", "link": "/masterpage/content:sobre:about.md", "sub": null},
+                    {"name": "História", "link": "/masterpage/content:sobre:historia.md", "sub": null},
+                    {"name": "O fundador", "link": "/masterpage/content:sobre:acharyadeva.md", "sub": null},
+                    {"name": "Srila Prabhupada", "link": "/masterpage/content:sobre:prabhupada.md", "sub": null},
+                    {"name": "ISKCON", "link": "/masterpage/content:sobre:instituicao.md", "sub": null},
+                    {"name": "O Mantra", "link": "/masterpage/content:sobre:mahamantra.md", "sub": null},
+                    {"name": "Filosofia", "link": "/masterpage/content:sobre:filosofia.md", "sub": null}
                 ]
             },
             {"name": "Atrativos", "link": "", "sub": 
                 [
-                    {"name": "Templos","link": "content:templos:_index.md", "sub": null},
-                    {"name": "Hospedagem","link": "content:hospedagem:_index.md", "sub": null},
-                    {"name": "Alimentação","link": "content:alimentacao:_index.md", "sub": null}
+                    {"name": "Templos", "link": "/masterpage/content:templos:_index.md", "sub": null},
+                    {"name": "Hospedagem", "link": "/masterpage/content:hospedagem:_index.md", "sub": null},
+                    {"name": "Alimentação", "link": "/masterpage/content:alimentacao:_index.md", "sub": null}
                 ]
             }, 
-            {"name": "Eventos", "link": "content:eventos:_index.md","sub":null},
-            {"name": "Como chegar", "link": "content:comochegar.md","sub": null},       
-            {"name": "Contato", "link": "content:contact.md","sub": null}
+            {"name": "Eventos", "link": "/masterpage/content:eventos:_index.md","sub":null},
+            {"name": "Como chegar", "link": "/masterpage/content:comochegar.md","sub": null},       
+            {"name": "Contato", "link": "/masterpage/content:contact.md","sub": null}
         ]
     },
     "footer": {

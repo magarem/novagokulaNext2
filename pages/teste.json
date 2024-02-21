@@ -1,0 +1,32 @@
+{
+"params_schema":{
+        "title":  {
+        "label": "Título",
+        "type": "string"
+        },
+        "description":  {
+        "label": "Descrição",
+        "type": "string"
+        },
+        "topimage":{
+        "label": "Imagem superior",
+        "type": "string",
+        "ref": {
+            "buttonLink": {
+            "label": "...",
+            "link": "openImageManagerModal"
+            }
+        }
+        },
+        "sideimage":{
+        "label": "Imagem superior",
+        "type": "string",
+        "ref": {
+            "buttonLink": {
+            "label": "...",
+            "link": "openImageManagerModal"
+            }
+        }
+        }
+    }
+}

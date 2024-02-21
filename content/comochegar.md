@@ -1,7 +1,39 @@
 ---
-title: 'Como chegar'
-description: ''
+components:
+  showContent:
+    mode: simple
+params_schema:
+  title:
+    label: Título
+    type: string
+  limit:
+    label: Limite
+    type: string
+  tipo:
+    label: Tipo
+    type: string
+  sideimage:
+    label: Imagem superior
+    type: text+button
+    buttonLink:
+      label: Selecionar
+      link: openImageManagerModal
+  files:
+    label: Arquivos
+    type: textarea
+params_data:
+  title: Alimentação
+  limit: '50'
+  tipo: '0'
+  sideimage: ''
+  files: |-
+    content:alimentacao:bistro.md
+    content:alimentacao:confrariavegana.md
+    content:alimentacao:eka.md
+    content:alimentacao:lanchonetejaganata.md
+
 ---
+
 ### Opções de transporte para a Fazenda Nova Gokula
 
 A Fazenda Nova Gokula situa-se na região rural de Pindamonhangaba/SP, há 25km da cidade. Funciona sábados, domingos e feriados das 10h às 18h.
