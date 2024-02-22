@@ -28,7 +28,7 @@
 	<div class="row">
 
 		<div class="col-12 col-md-6">
-			<section class="p-4" style="height: 500px; overflow: auto; background-image: url(img/toolbar-bg.jpg);">
+			<section class="p-4" style="background-image: url(img/toolbar-bg.jpg);">
 				<h1 class="mb-4" style="color: #604500; font-size: 28px;">Próximos eventos</h1>
 				<!-- <Showcontentindex 
 					id="content:home:homeeventos.md" 
@@ -39,7 +39,7 @@
 			</section>
 		</div> 
 		<div class="col-12 col-md-6">
-			<section class="p-4" style="height: 500px; overflow: auto;">
+			<section class="p-4" _style="height: 500px; overflow: auto;">
 				<h1 class="mb-4" style="color: #604500; font-size: 28px;" @click="go('content/reviews/_index.md')">Opiniões de visitantes</h1>
 				<Showcontentindex 
 					id="content:reviews:_index.md" 
